@@ -3,3 +3,15 @@
 [node name="Node" type="Node"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="ItemList" type="ItemList" parent="."]
+offset_left = 555.0
+offset_top = 245.0
+offset_right = 640.0
+offset_bottom = 359.0
