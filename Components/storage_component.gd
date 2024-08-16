@@ -25,6 +25,11 @@ func remove_item(item = -1):
 	else:
 		items.erase(item)
 	return item
+	
+func is_full():
+	if items.size() >= storage_size:
+		return true
+	return false
 
 func get_number_of_stacks():
 	var stacks = 0

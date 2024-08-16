@@ -1,12 +1,9 @@
 extends Area2D
 class_name conveyor
 
-var storageComponent : StorageComponent
+@export var storage_component : StorageComponent
+var conveyor_speed = 1000
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_area_entered(area):
+	if area is Item and storage_component.is_full() == false:
+		area.tween_position($Marker2D.global_position - storage_component.get_number_of_stacks() * 3, conveyor_speed)

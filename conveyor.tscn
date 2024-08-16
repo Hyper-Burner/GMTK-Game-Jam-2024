@@ -14,3 +14,6 @@ shape = SubResource("RectangleShape2D_5s4mm")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="StorageComponent" parent="." instance=ExtResource("2_b0pd6")]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -10)
