@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6aadg2b6nnrx"]
+[gd_scene load_steps=7 format=3 uid="uid://c6aadg2b6nnrx"]
 
 [ext_resource type="PackedScene" uid="uid://msibxbi6xaqy" path="res://player.tscn" id="1_l3dcw"]
+[ext_resource type="Script" path="res://camera.gd" id="2_e6tcn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81i1s"]
 
@@ -15,13 +16,15 @@ Panel/styles/panel = SubResource("StyleBoxFlat_ouf8y")
 
 [node name="Node" type="Node"]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_l3dcw")]
+[node name="PC" parent="." instance=ExtResource("1_l3dcw")]
 
-[node name="Camera" type="Camera2D" parent="CharacterBody2D"]
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
 
-[node name="Camera" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("TargetNode")]
+script = ExtResource("2_e6tcn")
+TargetNode = NodePath("../PC")
 
-[node name="Ui" type="Control" parent="CharacterBody2D"]
+[node name="Ui" type="Control" parent="Camera"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -320.0
@@ -30,7 +33,7 @@ offset_right = 320.0
 offset_bottom = 181.0
 theme = SubResource("Theme_k5fio")
 
-[node name="TextureRect" type="TextureRect" parent="CharacterBody2D/Ui"]
+[node name="TextureRect" type="TextureRect" parent="Camera/Ui"]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 275.0
@@ -38,17 +41,16 @@ offset_right = 640.0
 offset_bottom = 359.0
 texture = SubResource("CanvasTexture_gu4ad")
 
-[node name="Button" type="Button" parent="CharacterBody2D/Ui/TextureRect"]
+[node name="Button" type="Button" parent="Camera/Ui/TextureRect"]
+layout_mode = 0
 offset_left = 19.0
 offset_top = 15.0
 offset_right = 74.0
 offset_bottom = 60.0
 
-[node name="Panel" type="Panel" parent="CharacterBody2D/Ui/TextureRect/Button"]
+[node name="Panel" type="Panel" parent="Camera/Ui/TextureRect/Button"]
 layout_mode = 0
 offset_left = 85.0
 offset_top = -1.0
 offset_right = 125.0
 offset_bottom = 39.0
-
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
