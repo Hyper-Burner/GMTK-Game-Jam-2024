@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://c6aadg2b6nnrx"]
+[gd_scene load_steps=11 format=3 uid="uid://c6aadg2b6nnrx"]
 
 [ext_resource type="PackedScene" uid="uid://msibxbi6xaqy" path="res://player.tscn" id="1_l3dcw"]
 [ext_resource type="Script" path="res://tile_map_layer.gd" id="2_e6phl"]
 [ext_resource type="Script" path="res://camera.gd" id="2_e6tcn"]
 [ext_resource type="Texture2D" uid="uid://c5ryq5ixkaljr" path="res://test.PNG" id="4_68lwo"]
+
+[sub_resource type="TileSet" id="TileSet_5iuh4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81i1s"]
 
@@ -24,6 +26,7 @@ Panel/styles/panel = SubResource("StyleBoxFlat_ouf8y")
 [node name="PC" parent="." instance=ExtResource("1_l3dcw")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_5iuh4")
 script = ExtResource("2_e6phl")
 
 [node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("TargetNode")]
@@ -61,3 +64,5 @@ offset_top = 5.0
 offset_right = 51.0
 offset_bottom = 45.0
 texture = ExtResource("4_68lwo")
+
+[connection signal="pressed" from="Camera/Ui/TextureRect/Button" to="TileMapLayer" method="_on_button_pressed"]
