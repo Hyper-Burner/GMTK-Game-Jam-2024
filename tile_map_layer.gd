@@ -1,6 +1,6 @@
 extends TileMapLayer
 
-var place_new = true # Set this to true when there is a new node created to move
+var place_new = false # Set this to true when there is a new node created to move
 @export var node_to_move: Node2D # Change the node this is linked to when there is a new node to place
 
 func _ready() -> void:
