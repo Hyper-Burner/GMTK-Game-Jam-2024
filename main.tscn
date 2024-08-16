@@ -17,6 +17,10 @@ Panel/styles/panel = SubResource("StyleBoxFlat_ouf8y")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_l3dcw")]
 
+[node name="Camera" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="Camera" type="Camera2D" parent="CharacterBody2D"]
+
 [node name="Ui" type="Control" parent="CharacterBody2D"]
 layout_mode = 3
 anchors_preset = 0
