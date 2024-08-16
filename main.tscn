@@ -1,23 +1,56 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7sv1bhwtil4k"]
+[gd_scene load_steps=7 format=3 uid="uid://c6aadg2b6nnrx"]
 
 [ext_resource type="PackedScene" uid="uid://msibxbi6xaqy" path="res://player.tscn" id="1_l3dcw"]
-[ext_resource type="Script" path="res://tile_map_layer.gd" id="3_jt6nf"]
-[ext_resource type="Texture2D" uid="uid://c5ryq5ixkaljr" path="res://test.PNG" id="3_mtver"]
+[ext_resource type="Script" path="res://camera.gd" id="2_e6tcn"]
 
-[sub_resource type="TileSet" id="TileSet_4dklh"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81i1s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouf8y"]
+
+[sub_resource type="Theme" id="Theme_k5fio"]
+Button/styles/normal = SubResource("StyleBoxFlat_81i1s")
+Label/fonts/font = null
+Panel/styles/panel = SubResource("StyleBoxFlat_ouf8y")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gu4ad"]
 
 [node name="Node" type="Node"]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_l3dcw")]
+[node name="PC" parent="." instance=ExtResource("1_l3dcw")]
 
-[node name="Camera" type="Camera2D" parent="CharacterBody2D"]
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." node_paths=PackedStringArray("node_to_move")]
-tile_set = SubResource("TileSet_4dklh")
-script = ExtResource("3_jt6nf")
-node_to_move = NodePath("../target_node")
+[node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("TargetNode")]
+script = ExtResource("2_e6tcn")
+TargetNode = NodePath("../PC")
 
-[node name="target_node" type="Node2D" parent="."]
+[node name="Ui" type="Control" parent="Camera"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -320.0
+offset_top = -179.0
+offset_right = 320.0
+offset_bottom = 181.0
+theme = SubResource("Theme_k5fio")
 
-[node name="Sprite2D" type="Sprite2D" parent="target_node"]
-texture = ExtResource("3_mtver")
+[node name="TextureRect" type="TextureRect" parent="Camera/Ui"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 275.0
+offset_right = 640.0
+offset_bottom = 359.0
+texture = SubResource("CanvasTexture_gu4ad")
+
+[node name="Button" type="Button" parent="Camera/Ui/TextureRect"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 15.0
+offset_right = 74.0
+offset_bottom = 60.0
+
+[node name="Panel" type="Panel" parent="Camera/Ui/TextureRect/Button"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = -1.0
+offset_right = 125.0
+offset_bottom = 39.0
