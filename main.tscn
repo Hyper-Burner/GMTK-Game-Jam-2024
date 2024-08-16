@@ -10,6 +10,8 @@
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_l3dcw")]
 
+[node name="Camera" type="Camera2D" parent="CharacterBody2D"]
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." node_paths=PackedStringArray("node_to_move")]
 tile_set = SubResource("TileSet_4dklh")
 script = ExtResource("3_jt6nf")
