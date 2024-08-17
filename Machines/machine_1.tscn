@@ -7,6 +7,7 @@
 size = Vector2(10, 10)
 
 [node name="Machine1" type="Area2D"]
+collision_layer = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_q660h")
