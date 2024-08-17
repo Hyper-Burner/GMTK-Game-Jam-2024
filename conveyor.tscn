@@ -4,9 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://b5slr3nbkmmpb" path="res://Components/storage_component.tscn" id="2_b0pd6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5s4mm"]
+size = Vector2(16, 16)
 
-[node name="Conveyor" type="Area2D"]
+[node name="Conveyor" type="Area2D" node_paths=PackedStringArray("storage_component")]
 script = ExtResource("1_62jp6")
+storage_component = NodePath("StorageComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5s4mm")
@@ -14,6 +16,10 @@ shape = SubResource("RectangleShape2D_5s4mm")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="StorageComponent" parent="." instance=ExtResource("2_b0pd6")]
+storage_size = 3
+stack_size = 1
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(0, -10)
+position = Vector2(0, -8)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

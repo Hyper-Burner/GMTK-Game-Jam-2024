@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6aadg2b6nnrx"]
+[gd_scene load_steps=12 format=3 uid="uid://b7sv1bhwtil4k"]
 
 [ext_resource type="PackedScene" uid="uid://msibxbi6xaqy" path="res://player.tscn" id="1_l3dcw"]
 [ext_resource type="Script" path="res://tile_map_layer.gd" id="2_e6phl"]
 [ext_resource type="Script" path="res://camera.gd" id="2_e6tcn"]
+[ext_resource type="PackedScene" uid="uid://bfsas7b02yyqi" path="res://Classes/Items.tscn" id="3_mwm2t"]
 [ext_resource type="Texture2D" uid="uid://c5ryq5ixkaljr" path="res://test.PNG" id="4_68lwo"]
 
 [sub_resource type="TileSet" id="TileSet_5iuh4"]
@@ -28,6 +29,9 @@ Panel/styles/panel = SubResource("StyleBoxFlat_ouf8y")
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_5iuh4")
 script = ExtResource("2_e6phl")
+
+[node name="Items" parent="TileMapLayer" instance=ExtResource("3_mwm2t")]
+position = Vector2(-61, -15)
 
 [node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("TargetNode")]
 script = ExtResource("2_e6tcn")
