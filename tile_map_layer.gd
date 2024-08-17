@@ -20,8 +20,6 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and place_new :
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			var overlapping_bodies = node_to_move.get_overlapping_areas()
-			
-
 			if overlapping_bodies.size() > 0:
 				if(overlapping_bodies[0] is Item):
 					node_to_move.modulate.a = 1

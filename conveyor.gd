@@ -2,6 +2,7 @@ extends Area2D
 class_name conveyor
 
 @export var storage_component : StorageComponent
+
 var conveyor_speed = 1
 
 func _on_area_entered(area):
