@@ -11,4 +11,5 @@ func set_id(id : int):
 
 func tween_position(final_val, duration : float):
 	var tween = create_tween()
+	print(final_val);
 	tween.tween_property(self, "position", final_val, duration)

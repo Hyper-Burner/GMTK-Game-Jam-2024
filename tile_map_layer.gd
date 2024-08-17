@@ -17,13 +17,19 @@ func _process(delta: float) -> void:
 		node_to_move.position = Vector2(tile_pos.x * 16 + 8,tile_pos.y * 16 + 8)
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and place_new:
+	if event is InputEventMouseButton and place_new :
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			var overlapping_bodies = node_to_move.get_overlapping_areas()
 			
-			if overlapping_bodies.size() <= 0:
+
+			if overlapping_bodies.size() > 0:
+				if(overlapping_bodies[0] is Item):
+					node_to_move.modulate.a = 1
+					place_new = false
+			elif overlapping_bodies.size() <= 0:
 				node_to_move.modulate.a = 1
 				place_new = false
+				
 
 		elif event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed and place_new == true:
 			node_to_move.rotation -= PI/2
