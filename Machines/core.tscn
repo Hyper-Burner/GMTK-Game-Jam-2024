@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://07fnnrhc1lrk"]
+
+[ext_resource type="Script" path="res://Machines/core.gd" id="1_ih68l"]
+[ext_resource type="Texture2D" uid="uid://3whwn5s7wtck" path="res://icon.svg" id="1_tnr4x"]
+[ext_resource type="PackedScene" uid="uid://b5slr3nbkmmpb" path="res://Components/storage_component.tscn" id="2_bv250"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7s2ac"]
+size = Vector2(10, 10)
+
+[node name="Core" type="Area2D"]
+script = ExtResource("1_ih68l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tnr4x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7s2ac")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -10)
+
+[node name="StorageComponent" parent="." instance=ExtResource("2_bv250")]

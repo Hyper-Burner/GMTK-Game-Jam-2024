@@ -1,9 +1,14 @@
 extends Area2D
 class_name Item
 
+@onready var items = JSON.parse_string(FileAccess.get_file_as_string("res://json/items.json"))
+
 var id
 var speed = Vector2(0, 0)
 var on_conveyor = false
+
+func _ready() -> void:
+	print(items["items"])
 
 func set_id(id : int):
 	self.id = id
