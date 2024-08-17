@@ -1,5 +1,5 @@
 extends TileMapLayer
-@export var machine = preload("res://conveyor.tscn")
+@export var machine = preload("res://Classes/machine.tscn")
 var machinesprite = preload("res://test.PNG")
 
 var place_new = false # Set this to true when there is a new node created to move

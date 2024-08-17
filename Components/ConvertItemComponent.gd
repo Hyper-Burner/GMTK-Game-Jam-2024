@@ -1,4 +1,5 @@
 extends Node
+class_name ConvertItemComponent
 
 @export var inputs : Array[StorageComponent]
 @export var outputs : Array[StorageComponent]

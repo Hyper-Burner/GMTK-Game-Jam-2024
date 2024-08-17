@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbaticph6txf7"]
+
+[ext_resource type="Script" path="res://Classes/machines.gd" id="1_7k2yt"]
+[ext_resource type="PackedScene" uid="uid://dnuc1j857gjl" path="res://Components/input_component.tscn" id="2_8jynv"]
+[ext_resource type="PackedScene" uid="uid://6yje1yldhycb" path="res://Components/output_component.tscn" id="3_24xd1"]
+[ext_resource type="PackedScene" uid="uid://b5slr3nbkmmpb" path="res://Components/storage_component.tscn" id="4_c8vte"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fwydp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wi10p"]
+
+[node name="Machine" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_fwydp")
+script = ExtResource("1_7k2yt")
+
+[node name="InputComponent" parent="." node_paths=PackedStringArray("storage_component") instance=ExtResource("2_8jynv")]
+storage_component = NodePath("../InputStorageComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InputComponent"]
+shape = SubResource("RectangleShape2D_wi10p")
+
+[node name="OutputComponent" parent="." node_paths=PackedStringArray("storage") instance=ExtResource("3_24xd1")]
+position = Vector2(0, -10)
+storage = NodePath("../OutputStorageComponent")
+
+[node name="InputStorageComponent" parent="." instance=ExtResource("4_c8vte")]
+
+[node name="OutputStorageComponent" parent="." instance=ExtResource("4_c8vte")]
