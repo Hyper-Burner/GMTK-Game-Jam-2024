@@ -5,6 +5,7 @@ var machinesprite = preload("res://test.PNG")
 var place_new = false # Set this to true when there is a new node created to move
 var node_to_move # Change the node this is linked to when there is a new node to place
 var direction = 0
+var radius = 50
 
 var hold_button: bool = false # Checks to see if button is held down during building
 
@@ -30,8 +31,8 @@ func _process(delta: float) -> void:
 	if hold_button:
 		var location = local_to_map(get_global_mouse_position())
 		if(Input.is_action_pressed("left_click")):
-			if World.get_cell(location) == null:
-					place_machine(machine, location, mouse_direction)
+			if World.get_cell(location) == null and location.x <= radius and location.x >= -radius and location.y <= radius and location.y >= -radius:
+				place_machine(machine, location, mouse_direction)
 		elif(Input.is_action_pressed("right_click")):
 			World.erase_cell(location);
 
@@ -44,7 +45,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and place_new:
 		if event.button_index == MOUSE_BUTTON_LEFT or MOUSE_BUTTON_RIGHT and event.is_pressed():
 			var location = local_to_map(get_global_mouse_position())
-			if World.get_cell(location) == null:
+			if World.get_cell(location) == null and location.x <= radius and location.x >= -radius and location.y <= radius and location.y >= -radius:
 				place_machine(machine, location, direction)
 			hold_button = true
 		elif event.button_index == MOUSE_BUTTON_LEFT or MOUSE_BUTTON_RIGHT and event.is_released():
