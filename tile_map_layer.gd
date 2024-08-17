@@ -15,23 +15,20 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("rotate"):
 		direction += 90
-	if hold_button:
-=======
 		get_node("FollowMouse").rotation_degrees += 90
+	if hold_button:
+		var location = local_to_map(get_global_mouse_position())
+		if(Input.is_action_pressed("left_click")):
+			if World.get_cell(location) == null:
+					place_machine(machine, location, direction)
+		elif(Input.is_action_pressed("right_click")):
+			World.erase_cell(location);
+
 	if place_new:
 		var location = local_to_map(get_global_mouse_position())
 		get_node("FollowMouse").position = Vector2(location.x * 16 + 8, location.y * 16 + 8)
 		
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and place_new:
-		var location = local_to_map(get_global_mouse_position())
-		if(Input.is_action_pressed("left_click")):
-			if World.get_cell(location) == null:
-				place_machine(machine, location, direction)
-		elif(Input.is_action_pressed("right_click")):
-			World.erase_cell(location);
-	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and place_new:
 		if event.button_index == MOUSE_BUTTON_LEFT or MOUSE_BUTTON_RIGHT and event.is_pressed():
