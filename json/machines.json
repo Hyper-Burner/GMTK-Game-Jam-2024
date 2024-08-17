@@ -1,0 +1,139 @@
+{
+    "machines":[
+        {
+            "id": 0,
+            "name": "Core"
+        },
+        {
+            "id": 1,
+            "name": "Harvester",
+            "cost": {
+                "item1": {
+                    "amount": 30,
+                    "type": "Green Bamboo"
+                }
+            },
+            "action_delay": 10,
+            "input": {
+                "item1": "Green Bamboo"
+            },
+            "output": "Green Bamboo",
+            "size_x": 1,
+            "size_y": 1
+        },
+        {
+            "id": 2,
+            "name": "Sawmill",
+            "cost": {
+                "item1": {
+                    "amount": 10,
+                    "type": "Green Bamboo"
+                }
+            },
+            "action_delay": 10,
+            "input": {
+                "item1": "Green Bamboo"
+            },
+            "output": "Bamboo Planks",
+            "size_x": 2,
+            "size_y": 1
+        },
+        {
+            "id": 3,
+            "name": "Drill",
+            "cost": {
+                "item1": {
+                    "amount": 10,
+                    "type": "Green Bamboo"
+                },
+                "item2": {
+                    "amount": 5,
+                    "type": "Bamboo Planks"
+                }
+            },
+            "action_delay": 10,
+            "input": {
+                "item1": "Green Bamboo"
+            },
+            "output": "Bamboo Pipes",
+            "size_x": 2,
+            "size_y": 2
+        },
+        {
+            "id": 4,
+            "name": "Conveyor Belt",
+            "cost": {
+                "item1": {
+                    "amount": 10,
+                    "type": "Bamboo Planks"
+                },
+                "item2": {
+                    "amount": 5,
+                    "type": "Bamboo Pipes"
+                }
+            },
+            "action_delay": 10,
+            "input": {
+                "item1": "N/A"
+            },
+            "output": "N/A",
+            "size_x": 1,
+            "size_y": 1
+        },
+        {
+            "id": 5,
+            "name": "Hydraulic Press",
+            "cost": {
+                "item1": {
+                    "amount": 100,
+                    "type": "Green Bamboo"
+                },
+                "item2": {
+                    "amount": 30,
+                    "type": "Metal Bamboo"
+                }
+            },
+            "action_delay": 10,
+            "input": {
+                "item1": "Metal Bamboo"
+            },
+            "output": "Bamboo Sheets",
+            "size_x": 2,
+            "size_y": 2
+        },
+        {
+            "id": 6,
+            "name": "Smelter",
+            "cost": {
+                "item1": {
+                    "amount": 0,
+                    "type": "N/A"
+                }
+            },
+            "action_delay": 10,
+            "input": {
+                "item1": "Metal Bamboo"
+            },
+            "output": "Bamboo Rods",
+            "size_x": 2,
+            "size_y": 2
+        },
+        {
+            "id": 7,
+            "name": "Boiler",
+            "cost": {
+                "item1": {
+                    "amount": 0,
+                    "type": "N/A"
+                }
+            },
+            "action_delay": 10,
+            "input": {
+                "item1": "Sticky Bamboo"
+            },
+            "output": "Glue",
+            "size_x": 3,
+            "size_y": 2
+        }
+    ]
+}
