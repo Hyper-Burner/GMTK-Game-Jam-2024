@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://fyvulanq1c5f"]
+
+[ext_resource type="FontFile" uid="uid://bed4hftcfp2ty" path="res://Fonts/Kenney Pixel Square.ttf" id="1_omcv3"]
+[ext_resource type="Script" path="res://Menu_Scenes/settings_button.gd" id="2_ne3fu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7se6u"]
+bg_color = Color(2.74345e-06, 0.629811, 0.316993, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jf00x"]
+bg_color = Color(0, 0.718248, 0.36471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thh1r"]
+bg_color = Color(0, 0.4516, 0.220188, 1)
+
+[sub_resource type="Theme" id="Theme_sr45m"]
+Button/styles/focus = null
+Button/styles/hover = SubResource("StyleBoxFlat_7se6u")
+Button/styles/normal = SubResource("StyleBoxFlat_jf00x")
+Button/styles/pressed = SubResource("StyleBoxFlat_thh1r")
+
+[sub_resource type="Theme" id="Theme_jfyj7"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = SubResource("Theme_sr45m")
+
+[node name="Camera" type="Camera2D" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_as_relative = false
+layout_mode = 1
+offset_left = -130.0
+offset_right = 128.0
+offset_bottom = 178.0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_jfyj7")
+theme_override_fonts/font = ExtResource("1_omcv3")
+theme_override_font_sizes/font_size = 25
+text = "Start"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_omcv3")
+theme_override_font_sizes/font_size = 25
+text = "Settings"
+script = ExtResource("2_ne3fu")
+
+[connection signal="button_down" from="VBoxContainer/SettingsButton" to="VBoxContainer/SettingsButton" method="_on_button_down"]
