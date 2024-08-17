@@ -19,16 +19,19 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and place_new:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			node_to_move.modulate.a = 1
-			place_new = false
+			var overlapping_bodies = node_to_move.get_overlapping_areas()
 			
+			if overlapping_bodies.size() <= 0:
+				node_to_move.modulate.a = 1
+				place_new = false
+
 		elif event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed and place_new == true:
 			node_to_move.rotation -= PI/2
 
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.pressed and place_new == true:
 			node_to_move.rotation += PI/2
-			
-			
+
+
 func _on_button_pressed() -> void:
 	var obj = machine.instantiate()
 	node_to_move = obj
