@@ -5,21 +5,30 @@ var place_new = false # Set this to true when there is a new node created to mov
 var node_to_move # Change the node this is linked to when there is a new node to place
 var direction = 0
 
+var hold_button: bool = false # Checks to see if button is held down during building
+
+
 func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("rotate"):
 		direction += 90
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and place_new:
+	if hold_button:
 		var location = local_to_map(get_global_mouse_position())
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if(Input.is_action_pressed("left_click")):
 			if World.get_cell(location) == null:
 				place_machine(machine, location, direction)
-		elif event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-			World.erase_cell(location)
+		elif(Input.is_action_pressed("right_click")):
+			World.erase_cell(location);
+	
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and place_new:
+		if event.button_index == MOUSE_BUTTON_LEFT or MOUSE_BUTTON_RIGHT and event.is_pressed():
+			hold_button = true
+		elif event.button_index == MOUSE_BUTTON_LEFT or MOUSE_BUTTON_RIGHT and event.is_released():
+			hold_button = false
+
 
 func place_machine(machine: PackedScene, pos : Vector2i, rot : int):
 	var global_pos = map_to_local(pos)
@@ -30,7 +39,4 @@ func place_machine(machine: PackedScene, pos : Vector2i, rot : int):
 	add_child(instance)
 
 func _on_button_pressed() -> void:
-	var obj = machine.instantiate()
-	node_to_move = obj
 	place_new = true
-	add_child(obj)
