@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b5slr3nbkmmpb" path="res://Components/storage_component.tscn" id="2_8mcb6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ti4a"]
+size = Vector2(10, 10)
 
 [node name="Machine1" type="Area2D"]
 
