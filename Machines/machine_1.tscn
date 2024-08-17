@@ -1,8 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfhh3rfh1v1s4"]
+[gd_scene load_steps=4 format=3 uid="uid://cfhh3rfh1v1s4"]
 
 [ext_resource type="Texture2D" uid="uid://c5ryq5ixkaljr" path="res://test.PNG" id="1_q660h"]
+[ext_resource type="PackedScene" uid="uid://b5slr3nbkmmpb" path="res://Components/storage_component.tscn" id="2_8mcb6"]
 
-[node name="Machine1" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_237f0"]
+size = Vector2(16, 16)
+
+[node name="Machine1" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_q660h")
+
+[node name="StorageComponent" parent="." instance=ExtResource("2_8mcb6")]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -10)
+gizmo_extents = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_237f0")

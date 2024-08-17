@@ -15,6 +15,12 @@ func _process(delta: float) -> void:
 		var mouse_pos = get_global_mouse_position()
 		var tile_pos = local_to_map(mouse_pos)
 		node_to_move.position = Vector2(tile_pos.x * 16 + 8,tile_pos.y * 16 + 8)
+		var area = Area2D.new()
+		area.scale = Vector2(8,8)
+		area.position = node_to_move.position
+		add_child(area)  # Add the area to the scene
+		var overlapping_bodies = area.overlaps_area(node_to_move)
+		print(overlapping_bodies)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and place_new:
@@ -22,13 +28,16 @@ func _input(event: InputEvent) -> void:
 			node_to_move.modulate.a = 1
 			place_new = false
 			
+
+
+
 		elif event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed and place_new == true:
 			node_to_move.rotation -= PI/2
 
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.pressed and place_new == true:
 			node_to_move.rotation += PI/2
-			
-			
+
+
 func _on_button_pressed() -> void:
 	var obj = machine.instantiate()
 	node_to_move = obj
