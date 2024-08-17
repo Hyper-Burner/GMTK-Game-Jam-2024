@@ -5,6 +5,8 @@ extends TileMapLayer
 var place_new = false # Set this to true when there is a new node created to move
 var node_to_move # Change the node this is linked to when there is a new node to place
 
+var holding_left_building: bool = false
+
 func _ready() -> void:
 	pass
 
@@ -15,29 +17,40 @@ func _process(delta: float) -> void:
 		var mouse_pos = get_global_mouse_position()
 		var tile_pos = local_to_map(mouse_pos)
 		node_to_move.position = Vector2(tile_pos.x * 16 + 8,tile_pos.y * 16 + 8)
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and place_new :
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			var overlapping_bodies = node_to_move.get_overlapping_areas()
-			if overlapping_bodies.size() > 0:
-				if(overlapping_bodies[0] is Item):
-					node_to_move.modulate.a = 1
-					place_new = false
-			elif overlapping_bodies.size() <= 0:
+		
+		
+	if holding_left_building:
+		var overlapping_bodies = node_to_move.get_overlapping_areas()
+		if overlapping_bodies.size() > 0:
+			if(overlapping_bodies[0] is Item):
+				print("placed")
 				node_to_move.modulate.a = 1
 				place_new = false
-				
-
+				create()
+		elif overlapping_bodies.size() <= 0:
+			overlapping_bodies = node_to_move.get_overlapping_areas()
+			node_to_move.modulate.a = 1
+			place_new = false
+			create()
+		
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and place_new:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+			holding_left_building = true
+		elif event.button_index == MOUSE_BUTTON_LEFT and not event.is_pressed():
+			holding_left_building = false
+			place_new = false;
 		elif event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed and place_new == true:
 			node_to_move.rotation -= PI/2
-
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.pressed and place_new == true:
 			node_to_move.rotation += PI/2
 
 
-func _on_button_pressed() -> void:
+func create() -> void:
 	var obj = machine.instantiate()
 	node_to_move = obj
 	place_new = true
 	add_child(obj)
+
+func _on_button_pressed() -> void:
+	create()
