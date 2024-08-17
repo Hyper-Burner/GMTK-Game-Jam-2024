@@ -49,17 +49,17 @@ theme = SubResource("Theme_k5fio")
 [node name="TextureRect" type="TextureRect" parent="Camera/Ui"]
 layout_mode = 0
 offset_left = 1.0
-offset_top = 275.0
+offset_top = 291.0
 offset_right = 640.0
 offset_bottom = 359.0
 texture = SubResource("CanvasTexture_gu4ad")
 
 [node name="Button" type="Button" parent="Camera/Ui/TextureRect"]
 layout_mode = 0
-offset_left = 19.0
-offset_top = 10.0
-offset_right = 81.0
-offset_bottom = 61.0
+offset_left = 16.0
+offset_top = 7.0
+offset_right = 78.0
+offset_bottom = 58.0
 
 [node name="TextureRect" type="TextureRect" parent="Camera/Ui/TextureRect/Button"]
 layout_mode = 0
