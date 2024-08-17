@@ -1,5 +1,6 @@
 extends TileMapLayer
 @export var machine = preload("res://conveyor.tscn")
+var machinesprite = preload("res://test.PNG")
 
 var place_new = false # Set this to true when there is a new node created to move
 var node_to_move # Change the node this is linked to when there is a new node to place
@@ -15,6 +16,15 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("rotate"):
 		direction += 90
 	if hold_button:
+=======
+		get_node("FollowMouse").rotation_degrees += 90
+	if place_new:
+		var location = local_to_map(get_global_mouse_position())
+		get_node("FollowMouse").position = Vector2(location.x * 16 + 8, location.y * 16 + 8)
+		
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and place_new:
 		var location = local_to_map(get_global_mouse_position())
 		if(Input.is_action_pressed("left_click")):
 			if World.get_cell(location) == null:
@@ -40,3 +50,5 @@ func place_machine(machine: PackedScene, pos : Vector2i, rot : int):
 
 func _on_button_pressed() -> void:
 	place_new = true
+	get_node("FollowMouse/FollowMouseSprite").texture = machinesprite
+	get_node("FollowMouse").set_visible(true)

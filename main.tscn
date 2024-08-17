@@ -33,6 +33,12 @@ script = ExtResource("2_e6phl")
 [node name="Items" parent="TileMapLayer" instance=ExtResource("3_mwm2t")]
 position = Vector2(-61, -15)
 
+[node name="FollowMouse" type="Node2D" parent="TileMapLayer"]
+visible = false
+
+[node name="FollowMouseSprite" type="Sprite2D" parent="TileMapLayer/FollowMouse"]
+self_modulate = Color(0.497474, 0.497474, 0.497474, 1)
+
 [node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("TargetNode")]
 script = ExtResource("2_e6tcn")
 TargetNode = NodePath("../PC")
