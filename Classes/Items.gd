@@ -3,7 +3,7 @@ class_name Item
 
 @onready var items = JSON.parse_string(FileAccess.get_file_as_string("res://json/items.json"))
 
-var id
+@export var id : int
 var speed = Vector2(0, 0)
 var on_conveyor = false
 
