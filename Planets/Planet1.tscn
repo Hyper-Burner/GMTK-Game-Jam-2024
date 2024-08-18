@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bssr4eb532qd1" path="res://Tilemap/Planet1_Tiles.png" id="3_l5qxr"]
 [ext_resource type="Texture2D" uid="uid://by466boyl6sc0" path="res://Tilemap/Planet2_TestBambooTilt.png" id="4_1kx25"]
 [ext_resource type="Script" path="res://tile_map_layer.gd" id="5_4bk4t"]
-[ext_resource type="PackedScene" uid="uid://dnprenoh50sw6" path="res://Components/follow_mouse.tscn" id="6_bxxsj"]
+[ext_resource type="PackedScene" path="res://Components/follow_mouse.tscn" id="6_bxxsj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xaxns"]
 texture = ExtResource("1_07s2c")
