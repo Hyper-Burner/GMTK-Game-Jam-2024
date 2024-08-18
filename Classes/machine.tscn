@@ -5,12 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://6yje1yldhycb" path="res://Components/output_component.tscn" id="3_24xd1"]
 [ext_resource type="PackedScene" uid="uid://b5slr3nbkmmpb" path="res://Components/storage_component.tscn" id="4_c8vte"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_fwydp"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ja544"]
+animations = []
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wi10p"]
 
 [node name="Machine" type="AnimatedSprite2D"]
-sprite_frames = SubResource("SpriteFrames_fwydp")
+sprite_frames = SubResource("SpriteFrames_ja544")
+animation = &""
 script = ExtResource("1_7k2yt")
 
 [node name="InputComponent" parent="." node_paths=PackedStringArray("storage_component") instance=ExtResource("2_8jynv")]

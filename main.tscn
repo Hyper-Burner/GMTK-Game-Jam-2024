@@ -40,7 +40,7 @@ tile_set = SubResource("TileSet_ikdpt")
 script = ExtResource("2_e6phl")
 
 [node name="Items" parent="TileMapLayer" instance=ExtResource("3_mwm2t")]
-position = Vector2(-61, -15)
+position = Vector2(278, 146)
 
 [node name="FollowMouse" type="Node2D" parent="TileMapLayer"]
 visible = false
