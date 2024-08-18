@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dhwh842mfxokn"]
+[gd_scene load_steps=11 format=3 uid="uid://pncu8crocmje"]
 
 [ext_resource type="Texture2D" uid="uid://laekfo72yn3e" path="res://Tilemap/Planet1_GreenBamboo.png" id="1_07s2c"]
 [ext_resource type="Texture2D" uid="uid://cxb522ga5y3iy" path="res://Tilemap/Planet1_Rocks.png" id="2_677vt"]
