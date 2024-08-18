@@ -6,7 +6,7 @@ class_name machines
 var id
 var input_storage_component : Array[StorageComponent]
 var output_storage_component : Array[StorageComponent]
-var convert_item_component : ConvertItemComponent
+#var convert_item_component : ConvertItemComponent
 
 func _ready():
 	print("Okay")
