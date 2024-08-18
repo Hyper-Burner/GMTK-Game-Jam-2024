@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1smqaws00mlt"]
+
+[ext_resource type="Script" path="res://Menu_Scenes/planet_1.gd" id="1_jem8u"]
+[ext_resource type="Script" path="res://Menu_Scenes/planet_2.gd" id="2_j4f7t"]
+[ext_resource type="Script" path="res://Menu_Scenes/planet_3.gd" id="3_33u3a"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nvjby"]
+
+[node name="Planets" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Camera" type="Camera2D" parent="."]
+
+[node name="Planet1" type="Button" parent="Camera"]
+offset_left = -25.0
+offset_top = 90.0
+offset_right = 25.0
+offset_bottom = 140.0
+script = ExtResource("1_jem8u")
+
+[node name="Planet1_Sprite" type="Sprite2D" parent="Camera/Planet1"]
+position = Vector2(2.86102e-06, 8.22544e-06)
+scale = Vector2(50, 50)
+texture = SubResource("CanvasTexture_nvjby")
+centered = false
+
+[node name="Planet2" type="Button" parent="Camera"]
+offset_left = -75.0
+offset_top = -5.0
+offset_right = -25.0
+offset_bottom = 45.0
+script = ExtResource("2_j4f7t")
+
+[node name="Planet2_Sprite" type="Sprite2D" parent="Camera/Planet2"]
+position = Vector2(2.86102e-06, 8.22544e-06)
+scale = Vector2(50, 50)
+texture = SubResource("CanvasTexture_nvjby")
+centered = false
+
+[node name="Planet3" type="Button" parent="Camera"]
+offset_left = -25.0
+offset_top = -133.0
+offset_right = 25.0
+offset_bottom = -83.0
+script = ExtResource("3_33u3a")
+
+[node name="Planet3_Sprite" type="Sprite2D" parent="Camera/Planet3"]
+position = Vector2(2.86102e-06, 8.22544e-06)
+scale = Vector2(50, 50)
+texture = SubResource("CanvasTexture_nvjby")
+centered = false
+
+[connection signal="mouse_entered" from="Camera/Planet1" to="Camera/Planet1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Camera/Planet1" to="Camera/Planet1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Camera/Planet2" to="Camera/Planet2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Camera/Planet2" to="Camera/Planet2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Camera/Planet3" to="Camera/Planet3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Camera/Planet3" to="Camera/Planet3" method="_on_mouse_exited"]
