@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://pm13kkyu1qas"]
+
+[ext_resource type="Script" path="res://GUI/hotbar.gd" id="1_ai6h6"]
+[ext_resource type="Texture2D" uid="uid://dmqglpwabdlvt" path="res://GUI/gui.png" id="2_3t7wn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxt7b"]
+atlas = ExtResource("2_3t7wn")
+region = Rect2(0, 0, 0, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b35lu"]
+atlas = ExtResource("2_3t7wn")
+region = Rect2(0, 77, 74, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx86t"]
+atlas = ExtResource("2_3t7wn")
+region = Rect2(119, 77, 192, 32)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Hotbar" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ai6h6")
+
+[node name="Background" type="TextureRect" parent="Hotbar"]
+layout_mode = 0
+offset_left = -320.0
+offset_top = 103.0
+offset_right = 320.0
+offset_bottom = 180.0
+texture = SubResource("AtlasTexture_cxt7b")
+
+[node name="TextureButton" type="TextureButton" parent="Hotbar"]
+layout_mode = 0
+offset_left = -37.0
+offset_top = 90.0
+offset_right = 37.0
+offset_bottom = 105.0
+texture_normal = SubResource("AtlasTexture_b35lu")
+
+[node name="Objective" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Objective"]
+layout_mode = 0
+offset_left = -96.0
+offset_top = -180.0
+offset_right = 96.0
+offset_bottom = -148.0
+texture = SubResource("AtlasTexture_hx86t")
+
+[connection signal="pressed" from="Hotbar/TextureButton" to="Hotbar" method="_on_texture_button_pressed"]

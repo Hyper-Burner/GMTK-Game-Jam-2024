@@ -1,28 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://c6aadg2b6nnrx"]
+[gd_scene load_steps=8 format=3 uid="uid://cpusd0uu84s3y"]
 
 [ext_resource type="PackedScene" uid="uid://dc4s3nwak41h6" path="res://player.tscn" id="1_l3dcw"]
 [ext_resource type="Script" path="res://tile_map_layer.gd" id="2_e6phl"]
 [ext_resource type="Script" path="res://camera.gd" id="2_e6tcn"]
 [ext_resource type="PackedScene" uid="uid://bfsas7b02yyqi" path="res://Classes/Items.tscn" id="3_mwm2t"]
-[ext_resource type="Script" path="res://Classes/Items.gd" id="3_qg0y3"]
-[ext_resource type="Texture2D" uid="uid://c5ryq5ixkaljr" path="res://test.PNG" id="4_68lwo"]
 [ext_resource type="PackedScene" uid="uid://b01olnb7krwbh" path="res://Planets/Planet1.tscn" id="4_mv4i6"]
+[ext_resource type="PackedScene" uid="uid://pm13kkyu1qas" path="res://GUI/hud.tscn" id="6_58lc4"]
 
 [sub_resource type="TileSet" id="TileSet_ikdpt"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81i1s"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rcld"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouf8y"]
-
-[sub_resource type="Theme" id="Theme_k5fio"]
-Button/styles/normal = SubResource("StyleBoxFlat_81i1s")
-Button/styles/pressed = SubResource("StyleBoxFlat_5rcld")
-Label/fonts/font = null
-Panel/styles/panel = SubResource("StyleBoxFlat_ouf8y")
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_gu4ad"]
 
 [node name="Node" type="Node"]
 
@@ -30,7 +15,6 @@ Panel/styles/panel = SubResource("StyleBoxFlat_ouf8y")
 
 [node name="Items" parent="resource2" instance=ExtResource("3_mwm2t")]
 position = Vector2(787, 600)
-script = ExtResource("3_qg0y3")
 
 [node name="PC" parent="." instance=ExtResource("1_l3dcw")]
 position = Vector2(314, 160)
@@ -49,44 +33,8 @@ visible = false
 self_modulate = Color(0.497474, 0.497474, 0.497474, 1)
 
 [node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("TargetNode")]
-position = Vector2(363, 171)
+position = Vector2(320, 180)
 script = ExtResource("2_e6tcn")
 TargetNode = NodePath("../PC")
 
-[node name="Ui" type="Control" parent="Camera"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -320.0
-offset_top = -179.0
-offset_right = 320.0
-offset_bottom = 181.0
-theme = SubResource("Theme_k5fio")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="Camera/Ui"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 291.0
-offset_right = 640.0
-offset_bottom = 359.0
-texture = SubResource("CanvasTexture_gu4ad")
-metadata/_edit_use_anchors_ = true
-
-[node name="Button" type="Button" parent="Camera/Ui/TextureRect"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 7.0
-offset_right = 78.0
-offset_bottom = 58.0
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="Camera/Ui/TextureRect/Button"]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 5.0
-offset_right = 51.0
-offset_bottom = 45.0
-texture = ExtResource("4_68lwo")
-metadata/_edit_use_anchors_ = true
-
-[connection signal="pressed" from="Camera/Ui/TextureRect/Button" to="resource2" method="_on_button_pressed"]
+[node name="Control" parent="Camera" instance=ExtResource("6_58lc4")]
