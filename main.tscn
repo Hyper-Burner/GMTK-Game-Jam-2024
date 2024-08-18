@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Classes/Items.gd" id="3_qg0y3"]
 [ext_resource type="Texture2D" uid="uid://c5ryq5ixkaljr" path="res://test.PNG" id="4_68lwo"]
 [ext_resource type="PackedScene" uid="uid://b01olnb7krwbh" path="res://Planets/Planet1.tscn" id="4_mv4i6"]
+[sub_resource type="TileSet" id="TileSet_ikdpt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81i1s"]
 
@@ -31,9 +32,6 @@ position = Vector2(787, 600)
 script = ExtResource("3_qg0y3")
 
 [node name="PC" parent="." instance=ExtResource("1_l3dcw")]
-
-[node name="InventoryItem" parent="." instance=ExtResource("4_mf3n5")]
-position = Vector2(359, 163)
 
 [node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("TargetNode")]
 position = Vector2(363, 171)
