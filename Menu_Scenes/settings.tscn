@@ -1,26 +1,12 @@
-[gd_scene load_steps=17 format=4 uid="uid://1pq5vhk6o3e4"]
+[gd_scene load_steps=14 format=4 uid="uid://1pq5vhk6o3e4"]
 
 [ext_resource type="FontFile" uid="uid://bed4hftcfp2ty" path="res://Fonts/Kenney Pixel Square.ttf" id="1_bodm4"]
+[ext_resource type="Theme" uid="uid://b51f4yt0bjl4k" path="res://Menu_Scenes/menu_buttons.tres" id="1_raxhq"]
 [ext_resource type="Script" path="res://Menu_Scenes/back_button.gd" id="2_2rdky"]
 [ext_resource type="Script" path="res://Menu_Scenes/audio.gd" id="2_78ks7"]
 [ext_resource type="Texture2D" uid="uid://bssr4eb532qd1" path="res://Tilemap/Planet1_Tiles.png" id="4_6jxeu"]
 [ext_resource type="Texture2D" uid="uid://laekfo72yn3e" path="res://Tilemap/Planet1_GreenBamboo.png" id="5_7d6fl"]
 [ext_resource type="Texture2D" uid="uid://cxb522ga5y3iy" path="res://Tilemap/Planet1_Rocks.png" id="6_digr3"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7se6u"]
-bg_color = Color(2.74345e-06, 0.629811, 0.316993, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jf00x"]
-bg_color = Color(0, 0.718248, 0.36471, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thh1r"]
-bg_color = Color(0, 0.4516, 0.220188, 1)
-
-[sub_resource type="Theme" id="Theme_sr45m"]
-Button/styles/focus = null
-Button/styles/hover = SubResource("StyleBoxFlat_7se6u")
-Button/styles/normal = SubResource("StyleBoxFlat_jf00x")
-Button/styles/pressed = SubResource("StyleBoxFlat_thh1r")
 
 [sub_resource type="Theme" id="Theme_jfyj7"]
 
@@ -182,7 +168,7 @@ sources/1 = SubResource("TileSetAtlasSource_7ys26")
 [node name="Settings" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-theme = SubResource("Theme_sr45m")
+theme = ExtResource("1_raxhq")
 
 [node name="Camera" type="Camera2D" parent="."]
 

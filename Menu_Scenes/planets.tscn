@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1smqaws00mlt"]
+[gd_scene load_steps=9 format=3 uid="uid://b1smqaws00mlt"]
 
 [ext_resource type="Texture2D" uid="uid://qorvn2r6tod" path="res://Menu_Scenes/Space.png" id="1_d7nhb"]
 [ext_resource type="Script" path="res://Menu_Scenes/planet_1.gd" id="1_jem8u"]
 [ext_resource type="Script" path="res://Menu_Scenes/planet_2.gd" id="2_j4f7t"]
+[ext_resource type="Script" path="res://Menu_Scenes/background.gd" id="2_rjxao"]
+[ext_resource type="FontFile" uid="uid://bed4hftcfp2ty" path="res://Fonts/Kenney Pixel Square.ttf" id="3_4b4ns"]
 [ext_resource type="Script" path="res://Menu_Scenes/planet_3.gd" id="3_33u3a"]
+[ext_resource type="Script" path="res://Menu_Scenes/back_button.gd" id="4_sot8i"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_nvjby"]
 
@@ -13,10 +16,19 @@ anchors_preset = 0
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_d7nhb")
+script = ExtResource("2_rjxao")
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="BackButton" type="Button" parent="Background"]
+offset_left = -314.0
+offset_top = 127.0
+offset_right = -231.0
+offset_bottom = 174.0
+theme_override_fonts/font = ExtResource("3_4b4ns")
+theme_override_font_sizes/font_size = 25
+text = "Back"
+script = ExtResource("4_sot8i")
 
-[node name="Planet1" type="Button" parent="Camera"]
+[node name="Planet1" type="Button" parent="Background"]
 offset_left = -25.0
 offset_top = 90.0
 offset_right = 25.0
@@ -24,13 +36,13 @@ offset_bottom = 140.0
 pivot_offset = Vector2(25, 25)
 script = ExtResource("1_jem8u")
 
-[node name="Planet1_Sprite" type="Sprite2D" parent="Camera/Planet1"]
+[node name="Planet1_Sprite" type="Sprite2D" parent="Background/Planet1"]
 position = Vector2(2.86102e-06, 8.22544e-06)
 scale = Vector2(50, 50)
 texture = SubResource("CanvasTexture_nvjby")
 centered = false
 
-[node name="Planet2" type="Button" parent="Camera"]
+[node name="Planet2" type="Button" parent="Background"]
 offset_left = -75.0
 offset_top = -5.0
 offset_right = -25.0
@@ -38,13 +50,13 @@ offset_bottom = 45.0
 pivot_offset = Vector2(25, 25)
 script = ExtResource("2_j4f7t")
 
-[node name="Planet2_Sprite" type="Sprite2D" parent="Camera/Planet2"]
+[node name="Planet2_Sprite" type="Sprite2D" parent="Background/Planet2"]
 position = Vector2(2.86102e-06, 8.22544e-06)
 scale = Vector2(50, 50)
 texture = SubResource("CanvasTexture_nvjby")
 centered = false
 
-[node name="Planet3" type="Button" parent="Camera"]
+[node name="Planet3" type="Button" parent="Background"]
 offset_left = -25.0
 offset_top = -133.0
 offset_right = 25.0
@@ -52,15 +64,18 @@ offset_bottom = -83.0
 pivot_offset = Vector2(25, 25)
 script = ExtResource("3_33u3a")
 
-[node name="Planet3_Sprite" type="Sprite2D" parent="Camera/Planet3"]
+[node name="Planet3_Sprite" type="Sprite2D" parent="Background/Planet3"]
 position = Vector2(2.86102e-06, 8.22544e-06)
 scale = Vector2(50, 50)
 texture = SubResource("CanvasTexture_nvjby")
 centered = false
 
-[connection signal="mouse_entered" from="Camera/Planet1" to="Camera/Planet1" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Camera/Planet1" to="Camera/Planet1" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Camera/Planet2" to="Camera/Planet2" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Camera/Planet2" to="Camera/Planet2" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Camera/Planet3" to="Camera/Planet3" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Camera/Planet3" to="Camera/Planet3" method="_on_mouse_exited"]
+[node name="Camera" type="Camera2D" parent="."]
+
+[connection signal="button_down" from="Background/BackButton" to="Background/BackButton" method="_on_button_down"]
+[connection signal="mouse_entered" from="Background/Planet1" to="Background/Planet1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Background/Planet1" to="Background/Planet1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Background/Planet2" to="Background/Planet2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Background/Planet2" to="Background/Planet2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Background/Planet3" to="Background/Planet3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Background/Planet3" to="Background/Planet3" method="_on_mouse_exited"]
