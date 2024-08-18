@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dnprenoh50sw6"]
+
+[node name="FollowMouse" type="Node2D"]
+
+[node name="FollowMouseSprite" type="Sprite2D" parent="."]
+self_modulate = Color(0.497474, 0.497474, 0.497474, 1)
