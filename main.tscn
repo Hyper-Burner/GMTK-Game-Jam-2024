@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c5ryq5ixkaljr" path="res://test.PNG" id="4_68lwo"]
 [ext_resource type="PackedScene" uid="uid://dw434d52mf1jf" path="res://inventory_item.tscn" id="4_mf3n5"]
 
-[sub_resource type="TileSet" id="TileSet_5iuh4"]
+[sub_resource type="TileSet" id="TileSet_ikdpt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81i1s"]
 
@@ -31,7 +31,7 @@ Panel/styles/panel = SubResource("StyleBoxFlat_ouf8y")
 position = Vector2(50, 0)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_set = SubResource("TileSet_5iuh4")
+tile_set = SubResource("TileSet_ikdpt")
 script = ExtResource("2_e6phl")
 
 [node name="Items" parent="TileMapLayer" instance=ExtResource("3_mwm2t")]

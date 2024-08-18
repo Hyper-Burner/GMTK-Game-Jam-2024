@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var inventory_ui = $InventoryUI
-const speed = 200
+@export var speed = 200
 
 func _ready():
 	Global.set_player_reference(self)

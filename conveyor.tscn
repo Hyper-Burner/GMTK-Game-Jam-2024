@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b5slr3nbkmmpb" path="res://Components/storage_component.tscn" id="2_b0pd6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5s4mm"]
-size = Vector2(8, 14)
+size = Vector2(12, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d2f0y"]
 radius = 2.0
