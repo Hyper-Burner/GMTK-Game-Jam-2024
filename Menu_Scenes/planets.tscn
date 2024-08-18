@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1smqaws00mlt"]
+[gd_scene load_steps=11 format=3 uid="uid://b1smqaws00mlt"]
 
 [ext_resource type="Texture2D" uid="uid://qorvn2r6tod" path="res://Menu_Scenes/Space.png" id="1_d7nhb"]
 [ext_resource type="Script" path="res://Menu_Scenes/planet.gd" id="1_jem8u"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Menu_Scenes/back_button.gd" id="4_sot8i"]
 [ext_resource type="Texture2D" uid="uid://c0r3husbovyx5" path="res://Menu_Scenes/Planet_1.png" id="6_pyfae"]
 [ext_resource type="Texture2D" uid="uid://c3ilr8vmy7o8m" path="res://Menu_Scenes/Planet_2.png" id="8_wbrp3"]
+[ext_resource type="Texture2D" uid="uid://sfk4feoxvn58" path="res://Menu_Scenes/Black_screen.png" id="9_no2mu"]
 [ext_resource type="Texture2D" uid="uid://drqds0586fe7p" path="res://Menu_Scenes/Planet_3.png" id="10_aq5yx"]
 [ext_resource type="Script" path="res://Menu_Scenes/camera.gd" id="11_iu0um"]
 
@@ -70,8 +71,32 @@ centered = false
 [node name="Camera" type="Camera2D" parent="."]
 script = ExtResource("11_iu0um")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera"]
-root_node = NodePath("../..")
+[node name="Title" type="RichTextLabel" parent="Camera"]
+visible = false
+z_index = -1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -82.0
+offset_right = 210.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_4b4ns")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]Planet 1:
+test text[/center]"
+
+[node name="BlackScreen" type="Sprite2D" parent="Camera"]
+visible = false
+z_index = -2
+position = Vector2(1.19209e-07, 5.96046e-08)
+scale = Vector2(670.25, 369.25)
+texture = ExtResource("9_no2mu")
 
 [connection signal="button_down" from="Background/BackButton" to="Background/BackButton" method="_on_button_down"]
 [connection signal="button_down" from="Background/Planet1" to="Camera" method="_on_planet_1_button_down"]
