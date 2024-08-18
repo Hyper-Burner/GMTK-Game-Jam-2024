@@ -91,7 +91,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Drill",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -111,7 +111,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Hydraulic_Press",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -140,15 +140,16 @@ animations = [{
 }],
 "loop": true,
 "name": &"Sawmill",
-"speed": 5.0
+"speed": 16.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wi10p"]
 
 [node name="Machine" type="AnimatedSprite2D"]
+rotation = -0.000477113
 sprite_frames = SubResource("SpriteFrames_ja544")
-animation = &"Sawmill"
-frame_progress = 0.392686
+animation = &"Drill"
+frame_progress = 0.703989
 script = ExtResource("1_7k2yt")
 
 [node name="InputComponent" parent="." node_paths=PackedStringArray("storage_component") instance=ExtResource("2_8jynv")]

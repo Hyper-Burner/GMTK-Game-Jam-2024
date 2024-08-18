@@ -5,7 +5,7 @@ var machinesprite = preload("res://test.PNG")
 var place_new = false # Set this to true when there is a new node created to move
 var node_to_move # Change the node this is linked to when there is a new node to place
 var direction = 0
-var radius = 50
+var radius = 251
 
 var hold_button: bool = false # Checks to see if button is held down during building
 
