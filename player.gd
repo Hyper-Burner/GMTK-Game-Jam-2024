@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var speed = 200
 
 func _ready():
+	inventory_ui.visible = false
 	Global.set_player_reference(self)
 	
 
@@ -16,4 +17,3 @@ func _physics_process(_delta):
 func _input(event):
 	if event.is_action_pressed("ui_inventory"):
 		inventory_ui.visible = !inventory_ui.visible
-	
