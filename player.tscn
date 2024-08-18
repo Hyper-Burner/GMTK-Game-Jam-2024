@@ -1,26 +1,53 @@
-[gd_scene load_steps=6 format=3 uid="uid://dc4s3nwak41h6"]
+[gd_scene load_steps=10 format=3 uid="uid://dc4s3nwak41h6"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_u1sai"]
+[ext_resource type="Texture2D" uid="uid://5riubgn6fgae" path="res://playership-Sheet.png" id="2_f3c2x"]
 [ext_resource type="Script" path="res://Components/storage_component.gd" id="2_hgpeh"]
 [ext_resource type="PackedScene" uid="uid://0uoh7smqbvax" path="res://inventory_ui.tscn" id="3_uceme"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nvrqo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehatc"]
+atlas = ExtResource("2_f3c2x")
+region = Rect2(0, 0, 20, 20)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fg6rg"]
-radius = 2.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_65iqh"]
+atlas = ExtResource("2_f3c2x")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elqt0"]
+atlas = ExtResource("2_f3c2x")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3wtqv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehatc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65iqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elqt0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nvrqo"]
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 motion_mode = 1
 script = ExtResource("1_u1sai")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_3wtqv")
+autoplay = "default"
+frame_progress = 0.224476
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nvrqo")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(10, 0)
-shape = SubResource("CircleShape2D_fg6rg")
 
 [node name="StorageComponent" type="Node" parent="."]
 script = ExtResource("2_hgpeh")
