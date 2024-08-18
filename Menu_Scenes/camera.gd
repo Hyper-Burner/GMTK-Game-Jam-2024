@@ -27,14 +27,17 @@ func display_title(toDisplay: String) -> void:
 func _on_planet_1_button_down() -> void:
 	fade_to_black()
 	display_title("Planet 1:\nα-736")
-	# Link to Planet 1 Scene here
+	await get_tree().create_timer(7).timeout
+	get_tree().change_scene_to_file("res://Planets/Planet1.tscn")
 
 func _on_planet_2_button_down() -> void:
 	fade_to_black()
 	display_title("Planet 2:\nβ-241")
+	await get_tree().create_timer(7).timeout
 	# Link to Planet 2 Scene here
 
 func _on_planet_3_button_down() -> void:
 	fade_to_black()
 	display_title("Planet 3:\nΣ-128")
+	await get_tree().create_timer(7).timeout
 	# Link to Planet 3 Scene here
