@@ -4,10 +4,9 @@
 [ext_resource type="Script" path="res://tile_map_layer.gd" id="2_e6phl"]
 [ext_resource type="Script" path="res://camera.gd" id="2_e6tcn"]
 [ext_resource type="PackedScene" uid="uid://bfsas7b02yyqi" path="res://Classes/Items.tscn" id="3_mwm2t"]
+[ext_resource type="Script" path="res://Classes/Items.gd" id="3_qg0y3"]
 [ext_resource type="Texture2D" uid="uid://c5ryq5ixkaljr" path="res://test.PNG" id="4_68lwo"]
-[ext_resource type="PackedScene" uid="uid://dw434d52mf1jf" path="res://inventory_item.tscn" id="4_mf3n5"]
-
-[sub_resource type="TileSet" id="TileSet_ikdpt"]
+[ext_resource type="PackedScene" uid="uid://b01olnb7krwbh" path="res://Planets/Planet1.tscn" id="4_mv4i6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81i1s"]
 
@@ -24,6 +23,12 @@ Panel/styles/panel = SubResource("StyleBoxFlat_ouf8y")
 [sub_resource type="CanvasTexture" id="CanvasTexture_gu4ad"]
 
 [node name="Node" type="Node"]
+
+[node name="resource2" parent="." instance=ExtResource("4_mv4i6")]
+
+[node name="Items" parent="resource2" instance=ExtResource("3_mwm2t")]
+position = Vector2(787, 600)
+script = ExtResource("3_qg0y3")
 
 [node name="PC" parent="." instance=ExtResource("1_l3dcw")]
 
@@ -56,6 +61,7 @@ visible = false
 self_modulate = Color(0.497474, 0.497474, 0.497474, 1)
 
 [node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("TargetNode")]
+position = Vector2(363, 171)
 script = ExtResource("2_e6tcn")
 TargetNode = NodePath("../PC")
 
@@ -95,4 +101,4 @@ offset_bottom = 45.0
 texture = ExtResource("4_68lwo")
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Camera/Ui/TextureRect/Button" to="TileMapLayer" method="_on_button_pressed"]
+[connection signal="pressed" from="Camera/Ui/TextureRect/Button" to="resource2" method="_on_button_pressed"]
