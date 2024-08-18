@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://c6aadg2b6nnrx"]
+[gd_scene load_steps=13 format=3 uid="uid://c6aadg2b6nnrx"]
 
 [ext_resource type="PackedScene" uid="uid://dc4s3nwak41h6" path="res://player.tscn" id="1_l3dcw"]
+[ext_resource type="Script" path="res://tile_map_layer.gd" id="2_e6phl"]
 [ext_resource type="Script" path="res://camera.gd" id="2_e6tcn"]
 [ext_resource type="PackedScene" uid="uid://bfsas7b02yyqi" path="res://Classes/Items.tscn" id="3_mwm2t"]
 [ext_resource type="Script" path="res://Classes/Items.gd" id="3_qg0y3"]
@@ -30,6 +31,8 @@ position = Vector2(787, 600)
 script = ExtResource("3_qg0y3")
 
 [node name="PC" parent="." instance=ExtResource("1_l3dcw")]
+
+[node name="InventoryItem" parent="." instance=ExtResource("4_mf3n5")]
 position = Vector2(359, 163)
 
 [node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("TargetNode")]
