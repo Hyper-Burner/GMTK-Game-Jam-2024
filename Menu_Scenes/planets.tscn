@@ -1,15 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1smqaws00mlt"]
+[gd_scene load_steps=10 format=3 uid="uid://b1smqaws00mlt"]
 
 [ext_resource type="Texture2D" uid="uid://qorvn2r6tod" path="res://Menu_Scenes/Space.png" id="1_d7nhb"]
-[ext_resource type="Script" path="res://Menu_Scenes/planet_1.gd" id="1_jem8u"]
-[ext_resource type="Script" path="res://Menu_Scenes/planet_2.gd" id="2_j4f7t"]
+[ext_resource type="Script" path="res://Menu_Scenes/planet.gd" id="1_jem8u"]
 [ext_resource type="Script" path="res://Menu_Scenes/background.gd" id="2_rjxao"]
 [ext_resource type="FontFile" uid="uid://bed4hftcfp2ty" path="res://Fonts/Kenney Pixel Square.ttf" id="3_4b4ns"]
-[ext_resource type="Script" path="res://Menu_Scenes/planet_3.gd" id="3_33u3a"]
 [ext_resource type="Script" path="res://Menu_Scenes/back_button.gd" id="4_sot8i"]
 [ext_resource type="Texture2D" uid="uid://c0r3husbovyx5" path="res://Menu_Scenes/Planet_1.png" id="6_pyfae"]
 [ext_resource type="Texture2D" uid="uid://c3ilr8vmy7o8m" path="res://Menu_Scenes/Planet_2.png" id="8_wbrp3"]
 [ext_resource type="Texture2D" uid="uid://drqds0586fe7p" path="res://Menu_Scenes/Planet_3.png" id="10_aq5yx"]
+[ext_resource type="Script" path="res://Menu_Scenes/camera.gd" id="11_iu0um"]
 
 [node name="Planets" type="Control"]
 layout_mode = 3
@@ -48,7 +47,7 @@ offset_top = -5.0
 offset_right = -25.0
 offset_bottom = 45.0
 pivot_offset = Vector2(25, 25)
-script = ExtResource("2_j4f7t")
+script = ExtResource("1_jem8u")
 
 [node name="Planet2_Sprite" type="Sprite2D" parent="Background/Planet2"]
 position = Vector2(2.86102e-06, 8.22544e-06)
@@ -61,7 +60,7 @@ offset_top = -133.0
 offset_right = 25.0
 offset_bottom = -83.0
 pivot_offset = Vector2(25, 25)
-script = ExtResource("3_33u3a")
+script = ExtResource("1_jem8u")
 
 [node name="Planet3_Sprite" type="Sprite2D" parent="Background/Planet3"]
 position = Vector2(2.86102e-06, 8.22544e-06)
@@ -69,11 +68,18 @@ texture = ExtResource("10_aq5yx")
 centered = false
 
 [node name="Camera" type="Camera2D" parent="."]
+script = ExtResource("11_iu0um")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera"]
+root_node = NodePath("../..")
 
 [connection signal="button_down" from="Background/BackButton" to="Background/BackButton" method="_on_button_down"]
+[connection signal="button_down" from="Background/Planet1" to="Camera" method="_on_planet_1_button_down"]
 [connection signal="mouse_entered" from="Background/Planet1" to="Background/Planet1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Background/Planet1" to="Background/Planet1" method="_on_mouse_exited"]
+[connection signal="button_down" from="Background/Planet2" to="Camera" method="_on_planet_2_button_down"]
 [connection signal="mouse_entered" from="Background/Planet2" to="Background/Planet2" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Background/Planet2" to="Background/Planet2" method="_on_mouse_exited"]
+[connection signal="button_down" from="Background/Planet3" to="Camera" method="_on_planet_3_button_down"]
 [connection signal="mouse_entered" from="Background/Planet3" to="Background/Planet3" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Background/Planet3" to="Background/Planet3" method="_on_mouse_exited"]
