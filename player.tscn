@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://msibxbi6xaqy"]
+[gd_scene load_steps=5 format=3 uid="uid://dc4s3nwak41h6"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_u1sai"]
 [ext_resource type="Script" path="res://Components/storage_component.gd" id="2_hgpeh"]
@@ -8,7 +8,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_fg6rg"]
 radius = 2.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_u1sai")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -22,3 +22,25 @@ shape = SubResource("CircleShape2D_fg6rg")
 
 [node name="StorageComponent" type="Node" parent="."]
 script = ExtResource("2_hgpeh")
+
+[node name="InventoryUI" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="InventoryUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.623529, 0.6, 1, 1)
+
+[node name="Label" type="Label" parent="InventoryUI/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.5
+offset_top = 20.0
+offset_right = 37.5
+offset_bottom = 43.0
+grow_horizontal = 2
+text = "Inventory"
