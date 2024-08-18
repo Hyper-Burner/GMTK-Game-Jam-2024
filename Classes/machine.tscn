@@ -24,5 +24,9 @@ position = Vector2(0, -10)
 storage = NodePath("../OutputStorageComponent")
 
 [node name="InputStorageComponent" parent="." instance=ExtResource("4_c8vte")]
+storage_size = 1
+stack_size = 1
 
 [node name="OutputStorageComponent" parent="." instance=ExtResource("4_c8vte")]
+storage_size = 1
+stack_size = 1

@@ -8,5 +8,5 @@ var input_storage_component : Array[StorageComponent]
 var output_storage_component : Array[StorageComponent]
 var convert_item_component : ConvertItemComponent
 
-func _on_ready():
+func _ready():
 	print("Okay")
