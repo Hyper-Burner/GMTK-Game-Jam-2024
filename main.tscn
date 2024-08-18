@@ -33,21 +33,6 @@ script = ExtResource("3_qg0y3")
 
 [node name="PC" parent="." instance=ExtResource("1_l3dcw")]
 
-[node name="InventoryItem" parent="." instance=ExtResource("4_mf3n5")]
-position = Vector2(50, 0)
-item_name = "food"
-item_texture = ExtResource("4_68lwo")
-
-[node name="InventoryItem2" parent="." instance=ExtResource("4_mf3n5")]
-position = Vector2(100, 0)
-item_name = "food"
-item_texture = ExtResource("4_68lwo")
-
-[node name="InventoryItem3" parent="." instance=ExtResource("4_mf3n5")]
-position = Vector2(100, 100)
-item_name = "moneyz"
-item_texture = ExtResource("4_68lwo")
-
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_ikdpt")
 script = ExtResource("2_e6phl")
