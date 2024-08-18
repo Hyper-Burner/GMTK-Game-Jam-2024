@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1smqaws00mlt"]
+[gd_scene load_steps=11 format=3 uid="uid://b1smqaws00mlt"]
 
 [ext_resource type="Texture2D" uid="uid://qorvn2r6tod" path="res://Menu_Scenes/Space.png" id="1_d7nhb"]
 [ext_resource type="Script" path="res://Menu_Scenes/planet_1.gd" id="1_jem8u"]
@@ -7,8 +7,9 @@
 [ext_resource type="FontFile" uid="uid://bed4hftcfp2ty" path="res://Fonts/Kenney Pixel Square.ttf" id="3_4b4ns"]
 [ext_resource type="Script" path="res://Menu_Scenes/planet_3.gd" id="3_33u3a"]
 [ext_resource type="Script" path="res://Menu_Scenes/back_button.gd" id="4_sot8i"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_nvjby"]
+[ext_resource type="Texture2D" uid="uid://c0r3husbovyx5" path="res://Menu_Scenes/Planet_1.png" id="6_pyfae"]
+[ext_resource type="Texture2D" uid="uid://c3ilr8vmy7o8m" path="res://Menu_Scenes/Planet_2.png" id="8_wbrp3"]
+[ext_resource type="Texture2D" uid="uid://drqds0586fe7p" path="res://Menu_Scenes/Planet_3.png" id="10_aq5yx"]
 
 [node name="Planets" type="Control"]
 layout_mode = 3
@@ -38,8 +39,7 @@ script = ExtResource("1_jem8u")
 
 [node name="Planet1_Sprite" type="Sprite2D" parent="Background/Planet1"]
 position = Vector2(2.86102e-06, 8.22544e-06)
-scale = Vector2(50, 50)
-texture = SubResource("CanvasTexture_nvjby")
+texture = ExtResource("6_pyfae")
 centered = false
 
 [node name="Planet2" type="Button" parent="Background"]
@@ -52,8 +52,7 @@ script = ExtResource("2_j4f7t")
 
 [node name="Planet2_Sprite" type="Sprite2D" parent="Background/Planet2"]
 position = Vector2(2.86102e-06, 8.22544e-06)
-scale = Vector2(50, 50)
-texture = SubResource("CanvasTexture_nvjby")
+texture = ExtResource("8_wbrp3")
 centered = false
 
 [node name="Planet3" type="Button" parent="Background"]
@@ -66,8 +65,7 @@ script = ExtResource("3_33u3a")
 
 [node name="Planet3_Sprite" type="Sprite2D" parent="Background/Planet3"]
 position = Vector2(2.86102e-06, 8.22544e-06)
-scale = Vector2(50, 50)
-texture = SubResource("CanvasTexture_nvjby")
+texture = ExtResource("10_aq5yx")
 centered = false
 
 [node name="Camera" type="Camera2D" parent="."]
