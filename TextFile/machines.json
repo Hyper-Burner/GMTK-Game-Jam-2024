@@ -2,7 +2,26 @@
 	"machines":[
 		{
 			"id": 0,
-			"name": "Core"
+			"name": "Core",
+			"cost": {
+				"item1": {
+					"amount": 0,
+					"name": "NA"
+				}
+			},
+			"input": {
+				"item1": {
+					"amount": 0,
+					"name": "NA"
+				}
+			},
+			"output":{
+				"amount": 0,
+				"name": "nA"
+				
+			}, 
+			"size_x": 1,
+			"size_y": 1
 		},
 		{
 			"id": 1,

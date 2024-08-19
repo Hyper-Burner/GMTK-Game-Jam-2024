@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b5slr3nbkmmpb" path="res://Components/storage_component.tscn" id="4_c8vte"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wi10p"]
+resource_local_to_scene = true
 size = Vector2(64, 64)
 
 [node name="Machine" type="AnimatedSprite2D"]
