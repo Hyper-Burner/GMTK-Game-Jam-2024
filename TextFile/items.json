@@ -1,62 +1,79 @@
-[
-	{
-		"id": 0,
-		"name": "Green Bamboo"
-	},
-	{
-		"id": 1,
-		"name": "Bamboo Planks"
-	},
-	{
-		"id": 2,
-		"name": "Bamboo Pipes"
-	},
-	{
-		"id": 3,
-		"name": "Metal Bamboo"
-	},
-	{
-		"id": 4,
-		"name": "Sticky Bamboo"
-	},
-	{
-		"id": 5,
-		"name": "Bamboo Sheets"
-	},
-	{
-		"id": 6,
-		"name": "Bamboo Rods"
-	},
-	{
-		"id": 7,
-		"name": "Glue"
-	},
-	{
-		"id": 8,
-		"name": "Fuel"
-	},
-	{
-		"id": 9,
-		"name": "Spokes"
-	},
-	{
-		"id": 10,
-		"name": "Spacecraft Hull"
-	},
-	{
-		"id": 11,
-		"name": "Wire"
-	},
-	{
-		"id": 12,
-		"name": "Screws"
-	},
-	{
-		"id": 13,
-		"name": "Printed Circuit Board"
-	},
-	{
-		"id": 14,
-		"name": "Thruster"
-	}
-]
+{
+    "items":[
+        {
+            "id": 0,
+            "name": "Green_Bamboo",
+            "description": ""
+        },
+        {
+            "id": 1,
+            "name": "Bamboo_Planks",
+            "description": "Eco friendly bamboo veneers"
+        },
+        {
+            "id": 2,
+            "name": "Bamboo_Pipes",
+            "description": ""
+        },
+        {
+            "id": 3,
+            "name": "Metal_Bamboo",
+            "description": ""
+        },
+        {
+            "id": 4,
+            "name": "Sticky_Bamboo",
+            "description": ""
+        },
+        {
+            "id": 5,
+            "name": "Metal_Sheets",
+            "description": ""
+        },
+        {
+            "id": 6,
+            "name": "Metal_Rods",
+            "description": "Galvanized square steel"
+        },
+        {
+            "id": 7,
+            "name": "Glue",
+            "description": ""
+        },
+        {
+            "id": 8,
+            "name": "Spokes",
+            "description": ""
+        },
+        {
+            "id": 9,
+            "name": "Wires",
+            "description": ""
+        },
+        {
+            "id": 10,
+            "name": "Screws",
+            "description": ""
+        },
+        {
+            "id": 11,
+            "name": "Spacecraft_Hulls",
+            "description": ""
+        },
+        {
+            "id": 1,
+            "name": "PCB",
+            "description": ""
+        },
+        {
+            "id": 14,
+            "name": "Thrusters",
+            "description": ""
+        },
+        {
+            "id": 15,
+            "name": "Bamboo_Fuel",
+            "description": ""
+        }
+    ]
+}

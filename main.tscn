@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6aadg2b6nnrx"]
+[gd_scene load_steps=9 format=3 uid="uid://c6aadg2b6nnrx"]
 
 [ext_resource type="PackedScene" uid="uid://dc4s3nwak41h6" path="res://player.tscn" id="1_l3dcw"]
 [ext_resource type="Script" path="res://tile_map_layer.gd" id="2_e6phl"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bfsas7b02yyqi" path="res://Classes/Items.tscn" id="3_mwm2t"]
 [ext_resource type="PackedScene" uid="uid://b01olnb7krwbh" path="res://Planets/Planet1.tscn" id="4_mv4i6"]
 [ext_resource type="PackedScene" uid="uid://pm13kkyu1qas" path="res://GUI/hud.tscn" id="6_58lc4"]
+[ext_resource type="PackedScene" uid="uid://dbaticph6txf7" path="res://Classes/machine.tscn" id="7_23t5m"]
 
 [sub_resource type="TileSet" id="TileSet_ikdpt"]
 
@@ -15,6 +16,11 @@
 
 [node name="Items" parent="resource2" instance=ExtResource("3_mwm2t")]
 position = Vector2(787, 600)
+
+[node name="Machine" parent="resource2" instance=ExtResource("7_23t5m")]
+position = Vector2(261, 172)
+animation = &"Sawmill"
+frame_progress = 0.0
 
 [node name="PC" parent="." instance=ExtResource("1_l3dcw")]
 position = Vector2(314, 160)
