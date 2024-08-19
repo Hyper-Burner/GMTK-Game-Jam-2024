@@ -13,6 +13,12 @@
 					"name": "Green_Bamboo"
 				}
 			},
+			"input": {
+				"item1": {
+					"amount": 0,
+					"name": "NA"
+				}
+			},
 			"output":{
 				"amount": 1,
 				"name": "Green_Bamboo"
@@ -61,8 +67,10 @@
 			},
 			"action_delay": 10,
 			"input": {
-				"amount": 1,
-				"item1": "Green_Bamboo"
+				"item1": {
+					"amount": 1,
+					"name": "Green_Bamboo"
+				},
 			},
 			"output":{
 				"amount": 1,
