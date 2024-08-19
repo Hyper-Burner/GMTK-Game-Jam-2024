@@ -7,17 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://b5slr3nbkmmpb" path="res://Components/storage_component.tscn" id="4_c8vte"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wi10p"]
+size = Vector2(64, 64)
 
 [node name="Machine" type="AnimatedSprite2D"]
 sprite_frames = ExtResource("1_80mgm")
-animation = &"Drill"
+animation = &"Harvester"
 script = ExtResource("1_7k2yt")
-machine_type = "Sawmill"
 
 [node name="InputComponent" parent="." node_paths=PackedStringArray("storage_component") instance=ExtResource("2_8jynv")]
 storage_component = NodePath("../InputStorageComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InputComponent"]
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wi10p")
 
 [node name="OutputComponent" parent="." node_paths=PackedStringArray("storage") instance=ExtResource("3_24xd1")]
