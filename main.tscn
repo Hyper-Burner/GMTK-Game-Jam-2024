@@ -973,8 +973,8 @@ position = Vector2(787, 600)
 [node name="Machine" parent="resource2" instance=ExtResource("7_23t5m")]
 position = Vector2(261, 172)
 sprite_frames = SubResource("SpriteFrames_ja544")
-animation = &"Sawmill"
-machine_type = "Drill"
+animation = &"Smelter"
+machine_type = "Forge"
 
 [node name="PC" parent="." instance=ExtResource("1_l3dcw")]
 position = Vector2(314, 160)
