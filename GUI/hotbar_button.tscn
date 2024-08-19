@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dmqglpwabdlvt" path="res://GUI/gui.png" id="1_rvk61"]
 [ext_resource type="Script" path="res://GUI/hotbar_button.gd" id="2_4nu2o"]
-[ext_resource type="SpriteFrames" uid="uid://b14qnlhktano3" path="res://Classes/machine.tres" id="3_p4htj"]
+[ext_resource type="SpriteFrames" uid="uid://c8p1i561k6kmk" path="res://Classes/machine.tres" id="3_p4htj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tddo"]
 atlas = ExtResource("1_rvk61")

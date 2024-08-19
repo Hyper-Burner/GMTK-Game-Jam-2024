@@ -67,9 +67,9 @@ texture = SubResource("AtlasTexture_hx86t")
 
 [node name="ObjectivesList" type="HBoxContainer" parent="Objective"]
 layout_mode = 0
-offset_left = -62.0
+offset_left = -63.0
 offset_top = -177.0
-offset_right = 62.0
+offset_right = 65.0
 offset_bottom = -151.0
 
 [connection signal="pressed" from="Hotbar/TextureButton" to="Hotbar" method="_on_texture_button_pressed"]
