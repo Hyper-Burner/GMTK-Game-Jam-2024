@@ -151,6 +151,7 @@ sprite_frames = SubResource("SpriteFrames_ja544")
 animation = &"Hydraulic_Press"
 frame_progress = 0.166901
 script = ExtResource("1_7k2yt")
+machine_type = "Sawmill"
 
 [node name="InputComponent" parent="." node_paths=PackedStringArray("storage_component") instance=ExtResource("2_8jynv")]
 storage_component = NodePath("../InputStorageComponent")

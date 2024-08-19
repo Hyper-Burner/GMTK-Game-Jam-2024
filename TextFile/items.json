@@ -2,55 +2,78 @@
     "items":[
         {
             "id": 0,
-            "name": "Green Bamboo"
+            "name": "Green_Bamboo",
+            "description": ""
         },
         {
             "id": 1,
-            "name": "Bamboo Planks"
+            "name": "Bamboo_Planks",
+            "description": "Eco friendly bamboo veneers"
         },
         {
             "id": 2,
-            "name": "Bamboo Pipes"
+            "name": "Bamboo_Pipes",
+            "description": ""
         },
         {
             "id": 3,
-            "name": "Metal Bamboo"
+            "name": "Metal_Bamboo",
+            "description": ""
         },
         {
             "id": 4,
-            "name": "Sticky Bamboo"
+            "name": "Sticky_Bamboo",
+            "description": ""
         },
         {
             "id": 5,
-            "name": "Bamboo Sheets"
+            "name": "Metal_Sheets",
+            "description": ""
         },
         {
             "id": 6,
-            "name": "Bamboo Rods"
+            "name": "Metal_Rods",
+            "description": "Galvanized square steel"
         },
         {
             "id": 7,
-            "name": "Glue"
+            "name": "Glue",
+            "description": ""
         },
         {
             "id": 8,
-            "name": "Tape"
+            "name": "Spokes",
+            "description": ""
         },
         {
             "id": 9,
-            "name": "Chopsticks"
+            "name": "Wires",
+            "description": ""
         },
         {
             "id": 10,
-            "name": "(Whatever T2 Pipes is)"
+            "name": "Screws",
+            "description": ""
         },
         {
             "id": 11,
-            "name": "Wire"
+            "name": "Spacecraft_Hulls",
+            "description": ""
         },
         {
-            "id": 11,
-            "name": "Screws"
+            "id": 1,
+            "name": "PCB",
+            "description": ""
+        },
+        {
+            "id": 14,
+            "name": "Thrusters",
+            "description": ""
+        },
+        {
+            "id": 15,
+            "name": "Bamboo_Fuel",
+            "description": ""
         }
     ]
 }
