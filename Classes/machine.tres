@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=129 format=3 uid="uid://c8p1i561k6kmk"]
+[gd_resource type="SpriteFrames" load_steps=131 format=3 uid="uid://c8p1i561k6kmk"]
 
 [ext_resource type="Texture2D" uid="uid://by10chjorf30r" path="res://Machines/sprites/planet1machines.png" id="1_xfjew"]
 
@@ -197,6 +197,14 @@ region = Rect2(256, 384, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_cohfx"]
 atlas = ExtResource("1_xfjew")
 region = Rect2(288, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2o38r"]
+atlas = ExtResource("1_xfjew")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3dso"]
+atlas = ExtResource("1_xfjew")
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nkk44"]
 atlas = ExtResource("1_xfjew")
@@ -683,6 +691,17 @@ animations = [{
 "loop": true,
 "name": &"Fuel_Refinery",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2o38r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3dso")
+}],
+"loop": true,
+"name": &"Harvester",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,

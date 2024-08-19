@@ -16,7 +16,6 @@ var mouse_pos_next
 
 func _ready() -> void:
 	mouse_pos_next = get_global_mouse_position()
-	
 
 func _process(delta: float) -> void:
 	
@@ -56,9 +55,12 @@ func _input(event: InputEvent) -> void:
 func place_machine(machine: PackedScene, pos : Vector2i, rot : int):
 	var global_pos = map_to_local(pos)
 	var instance = machine.instantiate()
+	var offset = instance.set_id(selected_machine)
+	global_pos = global_pos + ((offset/Vector2(8,8)) - Vector2(1,1)) * Vector2(8,8)
 	instance.global_position = global_pos
 	instance.set_rotation_degrees(rot)
-	instance.set_id(selected_machine)
+	
+	
 	World.set_cell(instance, pos, rot)
 	add_child(instance)
 	
