@@ -35,7 +35,7 @@ func set_empty():
 	
 func set_item(new_item):
 	item = new_item
-	icon.texture = item["texture"]
-	quantity_label.text = str(item["quantity"])
-	item_name.text = str(item["name"])
+	icon.frame = item.id
+	quantity_label.text = str(item.quantity)
+	item_name.text = str(Global.convert_named_item(item.name))
 	
