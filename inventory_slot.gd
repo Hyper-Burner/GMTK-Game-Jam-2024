@@ -5,6 +5,7 @@ extends Control
 @onready var details_panel = $DetailsPanel
 @onready var item_name = $DetailsPanel/ItemName
 
+
 var item = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,10 +24,12 @@ func _on_item_button_pressed() -> void:
 func _on_item_button_mouse_entered() -> void:
 	if item != null:
 		details_panel.visible = true
+		Global.show_details.emit(item_name.text, item.description)
 
 
 func _on_item_button_mouse_exited() -> void:
 	details_panel.visible = false
+	Global.show_details.emit("", "")
 
 func set_empty():
 	icon.texture = null

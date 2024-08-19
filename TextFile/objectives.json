@@ -1,0 +1,19 @@
+{
+	"Planet1" : [
+		{"item" : "Green_Bamboo", "amount": 50},
+		{"item" : "Bamboo_Planks", "amount": 40},
+		{"item" : "Bamboo_Pipes", "amount": 30},
+	],
+	"Planet2" : [
+		{"item" : "Bamboo_Planks", "amount": 200},
+		{"item" : "Glue", "amount": 150},
+		{"item" : "Spacecraft_Hulls", "amount": 100},
+	],
+	"Planet3" : [
+		{"item" : "Thrusters", "amount": 80},
+		{"item" : "Spacecraft_Hulls", "amount": 500},
+		{"item" : "Printed_Circuit_Boards", "amount": 300},
+		{"item" : "Spokes", "amount": 400},
+		{"item" : "Fuel", "amount": 1000},
+	]
+}

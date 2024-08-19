@@ -1,5 +1,6 @@
 extends TileMapLayer
-@export var machine = preload("res://Classes/machine.tscn")
+@export var selected_machine : int
+var machine = preload("res://Classes/machine.tscn")
 var machinesprite = preload("res://test.PNG")
 
 var place_new = false # Set this to true when there is a new node created to move
@@ -57,8 +58,13 @@ func place_machine(machine: PackedScene, pos : Vector2i, rot : int):
 	var instance = machine.instantiate()
 	instance.global_position = global_pos
 	instance.set_rotation_degrees(rot)
+	instance.set_id(selected_machine)
 	World.set_cell(instance, pos, rot)
 	add_child(instance)
+	
+func set_selected_machine(id : int):
+	selected_machine = id
+	place_new = true
 
 func _on_button_pressed() -> void:
 	place_new = true

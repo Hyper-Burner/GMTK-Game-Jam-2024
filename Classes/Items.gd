@@ -28,7 +28,8 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			var pickup = {
 				"name" : items.items[id].name,
 				"id" : id,
-				"quantity" : 1
+				"quantity" : 1,
+				"description" : items.items[id].description
 			}
 			Global.add_item(pickup)
 			queue_free()

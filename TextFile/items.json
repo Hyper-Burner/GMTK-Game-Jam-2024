@@ -3,7 +3,7 @@
 		{
 			"id": 0,
 			"name": "Green_Bamboo",
-			"description": ""
+			"description": "Fast-growing and resilient, Green Bamboo is and excellent choice as manufacturing material"
 		},
 		{
 			"id": 1,
@@ -13,17 +13,17 @@
 		{
 			"id": 2,
 			"name": "Bamboo_Pipes",
-			"description": ""
+			"description": "A hollowed out bamboo stalk"
 		},
 		{
 			"id": 3,
 			"name": "Metal_Bamboo",
-			"description": ""
+			"description": "Its biology is shrouded in mystery; it is thought that it draws metallic atoms from the planet's core"
 		},
 		{
 			"id": 4,
 			"name": "Sticky_Bamboo",
-			"description": ""
+			"description": "Its sweet scented sap has been harvested by Pandas for eons"
 		},
 		{
 			"id": 5,
@@ -38,7 +38,7 @@
 		{
 			"id": 7,
 			"name": "Glue",
-			"description": ""
+			"description": "A durable adhesive made from the sap of sticky bamboo"
 		},
 		{
 			"id": 8,
@@ -53,27 +53,27 @@
 		{
 			"id": 10,
 			"name": "Screws",
-			"description": ""
+			"description": "Invented in 6700AB to replace old-fashioned nails"
 		},
 		{
 			"id": 11,
 			"name": "Spacecraft_Hulls",
-			"description": ""
+			"description": "A shameless copy of the IBC's standard rocket hull"
 		},
 		{
 			"id": 12,
 			"name": "PCB",
-			"description": ""
+			"description": "In short supply across the galaxy; sells for a fortune on the black market"
 		},
 		{
 			"id": 14,
 			"name": "Thrusters",
-			"description": ""
+			"description": "An older design, but highly capable for space travel"
 		},
 		{
 			"id": 15,
 			"name": "Bamboo_Fuel",
-			"description": ""
+			"description": "An extremely combustible liquid, banned in almost every solar system"
 		}
 	]
 }

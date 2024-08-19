@@ -45,6 +45,13 @@ offset_right = 37.0
 offset_bottom = 105.0
 texture_normal = SubResource("AtlasTexture_b35lu")
 
+[node name="HBoxContainer" type="HBoxContainer" parent="Hotbar"]
+layout_mode = 0
+offset_left = -317.0
+offset_top = 111.0
+offset_right = 317.0
+offset_bottom = 177.0
+
 [node name="Objective" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
