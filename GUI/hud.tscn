@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://pm13kkyu1qas"]
+[gd_scene load_steps=6 format=3 uid="uid://pm13kkyu1qas"]
 
 [ext_resource type="Script" path="res://GUI/hotbar.gd" id="1_ai6h6"]
 [ext_resource type="Texture2D" uid="uid://dmqglpwabdlvt" path="res://GUI/gui.png" id="2_3t7wn"]
-[ext_resource type="PackedScene" uid="uid://cr00iutejh0f" path="res://GUI/hotbar_button.tscn" id="3_cek8f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cxt7b"]
 atlas = ExtResource("2_3t7wn")
@@ -46,13 +45,12 @@ offset_right = 37.0
 offset_bottom = 105.0
 texture_normal = SubResource("AtlasTexture_b35lu")
 
-[node name="HotbarButton" parent="Hotbar" instance=ExtResource("3_cek8f")]
+[node name="HBoxContainer" type="HBoxContainer" parent="Hotbar"]
 layout_mode = 0
 offset_left = -317.0
 offset_top = 111.0
-offset_right = -272.0
+offset_right = 317.0
 offset_bottom = 177.0
-id = 2
 
 [node name="Objective" type="Control" parent="."]
 anchors_preset = 0

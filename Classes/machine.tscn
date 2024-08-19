@@ -962,8 +962,7 @@ animations = [{
 
 [node name="Machine" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_ja544")
-animation = &"Boiler"
-frame_progress = 0.0952449
+animation = &"Drill"
 script = ExtResource("1_7k2yt")
 machine_type = "Sawmill"
 
