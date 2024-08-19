@@ -5,6 +5,7 @@ var planet_level = 0
 var player_node: Node = null
 
 signal inventory_updated
+signal show_details
 
 @onready var inventory_slot_scene = preload("res://inventory_slot.tscn")
 

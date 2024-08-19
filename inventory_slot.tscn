@@ -49,12 +49,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_70aof")
 
-[node name="DetailsPanel" type="ColorRect" parent="."]
-layout_mode = 0
+[node name="DetailsPanel" type="Control" parent="."]
+anchors_preset = 0
 offset_top = -55.0
 offset_right = 51.0
 offset_bottom = -36.0
-color = Color(1, 1, 1, 0)
 
 [node name="ItemName" type="Label" parent="DetailsPanel"]
 layout_mode = 1

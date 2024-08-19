@@ -25,3 +25,16 @@ grow_vertical = 2
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 14
 columns = 5
+
+[node name="ItemName" type="Label" parent="."]
+offset_left = 407.0
+offset_top = -21.9999
+offset_right = 557.0
+offset_bottom = 36.0001
+
+[node name="ItemDescription" type="Label" parent="."]
+offset_left = 407.0
+offset_top = 16.0
+offset_right = 569.0
+offset_bottom = 223.0
+autowrap_mode = 2
