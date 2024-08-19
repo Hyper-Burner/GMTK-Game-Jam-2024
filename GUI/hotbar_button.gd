@@ -16,3 +16,4 @@ func set_machine_id(id):
 
 func _on_pressed() -> void:
 	get_tree().call_group("World", "set_selected_machine", id)
+	print("hi")
