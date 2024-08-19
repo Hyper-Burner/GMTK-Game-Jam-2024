@@ -24,15 +24,15 @@ grow_vertical = 2
 texture = ExtResource("2_mgn78")
 
 [node name="ItemIcon" type="Sprite2D" parent="OuterBorder"]
-position = Vector2(27, 27)
+position = Vector2(25, 25)
+scale = Vector2(2.092, 2)
 texture = ExtResource("2_71f7l")
 
 [node name="ItemQuantity" type="Label" parent="OuterBorder"]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 2.0
-offset_right = 22.0
-offset_bottom = 27.0
+offset_left = 8.0
+offset_right = 23.0
+offset_bottom = 25.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "1
 "
