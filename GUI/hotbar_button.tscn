@@ -1,21 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://cr00iutejh0f"]
+[gd_scene load_steps=4 format=3 uid="uid://cr00iutejh0f"]
 
 [ext_resource type="Texture2D" uid="uid://dmqglpwabdlvt" path="res://GUI/gui.png" id="1_rvk61"]
+[ext_resource type="Script" path="res://GUI/hotbar_button.gd" id="2_4nu2o"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qv7et"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tddo"]
 atlas = ExtResource("1_rvk61")
-region = Rect2(75, 78, 45, 66)
+region = Rect2(74, 78, 45, 66)
 
-[node name="HotbarButton" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
+[node name="HotbarButton" type="TextureButton"]
 offset_right = 45.0
 offset_bottom = 66.0
-texture = SubResource("AtlasTexture_qv7et")
+texture_normal = SubResource("AtlasTexture_3tddo")
+script = ExtResource("2_4nu2o")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
