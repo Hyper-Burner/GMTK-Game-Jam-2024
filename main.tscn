@@ -21,6 +21,7 @@ position = Vector2(787, 600)
 position = Vector2(261, 172)
 animation = &"Sawmill"
 frame_progress = 0.0
+machine_type = "Electronic_Fabricator"
 
 [node name="PC" parent="." instance=ExtResource("1_l3dcw")]
 position = Vector2(314, 160)
