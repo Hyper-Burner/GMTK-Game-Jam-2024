@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1bdta4fsin2t"]
+
+[ext_resource type="Script" path="res://camera.gd" id="1_gtvqi"]
+[ext_resource type="PackedScene" uid="uid://pm13kkyu1qas" path="res://GUI/hud.tscn" id="2_ikmg0"]
+
+[node name="Camera" type="Camera2D"]
+position = Vector2(320, 180)
+script = ExtResource("1_gtvqi")
+
+[node name="Control" parent="." instance=ExtResource("2_ikmg0")]
+metadata/_edit_use_anchors_ = true
