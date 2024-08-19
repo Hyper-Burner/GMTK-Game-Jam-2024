@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://byomii5cvehys"]
 
 [ext_resource type="Script" path="res://inventory_slot.gd" id="1_k33bm"]
-[ext_resource type="Texture2D" uid="uid://c5ryq5ixkaljr" path="res://test.PNG" id="2_71f7l"]
 [ext_resource type="Texture2D" uid="uid://btbqkppq0pefu" path="res://GUI/InventorySlot.png" id="2_mgn78"]
+[ext_resource type="Texture2D" uid="uid://dupqi60hwstxs" path="res://items-Sheet.png" id="3_5v27p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_70aof"]
 
@@ -26,7 +26,8 @@ texture = ExtResource("2_mgn78")
 [node name="ItemIcon" type="Sprite2D" parent="OuterBorder"]
 position = Vector2(25, 25)
 scale = Vector2(2.092, 2)
-texture = ExtResource("2_71f7l")
+texture = ExtResource("3_5v27p")
+hframes = 16
 
 [node name="ItemQuantity" type="Label" parent="OuterBorder"]
 layout_mode = 0

@@ -36,3 +36,12 @@ func remove_item():
 
 func set_player_reference(player):
 	player_node = player
+	
+func convert_named_item(name):
+	var str = ""
+	for i in range(len(name)):
+		if name[i] == "_":
+			str = str + " "
+		else:
+			str = str + name[i]
+	return str
