@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://fyvulanq1c5f"]
+[gd_scene load_steps=19 format=4 uid="uid://fyvulanq1c5f"]
 
 [ext_resource type="Theme" uid="uid://b51f4yt0bjl4k" path="res://Menu_Scenes/Assets/menu_buttons.tres" id="1_e83g2"]
 [ext_resource type="FontFile" uid="uid://bed4hftcfp2ty" path="res://Fonts/Kenney Pixel Square.ttf" id="2_jnktv"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://laekfo72yn3e" path="res://Tilemap/Planet1_GreenBamboo.png" id="6_jqcys"]
 [ext_resource type="Texture2D" uid="uid://cxb522ga5y3iy" path="res://Tilemap/Planet1_Rocks.png" id="7_l3106"]
 [ext_resource type="PackedScene" uid="uid://1pq5vhk6o3e4" path="res://Menu_Scenes/Scenes/settings.tscn" id="8_jhx0p"]
+[ext_resource type="Texture2D" uid="uid://0mppsovn6l6t" path="res://Menu_Scenes/Assets/Title1.png" id="9_l7qxo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7se6u"]
 bg_color = Color(2.74345e-06, 0.629811, 0.316993, 1)
@@ -190,8 +191,9 @@ theme = SubResource("Theme_sr45m")
 z_index = 2
 z_as_relative = false
 offset_left = -130.0
+offset_top = 25.0
 offset_right = 128.0
-offset_bottom = 178.0
+offset_bottom = 203.0
 theme_override_constants/separation = 15
 alignment = 1
 
@@ -223,8 +225,14 @@ tile_set = SubResource("TileSet_8e6lc")
 
 [node name="Settings" parent="Screen" instance=ExtResource("8_jhx0p")]
 visible = false
-offset_top = 42.0
-offset_bottom = 135.0
+offset_top = 67.0
+offset_bottom = 160.0
+
+[node name="Title" type="Sprite2D" parent="Screen"]
+z_index = 10
+position = Vector2(0, -60)
+scale = Vector2(3, 3)
+texture = ExtResource("9_l7qxo")
 
 [node name="Camera" type="Camera2D" parent="."]
 
