@@ -1,10 +1,13 @@
 extends Control
 
 @onready var grid_container = $GridContainer
+@onready var item_name = $ItemName
+@onready var item_desc = $ItemDescription
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.inventory_updated.connect(_on_inventory_updated)
+	Global.show_details.connect(_on_show_details)
 	_on_inventory_updated()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,3 +29,7 @@ func clear_grid_container():
 		var child = grid_container.get_child(0)
 		grid_container.remove_child(child)
 		child.queue_free()
+
+func _on_show_details(name, desc):
+	item_name.text = name
+	item_desc.text = desc

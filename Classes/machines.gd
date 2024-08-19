@@ -6,6 +6,7 @@ class_name machines
 var input_storage_component : Array[StorageComponent]
 var output_storage_component : Array[StorageComponent]
 var convert_item_component : ConvertItemComponent
+var id : int
 
 var input_type = []
 var input_amount = []
@@ -25,3 +26,6 @@ func _ready():
 				temp_int+= 1
 			print(input_type)
 			print(input_amount)
+
+func set_id(id : int):
+	self.id = id
