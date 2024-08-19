@@ -1,64 +1,62 @@
-{
-	"items":[
-		{
-			"id": 0,
-			"name": "Green Bamboo"
-		},
-		{
-			"id": 1,
-			"name": "Bamboo Planks"
-		},
-		{
-			"id": 2,
-			"name": "Bamboo Pipes"
-		},
-		{
-			"id": 3,
-			"name": "Metal Bamboo"
-		},
-		{
-			"id": 4,
-			"name": "Sticky Bamboo"
-		},
-		{
-			"id": 5,
-			"name": "Bamboo Sheets"
-		},
-		{
-			"id": 6,
-			"name": "Bamboo Rods"
-		},
-		{
-			"id": 7,
-			"name": "Glue"
-		},
-		{
-			"id": 8,
-			"name": "Fuel"
-		},
-		{
-			"id": 9,
-			"name": "Spokes"
-		},
-		{
-			"id": 10,
-			"name": "Spacecraft Hull"
-		},
-		{
-			"id": 11,
-			"name": "Wire"
-		},
-		{
-			"id": 12,
-			"name": "Screws"
-		},
-		{
-			"id": 13,
-			"name": "Printed Circuit Board"
-		},
-		{
-			"id": 14,
-			"name": "Thruster"
-		}
-	]
-}
+[
+	{
+		"id": 0,
+		"name": "Green Bamboo"
+	},
+	{
+		"id": 1,
+		"name": "Bamboo Planks"
+	},
+	{
+		"id": 2,
+		"name": "Bamboo Pipes"
+	},
+	{
+		"id": 3,
+		"name": "Metal Bamboo"
+	},
+	{
+		"id": 4,
+		"name": "Sticky Bamboo"
+	},
+	{
+		"id": 5,
+		"name": "Bamboo Sheets"
+	},
+	{
+		"id": 6,
+		"name": "Bamboo Rods"
+	},
+	{
+		"id": 7,
+		"name": "Glue"
+	},
+	{
+		"id": 8,
+		"name": "Fuel"
+	},
+	{
+		"id": 9,
+		"name": "Spokes"
+	},
+	{
+		"id": 10,
+		"name": "Spacecraft Hull"
+	},
+	{
+		"id": 11,
+		"name": "Wire"
+	},
+	{
+		"id": 12,
+		"name": "Screws"
+	},
+	{
+		"id": 13,
+		"name": "Printed Circuit Board"
+	},
+	{
+		"id": 14,
+		"name": "Thruster"
+	}
+]

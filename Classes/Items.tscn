@@ -14,3 +14,5 @@ shape = SubResource("RectangleShape2D_yfrkp")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
 hframes = 27
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
