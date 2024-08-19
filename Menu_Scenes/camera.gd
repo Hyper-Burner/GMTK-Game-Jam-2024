@@ -3,7 +3,7 @@ extends Camera2D
 var planet1: String = "res://Planets/Planet1.tscn"
 var planet2: String = "res://Planets/Planet2.tscn"
 var planet3: String = "res://Planets/Planet3.tscn"
-# export character and ui here
+var playerCam: String = "res://player_cam.tscn"
 
 func fade_to_black() -> void: # fade screen to black before title display
 	get_node("BlackScreen").visible = true
@@ -31,7 +31,7 @@ func display_title(toDisplay: String) -> void: # display title char by char
 
 func load_scene(loadPlanet: String) -> void: # load scene after click on planet
 	get_parent().get_parent().add_child(load(loadPlanet).instantiate())
-	# load character and ui here
+	get_parent().get_parent().add_child(load(playerCam).instantiate())
 	get_parent().queue_free()
 
 func _on_planet_1_button_down() -> void:
