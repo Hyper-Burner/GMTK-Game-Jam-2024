@@ -1,6 +1,7 @@
 extends Node
 
 var inventory = []
+var planet_level = 0
 var player_node: Node = null
 
 signal inventory_updated
