@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dc4s3nwak41h6"]
+[gd_scene load_steps=10 format=3 uid="uid://dc4s3nwak41h6"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_u1sai"]
 [ext_resource type="Texture2D" uid="uid://5riubgn6fgae" path="res://playership-Sheet.png" id="2_f3c2x"]
 [ext_resource type="Script" path="res://Components/storage_component.gd" id="2_hgpeh"]
 [ext_resource type="PackedScene" uid="uid://0uoh7smqbvax" path="res://inventory_ui.tscn" id="3_uceme"]
-[ext_resource type="Texture2D" uid="uid://c2b35crtjws3l" path="res://GUI/InventoryBackground.png" id="4_s52x4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ehatc"]
 atlas = ExtResource("2_f3c2x")
@@ -56,25 +55,7 @@ script = ExtResource("2_hgpeh")
 
 [node name="InventoryUI" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="TextureRect" parent="InventoryUI"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 14.0
-offset_right = 14.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_s52x4")
-metadata/_edit_use_anchors_ = true
-
-[node name="Inventory_UI" parent="InventoryUI/ColorRect" instance=ExtResource("3_uceme")]
+[node name="Inventory_UI" parent="InventoryUI" instance=ExtResource("3_uceme")]
 custom_minimum_size = Vector2(400, 240)
-layout_mode = 1
-anchor_left = 0.4125
-anchor_top = 0.444444
-anchor_right = 0.4125
-anchor_bottom = 0.491667
-offset_left = -200.0
-offset_top = -120.0
-offset_right = 200.0
-offset_bottom = 120.0
+offset_left = -700.0
+offset_right = -700.0

@@ -12,7 +12,7 @@
 [node name="resource2" parent="." groups=["Player", "World"] instance=ExtResource("4_mv4i6")]
 
 [node name="Items" parent="resource2" instance=ExtResource("3_mwm2t")]
-position = Vector2(787, 600)
+position = Vector2(200, 200)
 
 [node name="Machine" parent="resource2" instance=ExtResource("7_23t5m")]
 position = Vector2(261, 172)

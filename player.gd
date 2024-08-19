@@ -3,8 +3,10 @@ extends CharacterBody2D
 @onready var inventory_ui = $InventoryUI
 @export var speed = 200
 
+var inventory_on = false
+
 func _ready():
-	inventory_ui.visible = false
+	inventory_ui.visible = true
 	Global.set_player_reference(self)
 	
 
@@ -16,4 +18,12 @@ func _physics_process(_delta):
 
 func _input(event):
 	if event.is_action_pressed("ui_inventory"):
-		inventory_ui.visible = !inventory_ui.visible
+		var tween = create_tween()
+		if inventory_on:
+			tween.tween_property(inventory_ui.get_child(0), "position", Vector2(-700, 0), 0.3)
+			inventory_on = false
+		else:
+			tween.tween_property(inventory_ui.get_child(0), "position", Vector2(0,0), 0.3)
+			inventory_on = true
+		
+		#inventory_ui.visible = !inventory_ui.visible
