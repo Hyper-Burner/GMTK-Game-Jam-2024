@@ -9,4 +9,4 @@ func _on_button_down() -> void:
 	while screenNode.modulate.a > 0:
 		await get_tree().create_timer(0.01).timeout
 		screenNode.modulate.a -= 0.05
-	get_tree().change_scene_to_file("res://Menu_Scenes/planets.tscn")
+	get_tree().change_scene_to_file("res://Menu_Scenes/Scenes/planets.tscn")
