@@ -14,11 +14,12 @@ var mouse_direction
 var mouse_pos_cur
 var mouse_pos_next
 
+
 func _ready() -> void:
 	mouse_pos_next = get_global_mouse_position()
 
+
 func _process(delta: float) -> void:
-	
 	mouse_pos_cur = mouse_pos_next
 	mouse_pos_next = get_global_mouse_position()
 	mouse_direction = mouse_pos_next - mouse_pos_cur
@@ -32,10 +33,14 @@ func _process(delta: float) -> void:
 		var location = local_to_map(get_global_mouse_position())
 		if(Input.is_action_pressed("left_click")):
 			if World.get_cell(location) == null and location.x <= radius and location.x >= -radius and location.y <= radius and location.y >= -radius:
-				place_machine(machine, location, mouse_direction)
-		elif(Input.is_action_pressed("right_click")):
+				if(selected_machine == 1 and self.get_cell_source_id(location) == 0):
+					place_machine(machine, location, mouse_direction)
+					World.get_cell(location)[0].bamboo_delete = self.get_cell_atlas_coords(location);
+					self.erase_cell(location)
+		elif(Input.is_action_pressed("right_click") and World.get_cell(location) != null and World.get_cell(location)[0].bamboo_delete != null):
+			if( World.get_cell(location) != null and World.get_cell(location)[0].id == 1):
+				self.set_cell(local_to_map(get_global_mouse_position()), 0, World.get_cell(location)[0].bamboo_delete)
 			World.erase_cell(location);
-
 	if place_new:
 		var location = local_to_map(get_global_mouse_position())
 		get_node("FollowMouse").position = Vector2(location.x * 16 + 8, location.y * 16 + 8)
@@ -46,10 +51,13 @@ func _input(event: InputEvent) -> void:
 		if event.button_index == MOUSE_BUTTON_LEFT or MOUSE_BUTTON_RIGHT and event.is_pressed():
 			var location = local_to_map(get_global_mouse_position())
 			if World.get_cell(location) == null and location.x <= radius and location.x >= -radius and location.y <= radius and location.y >= -radius:
-				place_machine(machine, location, direction)
-			hold_button = true
-		elif event.button_index == MOUSE_BUTTON_LEFT or MOUSE_BUTTON_RIGHT and event.is_released():
-			hold_button = false
+				if(selected_machine == 1 and self.get_cell_source_id(location) == 0):
+					place_machine(machine, location, mouse_direction)
+					World.get_cell(location)[0].bamboo_delete = self.get_cell_atlas_coords(location);
+					self.erase_cell(location)
+				hold_button = true
+			elif event.button_index == MOUSE_BUTTON_LEFT or MOUSE_BUTTON_RIGHT and event.is_released():
+				hold_button = false
 
 
 func place_machine(machine: PackedScene, pos : Vector2i, rot : int):
@@ -58,9 +66,7 @@ func place_machine(machine: PackedScene, pos : Vector2i, rot : int):
 	var offset = instance.set_id(selected_machine)
 	global_pos = global_pos + ((offset/Vector2(8,8)) - Vector2(1,1)) * Vector2(8,8)
 	instance.global_position = global_pos
-	instance.set_rotation_degrees(rot)
-	
-	
+	instance.set_rotation_degrees(rot)	
 	World.set_cell(instance, pos, rot)
 	add_child(instance)
 	

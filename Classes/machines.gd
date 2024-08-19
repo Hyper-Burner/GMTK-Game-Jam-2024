@@ -16,6 +16,7 @@ var size_y: int
 var input_type = []
 var input_amount = []
 
+var bamboo_delete: Vector2i
 	
 func set_id(id : int):
 	self.id = id

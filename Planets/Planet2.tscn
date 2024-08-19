@@ -216,26 +216,26 @@ tile_set = SubResource("TileSet_v0w0h")
 
 [node name="FollowMouse" parent="." instance=ExtResource("5_iplf0")]
 
-[node name="Area2D" type="RigidBody2D" parent="."]
+[node name="World_Border" type="RigidBody2D" parent="."]
 sleeping = true
 lock_rotation = true
 freeze = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="World_Border"]
 position = Vector2(320, 7)
 rotation = 1.5713
 shape = SubResource("WorldBoundaryShape2D_dkon2")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="World_Border"]
 position = Vector2(1610, 209)
 rotation = 3.14159
 shape = SubResource("WorldBoundaryShape2D_dkon2")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="World_Border"]
 position = Vector2(7, 175)
 shape = SubResource("WorldBoundaryShape2D_dkon2")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="World_Border"]
 position = Vector2(585, 1611)
 rotation = 4.71239
 shape = SubResource("WorldBoundaryShape2D_dkon2")
