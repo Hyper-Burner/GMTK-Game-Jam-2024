@@ -1,25 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://0uoh7smqbvax"]
+[gd_scene load_steps=3 format=3 uid="uid://0uoh7smqbvax"]
 
 [ext_resource type="Script" path="res://inventory_ui.gd" id="1_hxatv"]
+[ext_resource type="Texture2D" uid="uid://c2b35crtjws3l" path="res://GUI/InventoryBackground.png" id="2_0vv7q"]
 
 [node name="Inventory_UI" type="Control"]
 layout_mode = 3
-anchor_left = 0.078125
-anchor_top = 0.222222
-anchor_right = 0.9375
-anchor_bottom = 0.777778
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hxatv")
-metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0vv7q")
+stretch_mode = 5
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 74.0
+offset_top = 47.0
+offset_right = -177.0
+offset_bottom = -63.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 30
@@ -27,14 +38,16 @@ theme_override_constants/v_separation = 14
 columns = 5
 
 [node name="ItemName" type="Label" parent="."]
-offset_left = 407.0
-offset_top = -21.9999
-offset_right = 557.0
-offset_bottom = 36.0001
+layout_mode = 0
+offset_left = 485.0
+offset_top = 38.0
+offset_right = 635.0
+offset_bottom = 96.0
 
 [node name="ItemDescription" type="Label" parent="."]
-offset_left = 407.0
-offset_top = 16.0
-offset_right = 569.0
-offset_bottom = 223.0
+layout_mode = 0
+offset_left = 485.0
+offset_top = 105.0
+offset_right = 634.0
+offset_bottom = 301.0
 autowrap_mode = 2

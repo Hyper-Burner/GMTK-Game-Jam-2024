@@ -5,6 +5,7 @@ class_name Item
 
 @export var id : int
 
+var pickupable = true
 var speed = Vector2(0, 0)
 var on_conveyor = false
 
@@ -24,7 +25,7 @@ func tween_position(final_val, duration : float):
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
-		if Input.is_action_just_pressed('left_click'):
+		if Input.is_action_just_pressed('left_click') and pickupable:
 			var pickup = {
 				"name" : items.items[id].name,
 				"id" : id,
@@ -32,5 +33,8 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 				"description" : items.items[id].description
 			}
 			Global.add_item(pickup)
-			queue_free()
+			pickupable = false
+			var tween = create_tween()
+			tween.tween_property($Sprite2D, "modulate:a", 0, 0.5)
+			tween.tween_callback(queue_free)
 		
