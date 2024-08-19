@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://1pq5vhk6o3e4"]
+
+[ext_resource type="Theme" uid="uid://b51f4yt0bjl4k" path="res://Menu_Scenes/Assets/menu_buttons.tres" id="1_uro5l"]
+[ext_resource type="FontFile" uid="uid://bed4hftcfp2ty" path="res://Fonts/Kenney Pixel Square.ttf" id="2_8u8f4"]
+[ext_resource type="Script" path="res://Menu_Scenes/Scripts/audio.gd" id="3_k232y"]
+[ext_resource type="Script" path="res://Menu_Scenes/Scripts/settings_to_menu.gd" id="4_d12q5"]
+
+[node name="VBoxContainer" type="VBoxContainer"]
+z_index = 2
+z_as_relative = false
+offset_left = -130.0
+offset_right = 128.0
+offset_bottom = 178.0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Audio" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("1_uro5l")
+theme_override_fonts/font = ExtResource("2_8u8f4")
+theme_override_font_sizes/font_size = 25
+text = "Audio: ON"
+script = ExtResource("3_k232y")
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("1_uro5l")
+theme_override_fonts/font = ExtResource("2_8u8f4")
+theme_override_font_sizes/font_size = 25
+text = "Back"
+script = ExtResource("4_d12q5")
+
+[connection signal="button_down" from="Audio" to="Audio" method="_on_button_down"]
+[connection signal="button_down" from="BackButton" to="BackButton" method="_on_button_down"]

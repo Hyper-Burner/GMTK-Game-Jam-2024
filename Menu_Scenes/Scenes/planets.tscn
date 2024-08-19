@@ -1,33 +1,33 @@
 [gd_scene load_steps=11 format=3 uid="uid://b1smqaws00mlt"]
 
-[ext_resource type="Texture2D" uid="uid://qorvn2r6tod" path="res://Menu_Scenes/Space.png" id="1_d7nhb"]
-[ext_resource type="Script" path="res://Menu_Scenes/planet.gd" id="1_jem8u"]
-[ext_resource type="Script" path="res://Menu_Scenes/background.gd" id="2_rjxao"]
-[ext_resource type="FontFile" uid="uid://bed4hftcfp2ty" path="res://Fonts/Kenney Pixel Square.ttf" id="3_4b4ns"]
-[ext_resource type="Script" path="res://Menu_Scenes/back_button.gd" id="4_sot8i"]
-[ext_resource type="Texture2D" uid="uid://c0r3husbovyx5" path="res://Menu_Scenes/Planet_1.png" id="6_pyfae"]
-[ext_resource type="Texture2D" uid="uid://c3ilr8vmy7o8m" path="res://Menu_Scenes/Planet_2.png" id="8_wbrp3"]
-[ext_resource type="Texture2D" uid="uid://sfk4feoxvn58" path="res://Menu_Scenes/Black_screen.png" id="9_no2mu"]
-[ext_resource type="Texture2D" uid="uid://drqds0586fe7p" path="res://Menu_Scenes/Planet_3.png" id="10_aq5yx"]
-[ext_resource type="Script" path="res://Menu_Scenes/camera.gd" id="11_iu0um"]
+[ext_resource type="Texture2D" uid="uid://qorvn2r6tod" path="res://Menu_Scenes/Assets/Space.png" id="1_s5nfs"]
+[ext_resource type="Script" path="res://Menu_Scenes/Scripts/background.gd" id="2_bky3g"]
+[ext_resource type="FontFile" uid="uid://bed4hftcfp2ty" path="res://Fonts/Kenney Pixel Square.ttf" id="3_f21x2"]
+[ext_resource type="Script" path="res://Menu_Scenes/Scripts/back_button.gd" id="4_o4qm4"]
+[ext_resource type="Script" path="res://Menu_Scenes/Scripts/planet.gd" id="5_2fhmh"]
+[ext_resource type="Texture2D" uid="uid://c0r3husbovyx5" path="res://Menu_Scenes/Assets/Planet_1.png" id="6_qdhif"]
+[ext_resource type="Texture2D" uid="uid://c3ilr8vmy7o8m" path="res://Menu_Scenes/Assets/Planet_2.png" id="7_nnw4d"]
+[ext_resource type="Texture2D" uid="uid://drqds0586fe7p" path="res://Menu_Scenes/Assets/Planet_3.png" id="8_w3xah"]
+[ext_resource type="Script" path="res://Menu_Scenes/Scripts/camera.gd" id="9_ostub"]
+[ext_resource type="Texture2D" uid="uid://sfk4feoxvn58" path="res://Menu_Scenes/Assets/Black_screen.png" id="10_16ot6"]
 
 [node name="Planets" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 
 [node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("1_d7nhb")
-script = ExtResource("2_rjxao")
+texture = ExtResource("1_s5nfs")
+script = ExtResource("2_bky3g")
 
 [node name="BackButton" type="Button" parent="Background"]
 offset_left = -314.0
 offset_top = 127.0
 offset_right = -231.0
 offset_bottom = 174.0
-theme_override_fonts/font = ExtResource("3_4b4ns")
+theme_override_fonts/font = ExtResource("3_f21x2")
 theme_override_font_sizes/font_size = 25
 text = "Back"
-script = ExtResource("4_sot8i")
+script = ExtResource("4_o4qm4")
 
 [node name="Planet1" type="Button" parent="Background"]
 offset_left = -25.0
@@ -35,11 +35,11 @@ offset_top = 90.0
 offset_right = 25.0
 offset_bottom = 140.0
 pivot_offset = Vector2(25, 25)
-script = ExtResource("1_jem8u")
+script = ExtResource("5_2fhmh")
 
 [node name="Planet1_Sprite" type="Sprite2D" parent="Background/Planet1"]
 position = Vector2(2.86102e-06, 8.22544e-06)
-texture = ExtResource("6_pyfae")
+texture = ExtResource("6_qdhif")
 centered = false
 
 [node name="Planet2" type="Button" parent="Background"]
@@ -48,11 +48,11 @@ offset_top = -5.0
 offset_right = -25.0
 offset_bottom = 45.0
 pivot_offset = Vector2(25, 25)
-script = ExtResource("1_jem8u")
+script = ExtResource("5_2fhmh")
 
 [node name="Planet2_Sprite" type="Sprite2D" parent="Background/Planet2"]
 position = Vector2(2.86102e-06, 8.22544e-06)
-texture = ExtResource("8_wbrp3")
+texture = ExtResource("7_nnw4d")
 centered = false
 
 [node name="Planet3" type="Button" parent="Background"]
@@ -61,15 +61,15 @@ offset_top = -133.0
 offset_right = 25.0
 offset_bottom = -83.0
 pivot_offset = Vector2(25, 25)
-script = ExtResource("1_jem8u")
+script = ExtResource("5_2fhmh")
 
 [node name="Planet3_Sprite" type="Sprite2D" parent="Background/Planet3"]
 position = Vector2(2.86102e-06, 8.22544e-06)
-texture = ExtResource("10_aq5yx")
+texture = ExtResource("8_w3xah")
 centered = false
 
 [node name="Camera" type="Camera2D" parent="."]
-script = ExtResource("11_iu0um")
+script = ExtResource("9_ostub")
 
 [node name="Title" type="RichTextLabel" parent="Camera"]
 visible = false
@@ -85,7 +85,7 @@ offset_right = 210.0
 offset_bottom = 82.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("3_4b4ns")
+theme_override_fonts/normal_font = ExtResource("3_f21x2")
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "[center]Planet 1:
@@ -96,7 +96,7 @@ visible = false
 z_index = -2
 position = Vector2(1.19209e-07, 5.96046e-08)
 scale = Vector2(670.25, 369.25)
-texture = ExtResource("9_no2mu")
+texture = ExtResource("10_16ot6")
 
 [connection signal="button_down" from="Background/BackButton" to="Background/BackButton" method="_on_button_down"]
 [connection signal="button_down" from="Background/Planet1" to="Camera" method="_on_planet_1_button_down"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qorvn2r6tod"
-path="res://.godot/imported/Space.png-c5242140abd932ae14f2d81e51a6abac.ctex"
+path="res://.godot/imported/Space.png-4164f70bd3050e4995e26f4f6341f974.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Menu_Scenes/Space.png"
-dest_files=["res://.godot/imported/Space.png-c5242140abd932ae14f2d81e51a6abac.ctex"]
+source_file="res://Menu_Scenes/Assets/Space.png"
+dest_files=["res://.godot/imported/Space.png-4164f70bd3050e4995e26f4f6341f974.ctex"]
 
 [params]
 

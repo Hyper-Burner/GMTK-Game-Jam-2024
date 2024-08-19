@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgugmakf1kx7j"]
+
+[ext_resource type="Script" path="res://Menu_Scenes/Scripts/fade_in.gd" id="1_0wn8h"]
+[ext_resource type="Texture2D" uid="uid://sfk4feoxvn58" path="res://Menu_Scenes/Assets/Black_screen.png" id="1_vl4bd"]
+
+[node name="FadeIn" type="Sprite2D"]
+z_index = 5
+scale = Vector2(2404.81, 1347.69)
+texture = ExtResource("1_vl4bd")
+script = ExtResource("1_0wn8h")
