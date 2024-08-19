@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://biojx5u6oqvkb" path="res://Tilemap/Planet2_BambooVariations.png" id="2_6hy6e"]
 [ext_resource type="Texture2D" uid="uid://b8eb0conftisc" path="res://Tilemap/Planet2_Rocks.png" id="3_o6n88"]
 [ext_resource type="Script" path="res://tile_map_layer.gd" id="3_rde11"]
-[ext_resource type="PackedScene" path="res://Components/follow_mouse.tscn" id="5_iplf0"]
+[ext_resource type="PackedScene" uid="uid://dnprenoh50sw6" path="res://Components/follow_mouse.tscn" id="5_iplf0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mnpux"]
 texture = ExtResource("2_6hy6e")

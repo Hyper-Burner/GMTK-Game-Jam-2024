@@ -9,4 +9,4 @@ var output_storage_component : Array[StorageComponent]
 #var convert_item_component : ConvertItemComponent
 
 func _ready():
-	print("Okay")
+	print(machines)

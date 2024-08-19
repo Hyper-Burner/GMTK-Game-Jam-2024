@@ -1,7 +1,7 @@
 extends Control
 
-@onready var icon = $InnerBorder/ItemIcon
-@onready var quantity_label = $InnerBorder/ItemQuantity
+@onready var icon = $OuterBorder/ItemIcon
+@onready var quantity_label = $OuterBorder/ItemQuantity
 @onready var details_panel = $DetailsPanel
 @onready var item_name = $DetailsPanel/ItemName
 

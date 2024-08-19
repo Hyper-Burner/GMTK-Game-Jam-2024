@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://byomii5cvehys"]
+[gd_scene load_steps=5 format=3 uid="uid://byomii5cvehys"]
 
 [ext_resource type="Script" path="res://inventory_slot.gd" id="1_k33bm"]
 [ext_resource type="Texture2D" uid="uid://c5ryq5ixkaljr" path="res://test.PNG" id="2_71f7l"]
+[ext_resource type="Texture2D" uid="uid://btbqkppq0pefu" path="res://GUI/InventorySlot.png" id="2_mgn78"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_70aof"]
 
@@ -13,38 +14,24 @@ offset_right = 50.0
 offset_bottom = 50.0
 script = ExtResource("1_k33bm")
 
-[node name="OuterBorder" type="ColorRect" parent="."]
+[node name="OuterBorder" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.273053, 0.101668, 0.435102, 1)
+texture = ExtResource("2_mgn78")
 
-[node name="InnerBorder" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -23.0
-offset_top = -23.0
-offset_right = 23.0
-offset_bottom = 23.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.276641, 0.778259, 0.584531, 1)
-
-[node name="ItemIcon" type="Sprite2D" parent="InnerBorder"]
+[node name="ItemIcon" type="Sprite2D" parent="OuterBorder"]
 position = Vector2(25, 25)
+scale = Vector2(2.092, 2)
 texture = ExtResource("2_71f7l")
 
-[node name="ItemQuantity" type="Label" parent="InnerBorder"]
+[node name="ItemQuantity" type="Label" parent="OuterBorder"]
 layout_mode = 0
-offset_left = 5.0
-offset_right = 20.0
+offset_left = 8.0
+offset_right = 23.0
 offset_bottom = 25.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "1

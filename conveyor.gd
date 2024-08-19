@@ -6,6 +6,5 @@ class_name conveyor
 var conveyor_speed = 1
 
 func _on_area_entered(area):
-	print(area)
 	if area is Item:
 		area.tween_position($Marker2D.global_position, conveyor_speed)

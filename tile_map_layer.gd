@@ -38,7 +38,6 @@ func _process(delta: float) -> void:
 
 	if place_new:
 		var location = local_to_map(get_global_mouse_position())
-		print(location)
 		get_node("FollowMouse").position = Vector2(location.x * 16 + 8, location.y * 16 + 8)
 		
 
@@ -63,6 +62,5 @@ func place_machine(machine: PackedScene, pos : Vector2i, rot : int):
 
 func _on_button_pressed() -> void:
 	place_new = true
-	print(machinesprite)
 	get_node("FollowMouse/FollowMouseSprite").texture = machinesprite
 	get_node("FollowMouse").set_visible(true)

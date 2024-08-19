@@ -148,8 +148,8 @@ animations = [{
 [node name="Machine" type="AnimatedSprite2D"]
 rotation = -0.000477113
 sprite_frames = SubResource("SpriteFrames_ja544")
-animation = &"Drill"
-frame_progress = 0.703989
+animation = &"Hydraulic_Press"
+frame_progress = 0.166901
 script = ExtResource("1_7k2yt")
 
 [node name="InputComponent" parent="." node_paths=PackedStringArray("storage_component") instance=ExtResource("2_8jynv")]
