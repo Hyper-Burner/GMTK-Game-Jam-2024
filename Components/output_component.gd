@@ -13,7 +13,6 @@ func _on_timer_timeout():
 		var item = items.instantiate()
 		item.set_id(data)
 		item.position = global_position
-		
 		get_node("/root").add_child(item)
 
 func local_to_map(local_position : Vector2):
