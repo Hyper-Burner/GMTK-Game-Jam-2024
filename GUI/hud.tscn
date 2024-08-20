@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://pm13kkyu1qas"]
+[gd_scene load_steps=8 format=3 uid="uid://pm13kkyu1qas"]
 
 [ext_resource type="Script" path="res://GUI/hotbar.gd" id="1_ai6h6"]
 [ext_resource type="Texture2D" uid="uid://dmqglpwabdlvt" path="res://GUI/gui.png" id="2_3t7wn"]
 [ext_resource type="FontFile" uid="uid://di3holtqvj3bm" path="res://Fonts/Kenney Pixel.ttf" id="3_rc25m"]
+[ext_resource type="Script" path="res://GUI/stop_placing.gd" id="4_u7rj3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cxt7b"]
 atlas = ExtResource("2_3t7wn")
@@ -84,4 +85,14 @@ theme_override_fonts/font = ExtResource("3_rc25m")
 theme_override_font_sizes/font_size = 16
 text = "Collect:"
 
+[node name="StopPlacing" type="Button" parent="."]
+layout_mode = 0
+offset_left = 264.0
+offset_top = -174.0
+offset_right = 304.0
+offset_bottom = -134.0
+text = "f"
+script = ExtResource("4_u7rj3")
+
 [connection signal="pressed" from="Hotbar/TextureButton" to="Hotbar" method="_on_texture_button_pressed"]
+[connection signal="button_down" from="StopPlacing" to="StopPlacing" method="_on_button_down"]

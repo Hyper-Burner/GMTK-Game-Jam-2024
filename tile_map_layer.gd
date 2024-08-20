@@ -1,7 +1,7 @@
 extends TileMapLayer
 @export var selected_machine : int
 var machine = preload("res://Classes/machine.tscn")
-var machinesprite = preload("res://test.PNG")
+var machines_json = JSON.parse_string(FileAccess.get_file_as_string("res://TextFile/machines.json"))
 @onready var groundlayer = $ground
 
 var place_new = false # Set this to true when there is a new node created to move
@@ -13,7 +13,7 @@ var hold_button: bool = false # Checks to see if button is held down during buil
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("rotate"):
 		direction += 90
-		get_node("FollowMouse").rotation_degrees += 90
+		#get_node("FollowMouse").rotation_degrees += 90
 	if hold_button:
 		var location = local_to_map(get_global_mouse_position())
 		if(Input.is_action_pressed("left_click")):
@@ -95,12 +95,15 @@ func place_machine(machine: PackedScene, pos : Vector2i, rot : int):
 	
 func set_selected_machine(id : int):
 	selected_machine = id
-	place_new = true
-
-func _on_button_pressed() -> void:
-	place_new = true
-	get_node("FollowMouse/FollowMouseSprite").texture = machinesprite
+	var machine_name = ""
+	for x in machines_json["machines"]:
+		if x["id"] == id:
+			machine_name = x["name"]
+	get_node("FollowMouse").animation = machine_name
+	get_node("FollowMouse").self_modulate.a = 0.5
 	get_node("FollowMouse").set_visible(true)
+	get_node("/root/PlayerCam/Camera/Control/StopPlacing").set_visible(true)
+	place_new = true
 
 func erase_cells(sprite: AnimatedSprite2D):
 	var spritepos = local_to_map(Vector2i(sprite.position)) 
