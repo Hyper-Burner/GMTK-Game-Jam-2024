@@ -48,6 +48,7 @@ func _on_pressed() -> void:
 
 func _on_mouse_entered() -> void:
 	label.visible = true
+	label.get_node("Sprite2D").modulate.a = 0.65
 
 
 func _on_mouse_exited() -> void:

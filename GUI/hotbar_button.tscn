@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cr00iutejh0f"]
+[gd_scene load_steps=7 format=3 uid="uid://cr00iutejh0f"]
 
 [ext_resource type="Texture2D" uid="uid://dmqglpwabdlvt" path="res://GUI/gui.png" id="1_rvk61"]
 [ext_resource type="Script" path="res://GUI/hotbar_button.gd" id="2_4nu2o"]
 [ext_resource type="SpriteFrames" uid="uid://c8p1i561k6kmk" path="res://Classes/machine.tres" id="3_p4htj"]
+[ext_resource type="Texture2D" uid="uid://sfk4feoxvn58" path="res://Menu_Scenes/Assets/Black_screen.png" id="4_h8e4t"]
 [ext_resource type="FontFile" uid="uid://di3holtqvj3bm" path="res://Fonts/Kenney Pixel.ttf" id="4_x15tm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tddo"]
@@ -25,6 +26,12 @@ offset_bottom = -16.0
 theme_override_fonts/font = ExtResource("4_x15tm")
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Label"]
+z_index = -1
+position = Vector2(-8, 83)
+scale = Vector2(126, 199)
+texture = ExtResource("4_h8e4t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(22, 28)
