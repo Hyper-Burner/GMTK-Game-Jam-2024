@@ -12,7 +12,6 @@ var on_conveyor = false
 func _ready() -> void:
 	set_id(id)
 	pass
-	#print(items["items"])
 
 func set_id(id : int):
 	self.id = id
@@ -21,7 +20,6 @@ func set_id(id : int):
 
 func tween_position(final_val, duration : float):
 	var tween = create_tween()
-	print(final_val);
 	tween.tween_property(self, "position", final_val, duration)
 	
 
