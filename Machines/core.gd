@@ -53,7 +53,7 @@ func check_objectives():
 		if(item != null):
 			for y in obj:
 				if(y == item):
-					if(obj[y] >= int(storage.items[item])):
+					if(obj[y] > int(storage.items[item])):
 						return false
 					enough = true
 	return enough

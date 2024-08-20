@@ -1,18 +1,20 @@
 [
 	[
-		{"item" : "Green_Bamboo", "amount": 1, "id": 0}
+		{"item" : "Green_Bamboo", "amount": 1, "id": 0},
+		{"item" : "Bamboo_Planks", "amount": 40, "id": 1},
+		{"item" : "Bamboo_Pipes", "amount": 30, "id": 2}
 
 	],
 	[
 		{"item" : "Bamboo_Planks", "amount": 200, "id": 1},
 		{"item" : "Glue", "amount": 150, "id": 7},
-		{"item" : "Spacecraft_Hulls", "amount": 100, "id": 11},
+		{"item" : "Spacecraft_Hulls", "amount": 100, "id": 9}
 	],
 	[
 		{"item" : "Thrusters", "amount": 80, "id": 14},
-		{"item" : "Spacecraft_Hulls", "amount": 500, "id": 11},
+		{"item" : "Spacecraft_Hulls", "amount": 500, "id": 9},
 		{"item" : "Printed_Circuit_Boards", "amount": 300, "id": 12},
-		{"item" : "Spokes", "amount": 400, "id": 8},
-		{"item" : "Bamboo_Fuel", "amount": 1000, "id": 15},
+		{"item" : "Spokes", "amount": 400, "id": 10},
+		{"item" : "Bamboo_Fuel", "amount": 1000, "id": 15}
 	]
 ]
