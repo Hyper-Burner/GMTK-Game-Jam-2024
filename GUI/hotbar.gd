@@ -6,6 +6,7 @@ var objectives = JSON.parse_string(FileAccess.get_file_as_string("res://TextFile
 var hotbar_button = preload("res://GUI/hotbar_button.tscn")
 var objective_item = preload("res://GUI/objective_item.tscn")
 
+
 func _ready() -> void:
 	# print(Global.planet_level)
 	for x in range(1, unlocks[Global.planet_level]):

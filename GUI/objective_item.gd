@@ -14,7 +14,11 @@ func set_properties(id, quantity):
 	$Quantity.text = "0/"+str(quantity)
 
 func update_collected(collected):
-	$Quantity.text = collected+"/"+str(quantity)
+	for x in collected:
+		if(self.id == x):
+			self.collected = collected[x]
+			
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$Quantity.text = str(self.collected) + "/" + str(quantity)
 	pass
