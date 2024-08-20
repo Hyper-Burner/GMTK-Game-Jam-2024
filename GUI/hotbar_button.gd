@@ -13,7 +13,7 @@ func set_machine_id(id):
 	for x in machine_json["machines"]:
 		if x["id"] == id:
 			$Label.text = x["name"]
+			$AnimatedSprite2D.animation = x["name"]
 
 func _on_pressed() -> void:
 	get_tree().call_group("World", "set_selected_machine", id)
-	print("hi")
