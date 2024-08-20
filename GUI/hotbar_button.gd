@@ -16,12 +16,13 @@ func set_machine_id(id):
 			$Label.text = x["name"].replace("_", " ") + "\n" + "Cost:\n"
 			$AnimatedSprite2D.animation = x["name"]
 			for y in x["cost"]:
-				$Label.text = $Label.text + str(x["cost"]["item" + str(count)]["amount"])
-				$Label.text = $Label.text + " " + x["cost"]["item" + str(count)]["name"].replace("_", " ") + "\n"
+				print(y)
+				$Label.text = $Label.text + str(x["cost"][y]["amount"])
+				$Label.text = $Label.text + " " + x["cost"][y]["name"].replace("_", " ") + "\n"
 				
 				var item = 0
 				for i in item_json["items"]:
-					if i["name"] == x["cost"]["item" + str(count)]["name"]:
+					if i["name"] == x["cost"][y]["name"]:
 						item = int(i["id"])
 				var new_control = Control.new()
 				var costInstance = Sprite2D.new()
