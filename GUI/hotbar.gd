@@ -11,7 +11,6 @@ func _ready() -> void:
 	conveyorbelt.set_machine_id(4)
 	$HBoxContainer.add_child(conveyorbelt)
 	
-	
 	print(Global.planet_level)
 	for x in range(1, unlocks[Global.planet_level]):
 		var instance = hotbar_button.instantiate()
@@ -32,3 +31,6 @@ func _on_texture_button_pressed() -> void:
 	else:
 		tween.tween_property(self, "position", Vector2(0, 0), 0.25)
 		open = true
+
+func _on_h_scroll_bar_value_changed(value: float) -> void:
+	$HBoxContainer.position.x = -value

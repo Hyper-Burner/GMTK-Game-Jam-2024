@@ -14,10 +14,11 @@ func set_machine_id(id):
 		if x["id"] == id:
 			$Label.text = x["name"].replace("_", " ") + "\n" + "Cost:\n"
 			$AnimatedSprite2D.animation = x["name"]
+
 			for y in x["cost"]:
 				$Label.text = $Label.text + str(x["cost"][y]["amount"])
 				$Label.text = $Label.text + " " + x["cost"][y]["name"].replace("_", " ") + "\n"
-				
+
 				var item = 0
 				for i in item_json["items"]:
 					if i["name"] == x["cost"][y]["name"]:
