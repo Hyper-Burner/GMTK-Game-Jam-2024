@@ -1,4 +1,4 @@
-extends Area2D
+extends AnimatedSprite2D
 class_name conveyor
 
 @export var storage_component : StorageComponent

@@ -6,18 +6,18 @@
 			"cost": {
 				"item1": {
 					"amount": 0,
-					"name": "NA"
+					"name": "N/A"
 				}
 			},
 			"input": {
 				"item1": {
 					"amount": 0,
-					"name": "NA"
+					"name": "N/A"
 				}
 			},
 			"output":{
 				"amount": 0,
-				"name": "nA"
+				"name": "N/A"
 				
 			}, 
 			"size_x": 1,
@@ -35,7 +35,7 @@
 			"input": {
 				"item1": {
 					"amount": 0,
-					"name": "NA"
+					"name": "N/A"
 				}
 			},
 			"output":{
@@ -89,7 +89,7 @@
 				"item1": {
 					"amount": 1,
 					"name": "Bamboo_Planks"
-				},
+				}
 			},
 			"output":{
 				"amount": 1,
@@ -116,12 +116,12 @@
 			"input": {
 				"item1": {
 					"amount": 0,
-					"name": "NA"
+					"name": "N/A"
 				}
 			},
 			"output":{
 				"amount": 0,
-				"name": "NA"
+				"name": "N/A"
 				
 			}, 
 			"size_x": 1,
@@ -143,7 +143,7 @@
 			"action_delay": 10,
 			"input":  {
 				"item1":{	
-					"amount": "1",
+					"amount": 1,
 					"name": "Metal_Bamboo"
 				}	
 			},
@@ -170,8 +170,11 @@
 				}
 			},
 			"action_delay": 10,
-			"input": {
-				"item1": "Metal_Bamboo"
+			"input":  {
+				"item1":{	
+					"amount": 1,
+					"name": "Metal_Bamboo"
+				}	
 			},
 			"output":{
 				"amount": 1,
@@ -200,7 +203,10 @@
 			},
 			"action_delay": 10,
 			"input": {
-				"item1": "Sticky_Bamboo"
+				"item1":{	
+					"amount": 1,
+					"name": "Sticky_Bamboo"
+				}
 			},
 			"output":{
 				"amount": 1,
@@ -271,8 +277,10 @@
 			},
 			"action_delay": 10,
 			"input": {
-				"amount": 5,
-				"item1": "Screws"
+				"item1":{	
+					"amount": 5,
+					"name": "Screws"
+				}
 			},
 			"output":{
 				"amount": 2,
@@ -300,8 +308,10 @@
 			},
 			"action_delay": 10,
 			"input": {
-				"amount": 5,
-				"item1": "Metal_Rods"
+				"item1":{	
+					"amount": 5,
+					"name": "Metal_Rods"
+				}
 			},
 			"output":{
 				"amount": 10,
