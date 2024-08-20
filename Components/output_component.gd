@@ -6,12 +6,14 @@ var items = preload("res://Classes/Items.tscn")
 
 func _on_timer_timeout():
 	var local_position = local_to_map(global_position)
+	#print(storage.items.size())
+	#print(World.get_cell(local_position))
 	if storage.items.size(): #and World.get_cell(local_position) != null: #and World.get_cell(local_position)["obj"]:
 		var data = storage.remove_item()
 		var item = items.instantiate()
 		item.set_id(data)
 		item.position = global_position
-		get_node("/root/Node").add_child(item)
+		get_node("/root").add_child(item)
 
 func local_to_map(local_position : Vector2):
 	return Vector2i(local_position / Vector2(16, 16))
