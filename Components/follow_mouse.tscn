@@ -5,5 +5,5 @@
 [node name="FollowMouse" type="AnimatedSprite2D"]
 visible = false
 sprite_frames = ExtResource("1_k1may")
-animation = &"Boiler"
+animation = &"Conveyor_Belt"
 speed_scale = 0.0

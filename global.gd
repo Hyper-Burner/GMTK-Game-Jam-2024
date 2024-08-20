@@ -5,6 +5,7 @@ var planet_level = 0
 var player_node: Node = null
 
 signal inventory_updated
+signal update_objective_progress
 signal show_details
 
 @onready var inventory_slot_scene = preload("res://inventory_slot.tscn")
@@ -33,7 +34,7 @@ func add_item(item):
 			#print("Item added", inventory)
 			return true
 	return false
-
+	
 func remove_item():
 	inventory_updated.emit()
 
@@ -49,3 +50,5 @@ func convert_named_item(name):
 			str = str + name[i]
 	return str
 	
+func update_objectives(items):
+	update_objective_progress.emit(items)

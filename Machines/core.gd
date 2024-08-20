@@ -5,6 +5,7 @@ var objectives = JSON.parse_string(FileAccess.get_file_as_string("res://TextFile
 @onready var storage = $StorageComponent
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	#for i in range(0, 50):
 		#storage.add_item(0)
 	#for i in range(0, 40):
@@ -19,9 +20,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	check_objectives()
 	
 func check_objectives():
+	Global.update_objectives(storage.items)
 	var obj = {}
 	for i in objectives[Global.planet_level]:
 		obj[i.id] = i.amount
