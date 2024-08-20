@@ -1238,6 +1238,6 @@ shape = SubResource("WorldBoundaryShape2D_ahnfx")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_8u41l")
-volume_db = -5.0
+volume_db = -15.0
 autoplay = true
 script = ExtResource("9_03x0m")

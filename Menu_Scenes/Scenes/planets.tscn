@@ -105,7 +105,7 @@ texture = ExtResource("10_16ot6")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Camera"]
 stream = ExtResource("11_6bcaw")
-volume_db = -5.0
+volume_db = -10.0
 autoplay = true
 script = ExtResource("11_1n6h3")
 
