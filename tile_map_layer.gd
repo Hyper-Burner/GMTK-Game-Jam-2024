@@ -89,6 +89,7 @@ func place_machine(machine: PackedScene, pos : Vector2i, rot : int):
 		for y in write_loop.y:
 			if(World.get_cell(pos + Vector2i(x,y)) != null):
 				isoverlap = true
+
 			if(is_placement_water(pos+Vector2i(x,y))):
 				iswater = true
 	if !isoverlap and !iswater:
@@ -113,9 +114,11 @@ func set_selected_machine(id : int):
 func erase_cells(sprite: AnimatedSprite2D):
 	var spritepos = local_to_map(Vector2i(sprite.position)) 
 	var erase_loop = Vector2i(sprite.size_x / 8, sprite.size_y / 8)
+	print("removed from:")
 	for x in erase_loop.x:
 		for y in erase_loop.y:
-			World.erase_cell(spritepos - Vector2i(x,y))
+			print(spritepos + (Vector2i(x,y)) - Vector2i(sprite.size_x / 8, sprite.size_y / 8) / Vector2i(2,2))
+			World.erase_cell(spritepos + (Vector2i(x,y)) - Vector2i(sprite.size_x / 8, sprite.size_y / 8) / Vector2i(2,2))
 			
 func is_placement_water(location: Vector2i):
 	var atlascoords = groundlayer.get_cell_atlas_coords(location)
@@ -129,8 +132,3 @@ func is_placement_water(location: Vector2i):
 	var isinwater = (part1 || part2)
 	return isinwater
 	
-		
-		
-		
-	
-			

@@ -5,6 +5,9 @@ var planet2: String = "res://Planets/Planet2.tscn"
 var planet3: String = "res://Planets/Planet3.tscn"
 var playerCam: String = "res://player_cam.tscn"
 var fadein: String = "res://Menu_Scenes/Scenes/fade_in.tscn"
+var planet_1_transition = preload("res://Audio/planet transition 1.wav")
+var planet_2_transition = preload("res://Audio/planet transition 2.wav")
+var planet_3_transition = preload("res://Audio/planet transition 3.wav")
 
 func fade_to_black() -> void: # fade screen to black before title display
 	get_node("BlackScreen").visible = true
@@ -38,6 +41,8 @@ func load_scene(loadPlanet: String) -> void: # load scene after click on planet
 
 func _on_planet_1_button_down() -> void:
 	Global.planet_level = 0
+	$AudioStreamPlayer.stream = planet_1_transition
+	$AudioStreamPlayer.play()
 	fade_to_black()
 	display_title("Planet 1:\nα-736")
 	await get_tree().create_timer(7).timeout
@@ -45,6 +50,8 @@ func _on_planet_1_button_down() -> void:
 
 func _on_planet_2_button_down() -> void:
 	Global.planet_level = 1
+	$AudioStreamPlayer.stream = planet_2_transition
+	$AudioStreamPlayer.play()
 	fade_to_black()
 	display_title("Planet 2:\nβ-241")
 	await get_tree().create_timer(7).timeout
@@ -52,6 +59,8 @@ func _on_planet_2_button_down() -> void:
 
 func _on_planet_3_button_down() -> void:
 	Global.planet_level = 2
+	$AudioStreamPlayer.stream = planet_3_transition
+	$AudioStreamPlayer.play()
 	fade_to_black()
 	display_title("Planet 3:\nΣ-128")
 	await get_tree().create_timer(7).timeout
