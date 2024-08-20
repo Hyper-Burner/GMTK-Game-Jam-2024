@@ -6,8 +6,6 @@ var items = preload("res://Classes/Items.tscn")
 
 func _on_timer_timeout():
 	var local_position = local_to_map(global_position)
-	print(storage.items.size())
-	print(World.get_cell(local_position))
 	if storage.items.size(): #and World.get_cell(local_position) != null: #and World.get_cell(local_position)["obj"]:
 		var data = storage.remove_item()
 		var item = items.instantiate()

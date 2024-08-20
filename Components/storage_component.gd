@@ -20,7 +20,7 @@ func remove_item(item = -1):
 		item = items.keys().max()
 		if item == null:
 			return -1
-	if items[item] > 1:
+	if items.has(item) and items[item] > 1:
 		items[item] -= 1
 	else:
 		items.erase(item)

@@ -28,13 +28,12 @@ storage = NodePath("../OutputStorageComponent")
 
 [node name="InputStorageComponent" parent="." instance=ExtResource("4_c8vte")]
 storage_size = 1
-stack_size = 1
+stack_size = 10
 
 [node name="OutputStorageComponent" parent="." instance=ExtResource("4_c8vte")]
-storage_size = 2
+storage_size = 4
 stack_size = 10
 
 [node name="ConvertItemComponent" parent="." node_paths=PackedStringArray("inputs", "outputs") instance=ExtResource("6_ok3wo")]
 inputs = [NodePath("../InputStorageComponent")]
 outputs = [NodePath("../OutputStorageComponent")]
-output = Array[int]([0])
