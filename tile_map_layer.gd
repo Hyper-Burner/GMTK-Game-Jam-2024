@@ -56,6 +56,10 @@ func _input(event: InputEvent) -> void:
 					World.get_cell(location)[0].bamboo_delete = self.get_cell_atlas_coords(location);
 					self.erase_cell(location)
 				hold_button = true
+			if(Input.is_action_pressed("right_click") and World.get_cell(location) != null and World.get_cell(location)[0].bamboo_delete != null):
+				if( World.get_cell(location) != null and World.get_cell(location)[0].id == 1):
+					self.set_cell(local_to_map(get_global_mouse_position()), 0, World.get_cell(location)[0].bamboo_delete)
+					World.erase_cell(location);
 			elif event.button_index == MOUSE_BUTTON_LEFT or MOUSE_BUTTON_RIGHT and event.is_released():
 				hold_button = false
 
