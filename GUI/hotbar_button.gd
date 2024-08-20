@@ -33,12 +33,12 @@ func set_machine_id(id):
 				new_control.add_child(costInstance)
 				$HBoxContainer.add_child(new_control)
 
-			$Label.text = $Label.text + "\nInputs:"
+			$Label.text = $Label.text + "\nInputs:\n"
 			for z in x["input"]:
 				$Label.text = $Label.text + str(x["input"][z]["amount"])
 				$Label.text = $Label.text + " " + x["input"][z]["name"].replace("_", " ") + "\n"
 			
-			$Label.text = $Label.text + "\nOutput:"
+			$Label.text = $Label.text + "\nOutput:\n"
 			$Label.text = $Label.text + str(x["output"]["amount"])
 			$Label.text = $Label.text + " " + x["output"]["name"].replace("_", " ") + "\n"
 

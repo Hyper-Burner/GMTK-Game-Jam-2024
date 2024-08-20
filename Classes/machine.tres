@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=135 format=3 uid="uid://c8p1i561k6kmk"]
+[gd_resource type="SpriteFrames" load_steps=137 format=3 uid="uid://c8p1i561k6kmk"]
 
 [ext_resource type="Texture2D" uid="uid://by10chjorf30r" path="res://Machines/sprites/planet1machines.png" id="1_xfjew"]
 
@@ -33,6 +33,14 @@ region = Rect2(288, 144, 48, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_nipqw"]
 atlas = ExtResource("1_xfjew")
 region = Rect2(336, 144, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsxof"]
+atlas = ExtResource("1_xfjew")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xypd"]
+atlas = ExtResource("1_xfjew")
+region = Rect2(48, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fvjhd"]
 atlas = ExtResource("1_xfjew")
@@ -567,6 +575,12 @@ animations = [{
 "speed": 8.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsxof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xypd")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fvjhd")
 }, {
