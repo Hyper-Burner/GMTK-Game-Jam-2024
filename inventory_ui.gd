@@ -1,14 +1,16 @@
 extends Control
 
 @onready var grid_container = $GridContainer
-@onready var item_name = $ItemName
-@onready var item_desc = $ItemDescription
+@onready var item_name = $TextureRect/ItemName
+@onready var item_desc = $TextureRect/ItemDescription
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.inventory_updated.connect(_on_inventory_updated)
 	Global.show_details.connect(_on_show_details)
 	_on_inventory_updated()
+	$TextureRect.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -33,3 +35,7 @@ func clear_grid_container():
 func _on_show_details(name, desc):
 	item_name.text = name
 	item_desc.text = desc
+	if name == "":
+		$TextureRect.visible = false
+	else:
+		$TextureRect.visible = true

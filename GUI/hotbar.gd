@@ -11,7 +11,6 @@ func _ready() -> void:
 		var instance = hotbar_button.instantiate()
 		instance.set_machine_id(x)
 		$HBoxContainer.add_child(instance)
-	print(objectives[Global.planet_level])
 	for i in range(0, len(objectives[Global.planet_level])):
 		var objective_instance = objective_item.instantiate()
 		objective_instance.set_properties(objectives[Global.planet_level][i].id,objectives[Global.planet_level][i].amount)

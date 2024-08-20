@@ -3,7 +3,7 @@
 		{
 			"id": 0,
 			"name": "Green_Bamboo",
-			"description": "Fast-growing and resilient, Green Bamboo is and excellent choice as manufacturing material"
+			"description": "Fast-growing and resilient, Green Bamboo is an excellent choice as manufacturing material"
 		},
 		{
 			"id": 1,
@@ -28,7 +28,7 @@
 		{
 			"id": 5,
 			"name": "Metal_Sheets",
-			"description": ""
+			"description": "Metal bamboo stamped into versatile sheets"
 		},
 		{
 			"id": 6,
@@ -43,12 +43,12 @@
 		{
 			"id": 8,
 			"name": "Spokes",
-			"description": ""
+			"description": "Its a stick"
 		},
 		{
 			"id": 9,
 			"name": "Wires",
-			"description": ""
+			"description": "Drawn wire used to carry an electrical current"
 		},
 		{
 			"id": 10,
