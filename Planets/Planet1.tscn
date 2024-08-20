@@ -1,4 +1,4 @@
-[gd_scene load_steps=151 format=4 uid="uid://b01olnb7krwbh"]
+[gd_scene load_steps=152 format=4 uid="uid://b01olnb7krwbh"]
 
 [ext_resource type="Texture2D" uid="uid://laekfo72yn3e" path="res://Tilemap/Planet1_GreenBamboo.png" id="1_07s2c"]
 [ext_resource type="Texture2D" uid="uid://cxb522ga5y3iy" path="res://Tilemap/Planet1_Rocks.png" id="2_677vt"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dnprenoh50sw6" path="res://Components/follow_mouse.tscn" id="6_bxxsj"]
 [ext_resource type="Texture2D" uid="uid://by10chjorf30r" path="res://Machines/sprites/planet1machines.png" id="7_avf81"]
 [ext_resource type="AudioStream" uid="uid://cenl0kgw0q30q" path="res://Audio/planet_1.wav" id="8_8u41l"]
+[ext_resource type="Script" path="res://Audio/audio.gd" id="9_03x0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xaxns"]
 texture = ExtResource("1_07s2c")
@@ -1239,3 +1240,4 @@ shape = SubResource("WorldBoundaryShape2D_ahnfx")
 stream = ExtResource("8_8u41l")
 volume_db = -5.0
 autoplay = true
+script = ExtResource("9_03x0m")
