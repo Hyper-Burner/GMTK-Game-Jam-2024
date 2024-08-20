@@ -16,7 +16,7 @@ region = Rect2(0, 77, 74, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hx86t"]
 atlas = ExtResource("2_3t7wn")
-region = Rect2(119, 77, 272, 32)
+region = Rect2(120, 77, 272, 32)
 
 [node name="Control" type="Control"]
 z_index = 10
