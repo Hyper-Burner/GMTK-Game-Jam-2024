@@ -13,9 +13,11 @@
 
 [node name="Items" parent="resource2" instance=ExtResource("3_mwm2t")]
 position = Vector2(200, 200)
+id = 10
 
 [node name="Items2" parent="resource2" instance=ExtResource("3_mwm2t")]
 position = Vector2(278, 146)
+id = 8
 
 [node name="FollowMouse2" type="Node2D" parent="resource2"]
 visible = false
