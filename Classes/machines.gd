@@ -29,6 +29,9 @@ func set_id(id : int):
 				for z in items_json.items:
 					if z.name == x.input[y].name:
 						convert_item_component.input.append([z.id, x.input[y].amount])
+			for y in items_json.items:
+				if y.name == x.output.name:
+					convert_item_component.output.append(y.id)
 			machine_type = x.name
 			var temp_string = "item"
 			var temp_int = 1
