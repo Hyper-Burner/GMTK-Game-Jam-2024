@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr00iutejh0f"]
+[gd_scene load_steps=6 format=3 uid="uid://cr00iutejh0f"]
 
 [ext_resource type="Texture2D" uid="uid://dmqglpwabdlvt" path="res://GUI/gui.png" id="1_rvk61"]
 [ext_resource type="Script" path="res://GUI/hotbar_button.gd" id="2_4nu2o"]
 [ext_resource type="SpriteFrames" uid="uid://c8p1i561k6kmk" path="res://Classes/machine.tres" id="3_p4htj"]
+[ext_resource type="FontFile" uid="uid://di3holtqvj3bm" path="res://Fonts/Kenney Pixel.ttf" id="4_x15tm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tddo"]
 atlas = ExtResource("1_rvk61")
@@ -14,15 +15,32 @@ offset_bottom = 66.0
 texture_normal = SubResource("AtlasTexture_3tddo")
 script = ExtResource("2_4nu2o")
 
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -34.0
+offset_top = -188.0
+offset_right = 78.0
+offset_bottom = -16.0
+theme_override_fonts/font = ExtResource("4_x15tm")
+horizontal_alignment = 1
+vertical_alignment = 2
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(22, 29)
+position = Vector2(22, 28)
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("3_p4htj")
-animation = &"Electronic_Fabricator"
+animation = &"Conveyor_Belt"
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = -13.0
+offset_top = 57.0
+offset_right = 57.0
+offset_bottom = 66.0
+theme_override_constants/separation = 8
+alignment = 1
 
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]

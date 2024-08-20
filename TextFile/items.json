@@ -42,28 +42,33 @@
 		},
 		{
 			"id": 8,
+			"name": "Tape",
+			"description": "A durable adhesive made from the sap of sticky bamboo"
+		},
+		{
+			"id": 9,
+			"name": "Spacecraft_Hulls",
+			"description": "A shameless copy of the IBC's standard rocket hull"
+		},
+		{
+			"id": 10,
 			"name": "Spokes",
 			"description": ""
 		},
 		{
-			"id": 9,
-			"name": "Wires",
-			"description": ""
-		},
-		{
-			"id": 10,
+			"id": 11,
 			"name": "Screws",
 			"description": "Invented in 6700AB to replace old-fashioned nails"
-		},
-		{
-			"id": 11,
-			"name": "Spacecraft_Hulls",
-			"description": "A shameless copy of the IBC's standard rocket hull"
 		},
 		{
 			"id": 12,
 			"name": "PCB",
 			"description": "In short supply across the galaxy; sells for a fortune on the black market"
+		},
+		{
+			"id": 13,
+			"name": "Wires",
+			"description": ""
 		},
 		{
 			"id": 14,

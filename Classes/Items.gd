@@ -9,6 +9,11 @@ var pickupable = true
 var speed = Vector2(0, 0)
 var on_conveyor = false
 
+func _ready() -> void:
+	set_id(id)
+	pass
+	#print(items["items"])
+
 func set_id(id : int):
 	self.id = id
 	$Sprite2D.frame = id

@@ -18,20 +18,21 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+
 func add_item(item):
 	for i in range(inventory.size()):
 		if inventory[i] != null and inventory[i]["name"] == item["name"]:
 			inventory[i]["quantity"] += item["quantity"]
 			inventory_updated.emit()
-			print("Item added", inventory)
+			#print("Item added", inventory)
 			return true
-		elif inventory[i] == null:
+	for i in range(inventory.size()):
+		if inventory[i] == null:
 			inventory[i] = item
 			inventory_updated.emit()
-			print("Item added", inventory)
+			#print("Item added", inventory)
 			return true
-		return false
-	
+	return false
 
 func remove_item():
 	inventory_updated.emit()
@@ -47,3 +48,4 @@ func convert_named_item(name):
 		else:
 			str = str + name[i]
 	return str
+	

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6aadg2b6nnrx"]
+[gd_scene load_steps=7 format=3 uid="uid://c6aadg2b6nnrx"]
 
 [ext_resource type="PackedScene" uid="uid://dc4s3nwak41h6" path="res://player.tscn" id="1_l3dcw"]
 [ext_resource type="Script" path="res://camera.gd" id="2_e6tcn"]
+[ext_resource type="PackedScene" uid="uid://07fnnrhc1lrk" path="res://Machines/core.tscn" id="3_dgrky"]
 [ext_resource type="PackedScene" uid="uid://bfsas7b02yyqi" path="res://Classes/Items.tscn" id="3_mwm2t"]
 [ext_resource type="PackedScene" uid="uid://b01olnb7krwbh" path="res://Planets/Planet1.tscn" id="4_mv4i6"]
 [ext_resource type="PackedScene" uid="uid://pm13kkyu1qas" path="res://GUI/hud.tscn" id="6_58lc4"]
@@ -12,15 +13,19 @@
 
 [node name="Items" parent="resource2" instance=ExtResource("3_mwm2t")]
 position = Vector2(200, 200)
+id = 8
 
 [node name="Items2" parent="resource2" instance=ExtResource("3_mwm2t")]
 position = Vector2(278, 146)
+id = 8
 
 [node name="FollowMouse2" type="Node2D" parent="resource2"]
 visible = false
 
 [node name="FollowMouseSprite" type="Sprite2D" parent="resource2/FollowMouse2"]
 self_modulate = Color(0.497474, 0.497474, 0.497474, 1)
+
+[node name="Core" parent="." instance=ExtResource("3_dgrky")]
 
 [node name="PC" parent="." instance=ExtResource("1_l3dcw")]
 position = Vector2(314, 160)
