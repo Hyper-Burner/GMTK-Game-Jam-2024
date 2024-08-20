@@ -11,6 +11,8 @@ var id : int
 var machines_json = JSON.parse_string(FileAccess.get_file_as_string("res://TextFile/machines.json"))
 var items_json = JSON.parse_string(FileAccess.get_file_as_string("res://TextFile/items.json"))
 
+var cost = []
+
 var size_x: int
 var size_y: int
 
@@ -28,6 +30,7 @@ func set_id(id : int):
 	var collision_shape = $InputComponent/CollisionShape2D
 	for x in machines_json.machines:
 		if(id == x.id):
+			cost = x.cost
 			for y in x.input:
 				for z in items_json.items:
 					if z.name == x.input[y].name:

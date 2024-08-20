@@ -11,6 +11,14 @@ var direction = 0
 var radius = 256
 
 var hold_button: bool = false # Checks to see if button is held down during building
+
+func _ready():
+	Global.add_item({
+		"id": 0,
+		"name": "Green_Bamboo",
+		"description": "Fast-growing and resilient, Green Bamboo is and excellent choice as manufacturing material",
+		"quantity": 200
+	})
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("rotate") or Input.is_action_just_pressed("mousewheeldown"):
 		direction += 90
@@ -23,9 +31,9 @@ func _process(delta: float) -> void:
 		if(Input.is_action_pressed("left_click")):
 			if World.get_cell(location) == null and location.x <= radius and location.x >= -radius and location.y <= radius and location.y >= -radius:
 				if(selected_machine == 1 and self.get_cell_source_id(location) == 0):
-					place_machine(machine, location, direction)
-					World.get_cell(location)[0].bamboo_delete = self.get_cell_atlas_coords(location);
-					self.erase_cell(location)
+					if(place_machine(machine, location, direction)):
+						World.get_cell(location)[0].bamboo_delete = self.get_cell_atlas_coords(location);
+						self.erase_cell(location)
 				elif(selected_machine > 1 and self.get_cell_source_id(location) != 0):
 						place_machine(machine, location, direction)
 		elif(Input.is_action_pressed("right_click")):
@@ -49,9 +57,9 @@ func _input(event: InputEvent) -> void:
 			var location = local_to_map(get_global_mouse_position())
 			if World.get_cell(location) == null and location.x <= radius and location.x >= -radius and location.y <= radius and location.y >= -radius:
 				if(selected_machine == 1 and self.get_cell_source_id(location) == 0):
-					place_machine(machine, location, direction)
-					World.get_cell(location)[0].bamboo_delete = self.get_cell_atlas_coords(location);
-					self.erase_cell(location)
+					if(place_machine(machine, location, direction)):
+						World.get_cell(location)[0].bamboo_delete = self.get_cell_atlas_coords(location);
+						self.erase_cell(location)
 				elif(selected_machine > 1 and self.get_cell_source_id(location) != 0):
 					place_machine(machine, location, direction)
 		elif Input.is_action_just_released("left_click") or Input.is_action_just_released("right_click"):
@@ -60,6 +68,7 @@ func _input(event: InputEvent) -> void:
 
 
 func place_machine(machine: PackedScene, pos : Vector2i, rot : int):
+	var placed: bool = false
 	var global_pos = map_to_local(pos)
 	if(selected_machine == 4):
 		machine = conveyor_belt 
@@ -96,11 +105,19 @@ func place_machine(machine: PackedScene, pos : Vector2i, rot : int):
 			if(is_placement_water(pos+Vector2i(x,y))):
 				iswater = true
 	if !isoverlap and !iswater:
-		add_child(instance)
-		for x in write_loop.x:
-			for y in write_loop.y:
-				World.set_cell(instance, pos + Vector2i(x,y), rot)
-
+		if (remove_from_inventory(instance)):
+			placed = true
+			add_child(instance)
+			for y in instance.cost:
+				for item in Global.inventory:
+					if(item != null):
+						if(instance.cost[y].name == item.name):
+							var subtract = Global.to_item(-instance.cost[y].amount, instance.cost[y].name)
+							Global.add_item(subtract)
+			for x in write_loop.x:
+				for y in write_loop.y:
+					World.set_cell(instance, pos + Vector2i(x,y), rot)
+	return placed
 	
 func set_selected_machine(id : int):
 	selected_machine = id
@@ -117,10 +134,8 @@ func set_selected_machine(id : int):
 func erase_cells(sprite: AnimatedSprite2D):
 	var spritepos = local_to_map(Vector2i(sprite.position)) 
 	var erase_loop = Vector2i(sprite.size_x / 8, sprite.size_y / 8)
-	print("removed from:")
 	for x in erase_loop.x:
 		for y in erase_loop.y:
-			print(spritepos + (Vector2i(x,y)) - Vector2i(sprite.size_x / 8, sprite.size_y / 8) / Vector2i(2,2))
 			World.erase_cell(spritepos + (Vector2i(x,y)) - Vector2i(sprite.size_x / 8, sprite.size_y / 8) / Vector2i(2,2))
 			
 func is_placement_water(location: Vector2i):
@@ -135,3 +150,13 @@ func is_placement_water(location: Vector2i):
 	var isinwater = (part1 || part2)
 	return isinwater
 	
+func remove_from_inventory(machine):
+	var enough:bool = false
+	for item in Global.inventory:
+		if(item != null):
+			for y in machine.cost:
+				if(machine.cost[y].name == item.name):
+					if(machine.cost[y].amount > item.quantity):
+						return false
+					enough = true
+	return enough

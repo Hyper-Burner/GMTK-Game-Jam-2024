@@ -10,6 +10,8 @@ var id
 var size_x: int
 var size_y: int
 
+var cost = {"item1": { "amount": 2, "name": "Green_Bamboo"}}
+
 		
 func set_id(useless):
 	id = 4
