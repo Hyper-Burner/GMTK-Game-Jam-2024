@@ -5,7 +5,7 @@
 
 [node name="FadeIn" type="Sprite2D"]
 z_index = 5
-position = Vector2(-831, -524)
-scale = Vector2(1670, 1047)
+position = Vector2(-960, -602)
+scale = Vector2(1920, 1203.74)
 texture = ExtResource("1_vl4bd")
 script = ExtResource("1_0wn8h")
