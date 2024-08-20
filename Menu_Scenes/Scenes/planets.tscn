@@ -35,10 +35,9 @@ script = ExtResource("4_o4qm4")
 
 [node name="Planet1" type="Button" parent="Background"]
 z_index = 1
-offset_left = -25.0
-offset_top = 90.0
-offset_right = 25.0
-offset_bottom = 140.0
+offset_left = -200.0
+offset_top = -50.0
+offset_right = -150.0
 pivot_offset = Vector2(25, 25)
 script = ExtResource("5_2fhmh")
 
@@ -49,10 +48,10 @@ centered = false
 
 [node name="Planet2" type="Button" parent="Background"]
 z_index = 1
-offset_left = -75.0
-offset_top = -5.0
-offset_right = -25.0
-offset_bottom = 45.0
+offset_left = 20.0
+offset_top = 30.0
+offset_right = 70.0
+offset_bottom = 80.0
 pivot_offset = Vector2(25, 25)
 script = ExtResource("5_2fhmh")
 
@@ -63,10 +62,10 @@ centered = false
 
 [node name="Planet3" type="Button" parent="Background"]
 z_index = 1
-offset_left = -25.0
-offset_top = -133.0
-offset_right = 25.0
-offset_bottom = -83.0
+offset_left = 180.0
+offset_top = -80.0
+offset_right = 230.0
+offset_bottom = -30.0
 pivot_offset = Vector2(25, 25)
 script = ExtResource("5_2fhmh")
 
