@@ -13,7 +13,7 @@
 
 [node name="Items" parent="resource2" instance=ExtResource("3_mwm2t")]
 position = Vector2(200, 200)
-id = 10
+id = 8
 
 [node name="Items2" parent="resource2" instance=ExtResource("3_mwm2t")]
 position = Vector2(278, 146)
