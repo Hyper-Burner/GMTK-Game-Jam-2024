@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=4 uid="uid://c7uog2g1ymywe"]
+[gd_scene load_steps=148 format=4 uid="uid://c7uog2g1ymywe"]
 
 [ext_resource type="Texture2D" uid="uid://b1xserc8ltpuv" path="res://Tilemap/Planet3_BambooVariations.png" id="2_r0fg1"]
 [ext_resource type="Script" path="res://tile_map_layer.gd" id="3_11dlf"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cexecjc3uf0ls" path="res://Tilemap/Planet3_Tiles.png" id="4_loc52"]
 [ext_resource type="PackedScene" uid="uid://dnprenoh50sw6" path="res://Components/follow_mouse.tscn" id="5_3ji7r"]
 [ext_resource type="Texture2D" uid="uid://by10chjorf30r" path="res://Machines/sprites/planet1machines.png" id="5_clo8b"]
+[ext_resource type="AudioStream" uid="uid://b0viwusm0nt8d" path="res://Audio/planet_3.wav" id="7_squib"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80aga"]
 texture = ExtResource("2_r0fg1")
@@ -1244,3 +1245,8 @@ shape = SubResource("WorldBoundaryShape2D_dkon2")
 position = Vector2(3054, 4018)
 rotation = 4.71239
 shape = SubResource("WorldBoundaryShape2D_dkon2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_squib")
+volume_db = -5.0
+autoplay = true
