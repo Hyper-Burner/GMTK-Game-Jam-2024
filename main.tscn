@@ -36,4 +36,5 @@ script = ExtResource("2_e6tcn")
 TargetNode = NodePath("../PC")
 
 [node name="Control" parent="Camera" instance=ExtResource("6_58lc4")]
+z_index = 0
 metadata/_edit_use_anchors_ = true
