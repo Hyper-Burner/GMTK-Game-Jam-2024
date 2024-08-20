@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 func _on_button_down() -> void:
 	var screenNode = get_parent().get_parent()
