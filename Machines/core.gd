@@ -1,5 +1,6 @@
 extends AnimatedSprite2D
 
+var completed_objective:bool = false
 var objectives = JSON.parse_string(FileAccess.get_file_as_string("res://TextFile/objectives.json"))
 @onready var hitbox = $InputComponent/CollisionShape2D
 @onready var storage = $StorageComponent
@@ -30,6 +31,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var completed: bool = check_objectives()
 	if(completed):
+		completed_objective = true
 		match Global.planet_level:
 			0:
 				self.play("teleporter")
@@ -37,6 +39,8 @@ func _process(delta: float) -> void:
 				self.play("portal")
 			2:
 				self.play("starting_rocket")
+
+
 	
 func check_objectives():
 	Global.update_objectives(storage.items)
@@ -53,4 +57,3 @@ func check_objectives():
 						return false
 					enough = true
 	return enough
-	

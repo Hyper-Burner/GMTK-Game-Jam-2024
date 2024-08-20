@@ -4,6 +4,10 @@ var inventory = []
 var planet_level = 0
 var player_node: Node = null
 
+var corescene
+
+@onready var planet_scene = preload("res://Menu_Scenes/Scenes/planets.tscn")
+
 signal inventory_updated
 signal update_objective_progress
 signal show_details
@@ -23,7 +27,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if(get_node("/root/resource/Core") != null):
+		corescene = get_node("/root/resource/Core")
+		print(corescene.completed_objective)
+		if(corescene.completed_objective):
+			get_node("/root/resource").queue_free()
+			get_node("/root/PlayerCam").queue_free()
+			World.world = {}
+			get_node("/root").add_child(planet_scene.instantiate())
 
 
 func add_item(item):

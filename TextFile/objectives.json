@@ -1,8 +1,7 @@
 [
 	[
-		{"item" : "Green_Bamboo", "amount": 50, "id": 0},
-		{"item" : "Bamboo_Planks", "amount": 40, "id": 1},
-		{"item" : "Bamboo_Pipes", "amount": 30, "id": 2},
+		{"item" : "Green_Bamboo", "amount": 1, "id": 0}
+
 	],
 	[
 		{"item" : "Bamboo_Planks", "amount": 200, "id": 1},
