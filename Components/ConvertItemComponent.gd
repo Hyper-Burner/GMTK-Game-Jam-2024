@@ -4,7 +4,7 @@ class_name ConvertItemComponent
 @export var inputs : Array[StorageComponent]
 @export var outputs : Array[StorageComponent]
 @export var input : Array[Array]
-@onready var output : int
+var output : Array[int] = [0]
 
 @onready var timer = $Timer
 
@@ -23,4 +23,4 @@ func _on_timer_timeout():
 	for item in input:
 		for x in range(item[1]):
 			inputs[0].remove_item(int(item[0]))
-	outputs[0].add_item(output)
+	outputs[0].add_item(output[0])
