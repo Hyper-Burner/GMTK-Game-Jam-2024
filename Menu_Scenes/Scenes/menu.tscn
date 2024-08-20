@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://fyvulanq1c5f"]
+[gd_scene load_steps=21 format=4 uid="uid://fyvulanq1c5f"]
 
 [ext_resource type="Theme" uid="uid://b51f4yt0bjl4k" path="res://Menu_Scenes/Assets/menu_buttons.tres" id="1_e83g2"]
 [ext_resource type="FontFile" uid="uid://bed4hftcfp2ty" path="res://Fonts/Kenney Pixel Square.ttf" id="2_jnktv"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cxb522ga5y3iy" path="res://Tilemap/Planet1_Rocks.png" id="7_l3106"]
 [ext_resource type="PackedScene" uid="uid://1pq5vhk6o3e4" path="res://Menu_Scenes/Scenes/settings.tscn" id="8_jhx0p"]
 [ext_resource type="Texture2D" uid="uid://0mppsovn6l6t" path="res://Menu_Scenes/Assets/Title1.png" id="9_l7qxo"]
+[ext_resource type="AudioStream" uid="uid://d037xmqfle2rr" path="res://Audio/menu.wav" id="10_m7t3f"]
+[ext_resource type="Script" path="res://Audio/menu.gd" id="11_jnx22"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7se6u"]
 bg_color = Color(2.74345e-06, 0.629811, 0.316993, 1)
@@ -235,6 +237,12 @@ scale = Vector2(3, 3)
 texture = ExtResource("9_l7qxo")
 
 [node name="Camera" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_m7t3f")
+volume_db = -5.0
+autoplay = true
+script = ExtResource("11_jnx22")
 
 [connection signal="button_down" from="Screen/Menu/StartButton" to="Screen/Menu/StartButton" method="_on_button_down"]
 [connection signal="button_down" from="Screen/Menu/SettingsButton" to="Screen/Menu/SettingsButton" method="_on_button_down"]

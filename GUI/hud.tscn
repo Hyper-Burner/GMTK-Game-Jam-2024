@@ -51,10 +51,20 @@ texture_normal = SubResource("AtlasTexture_b35lu")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Hotbar"]
 layout_mode = 0
-offset_left = -287.0
+offset_left = -276.0
 offset_top = 113.0
-offset_right = 293.0
+offset_right = 304.0
 offset_bottom = 179.0
+
+[node name="HScrollBar" type="HScrollBar" parent="Hotbar"]
+layout_mode = 0
+offset_left = -182.0
+offset_top = 104.0
+offset_right = 183.0
+offset_bottom = 114.0
+min_value = 276.0
+max_value = 410.0
+value = 276.0
 
 [node name="Objective" type="Control" parent="."]
 anchors_preset = 0
@@ -98,6 +108,7 @@ text = "X"
 script = ExtResource("4_u7rj3")
 
 [connection signal="pressed" from="Hotbar/TextureButton" to="Hotbar" method="_on_texture_button_pressed"]
+[connection signal="value_changed" from="Hotbar/HScrollBar" to="Hotbar" method="_on_h_scroll_bar_value_changed"]
 [connection signal="button_down" from="StopPlacing" to="StopPlacing" method="_on_button_down"]
 [connection signal="mouse_entered" from="StopPlacing" to="StopPlacing" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="StopPlacing" to="StopPlacing" method="_on_mouse_exited"]

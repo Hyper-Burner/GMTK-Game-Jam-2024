@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=131 format=3 uid="uid://c8p1i561k6kmk"]
+[gd_resource type="SpriteFrames" load_steps=137 format=3 uid="uid://devjhx6s85xq4"]
 
 [ext_resource type="Texture2D" uid="uid://by10chjorf30r" path="res://Machines/sprites/planet1machines.png" id="1_xfjew"]
 
@@ -33,6 +33,30 @@ region = Rect2(288, 144, 48, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_nipqw"]
 atlas = ExtResource("1_xfjew")
 region = Rect2(336, 144, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsxof"]
+atlas = ExtResource("1_xfjew")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xypd"]
+atlas = ExtResource("1_xfjew")
+region = Rect2(48, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvjhd"]
+atlas = ExtResource("1_xfjew")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nf54k"]
+atlas = ExtResource("1_xfjew")
+region = Rect2(16, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_got2g"]
+atlas = ExtResource("1_xfjew")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcrss"]
+atlas = ExtResource("1_xfjew")
+region = Rect2(48, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ryft3"]
 atlas = ExtResource("1_xfjew")
@@ -550,7 +574,25 @@ animations = [{
 "name": &"Boiler",
 "speed": 8.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsxof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xypd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvjhd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nf54k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_got2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcrss")
+}],
 "loop": true,
 "name": &"Conveyor_Belt",
 "speed": 12.0

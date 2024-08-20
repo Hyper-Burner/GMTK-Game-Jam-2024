@@ -20,9 +20,12 @@ func _ready():
 		"quantity": 200
 	})
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("rotate"):
+	if Input.is_action_just_pressed("rotate") or Input.is_action_just_pressed("mousewheeldown"):
 		direction += 90
-		#get_node("FollowMouse").rotation_degrees += 90
+		get_node("FollowMouse").rotation_degrees += 90
+	if Input.is_action_just_pressed("mousewheelup"):
+		direction -= 90
+		get_node("FollowMouse").rotation_degrees -= 90
 	if hold_button:
 		var location = local_to_map(get_global_mouse_position())
 		if(Input.is_action_pressed("left_click")):
