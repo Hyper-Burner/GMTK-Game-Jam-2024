@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1smqaws00mlt"]
+[gd_scene load_steps=12 format=3 uid="uid://b1smqaws00mlt"]
 
 [ext_resource type="Texture2D" uid="uid://qorvn2r6tod" path="res://Menu_Scenes/Assets/Space.png" id="1_s5nfs"]
 [ext_resource type="Script" path="res://Menu_Scenes/Scripts/background.gd" id="2_bky3g"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://drqds0586fe7p" path="res://Menu_Scenes/Assets/Planet_3.png" id="8_w3xah"]
 [ext_resource type="Script" path="res://Menu_Scenes/Scripts/camera.gd" id="9_ostub"]
 [ext_resource type="Texture2D" uid="uid://sfk4feoxvn58" path="res://Menu_Scenes/Assets/Black_screen.png" id="10_16ot6"]
+[ext_resource type="AudioStream" uid="uid://bwe8ilnhwp2nh" path="res://Audio/planet transition 1.wav" id="11_837hd"]
 
 [node name="Planets" type="Control"]
 layout_mode = 3
@@ -100,6 +101,10 @@ z_index = -2
 position = Vector2(1.19209e-07, 5.96046e-08)
 scale = Vector2(670.25, 369.25)
 texture = ExtResource("10_16ot6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Camera"]
+stream = ExtResource("11_837hd")
+volume_db = -5.0
 
 [connection signal="button_down" from="Background/BackButton" to="Background/BackButton" method="_on_button_down"]
 [connection signal="button_down" from="Background/Planet1" to="Camera" method="_on_planet_1_button_down"]
