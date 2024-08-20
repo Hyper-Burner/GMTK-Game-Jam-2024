@@ -13,7 +13,6 @@ func _physics_process(delta):
 	for x in input:
 		if !inputs[0].items.has(int(x[0])) or !inputs[0].items[int(x[0])] >= x[1]:
 			flag = false
-	#print(flag)
 	if flag:
 		timer.paused = false
 	else:

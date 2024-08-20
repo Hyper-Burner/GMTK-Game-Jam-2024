@@ -11,7 +11,6 @@ func _on_timer_timeout():
 	if storage.items.size(): #and World.get_cell(local_position) != null: #and World.get_cell(local_position)["obj"]:
 		var data = storage.remove_item()
 		var item = items.instantiate()
-		
 		item.set_id(data)
 		item.position = global_position
 		

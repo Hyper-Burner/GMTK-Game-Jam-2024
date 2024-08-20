@@ -3,7 +3,7 @@ class_name machines
 
 var input_storage_component : Array[StorageComponent]
 var output_storage_component : Array[StorageComponent]
-var convert_item_component : ConvertItemComponent
+#var convert_item_component : ConvertItemComponent
 var id : int
 
 var machines_json = JSON.parse_string(FileAccess.get_file_as_string("res://TextFile/machines.json"))
