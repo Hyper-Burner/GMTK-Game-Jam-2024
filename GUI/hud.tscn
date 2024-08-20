@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://pm13kkyu1qas"]
+[gd_scene load_steps=7 format=3 uid="uid://pm13kkyu1qas"]
 
 [ext_resource type="Script" path="res://GUI/hotbar.gd" id="1_ai6h6"]
 [ext_resource type="Texture2D" uid="uid://dmqglpwabdlvt" path="res://GUI/gui.png" id="2_3t7wn"]
+[ext_resource type="FontFile" uid="uid://di3holtqvj3bm" path="res://Fonts/Kenney Pixel.ttf" id="3_rc25m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cxt7b"]
 atlas = ExtResource("2_3t7wn")
@@ -16,6 +17,7 @@ atlas = ExtResource("2_3t7wn")
 region = Rect2(119, 77, 192, 32)
 
 [node name="Control" type="Control"]
+z_index = 10
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -67,9 +69,19 @@ texture = SubResource("AtlasTexture_hx86t")
 
 [node name="ObjectivesList" type="HBoxContainer" parent="Objective"]
 layout_mode = 0
-offset_left = -63.0
+offset_left = -39.0
 offset_top = -177.0
-offset_right = 65.0
+offset_right = 73.0
 offset_bottom = -151.0
+
+[node name="Label" type="Label" parent="Objective"]
+layout_mode = 0
+offset_left = -84.0
+offset_top = -182.0
+offset_right = -47.0
+offset_bottom = -159.0
+theme_override_fonts/font = ExtResource("3_rc25m")
+theme_override_font_sizes/font_size = 16
+text = "Collect:"
 
 [connection signal="pressed" from="Hotbar/TextureButton" to="Hotbar" method="_on_texture_button_pressed"]

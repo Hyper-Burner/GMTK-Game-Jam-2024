@@ -10,6 +10,7 @@ var speed = Vector2(0, 0)
 var on_conveyor = false
 
 func _ready() -> void:
+	set_id(id)
 	pass
 	#print(items["items"])
 

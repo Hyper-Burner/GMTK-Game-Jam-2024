@@ -27,6 +27,7 @@ hframes = 16
 [node name="Quantity" type="Label" parent="."]
 layout_mode = 0
 offset_top = 16.0
-offset_right = 22.0
+offset_right = 16.0
 offset_bottom = 30.0
 theme_override_fonts/font = ExtResource("3_cytii")
+horizontal_alignment = 1

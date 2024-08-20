@@ -4,6 +4,7 @@
 
 [node name="ConvertItemComponent" type="Node"]
 script = ExtResource("1_dd2yc")
+output = Array[int]([0])
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
