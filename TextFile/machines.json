@@ -312,7 +312,7 @@
 		},
 		{
 			"id": 11,
-			"name": "Electronics Fabricator",
+			"name": "Electronic_Fabricator",
 			"cost": {
 				"item1": {
 					"amount": 100,

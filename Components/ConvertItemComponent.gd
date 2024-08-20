@@ -19,7 +19,6 @@ func _physics_process(delta):
 		timer.paused = true
 
 func _on_timer_timeout():
-	print(output)
 	for item in input:
 		for x in range(item[1]):
 			inputs[0].remove_item(int(item[0]))

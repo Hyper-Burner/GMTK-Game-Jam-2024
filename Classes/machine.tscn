@@ -14,7 +14,7 @@ size = Vector2(16, 16)
 [node name="Machine" type="AnimatedSprite2D" node_paths=PackedStringArray("convert_item_component")]
 rotation = -1.5708
 sprite_frames = ExtResource("1_80mgm")
-animation = &"Conveyor_Belt"
+animation = &"Electronic_Fabricator"
 script = ExtResource("1_7k2yt")
 convert_item_component = NodePath("ConvertItemComponent")
 
