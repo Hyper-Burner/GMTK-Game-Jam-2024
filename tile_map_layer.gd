@@ -11,7 +11,6 @@ var radius = 256
 
 var hold_button: bool = false # Checks to see if button is held down during building
 func _process(delta: float) -> void:
-
 	if Input.is_action_just_pressed("rotate"):
 		direction += 90
 		get_node("FollowMouse").rotation_degrees += 90
@@ -51,34 +50,48 @@ func _input(event: InputEvent) -> void:
 					place_machine(machine, location, direction)
 		elif Input.is_action_just_released("left_click") or Input.is_action_just_released("right_click"):
 			hold_button = false
-				
+			
 
 
 func place_machine(machine: PackedScene, pos : Vector2i, rot : int):
 	var global_pos = map_to_local(pos)
 	var instance = machine.instantiate()
+	if(selected_machine == 1):
+		match (self.get_cell_atlas_coords(pos)):
+			Vector2i(0,0):
+				instance.bamboo_type = 1
+			Vector2i(0,2):
+				instance.bamboo_type = 1
+			Vector2i(1,0):
+				instance.bamboo_type = 2
+			Vector2i(1,2):
+				instance.bamboo_type = 2
+			Vector2i(2,0):
+				instance.bamboo_type = 3
+			Vector2i(2,2):
+				instance.bamboo_type = 3
 	var offset = instance.set_id(selected_machine)
 	var isoverlap: bool = false
 	var iswater: bool = false
-	
+
 	global_pos = global_pos + ((offset/Vector2(8,8)) - Vector2(1,1)) * Vector2(8,8)
 	instance.global_position = global_pos
 	instance.set_rotation_degrees(rot)
-	
+
 	var write_loop = offset / Vector2(8,8)
-	
+
 	for x in write_loop.x:
 		for y in write_loop.y:
 			if(World.get_cell(pos + Vector2i(x,y)) != null):
 				isoverlap = true
 			if(is_placement_water(pos+Vector2i(x,y))):
 				iswater = true
-	print(iswater)
 	if !isoverlap and !iswater:
+		add_child(instance)
 		for x in write_loop.x:
 			for y in write_loop.y:
 				World.set_cell(instance, pos + Vector2i(x,y), rot)
-		add_child(instance)
+
 	
 func set_selected_machine(id : int):
 	selected_machine = id

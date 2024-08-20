@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://b1yhkhvu65mxk"]
+
+[ext_resource type="Texture2D" uid="uid://by10chjorf30r" path="res://Machines/sprites/planet1machines.png" id="1_m28qh"]
+[ext_resource type="Script" path="res://Machines/harvester.gd" id="2_rej7w"]
+[ext_resource type="PackedScene" uid="uid://6yje1yldhycb" path="res://Components/output_component.tscn" id="3_5vkb2"]
+[ext_resource type="PackedScene" uid="uid://dnuc1j857gjl" path="res://Components/input_component.tscn" id="4_iajq6"]
+[ext_resource type="PackedScene" uid="uid://b5slr3nbkmmpb" path="res://Components/storage_component.tscn" id="5_xw8pg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cwv4"]
+atlas = ExtResource("1_m28qh")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytft0"]
+atlas = ExtResource("1_m28qh")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vn6ei"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cwv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytft0")
+}],
+"loop": true,
+"name": &"Harvester",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8aykr"]
+resource_local_to_scene = true
+size = Vector2(16, 16)
+
+[node name="Harvester" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_vn6ei")
+animation = &"Harvester"
+autoplay = "Harvester"
+script = ExtResource("2_rej7w")
+selected_machine = null
+
+[node name="OutputComponent" parent="." instance=ExtResource("3_5vkb2")]
+
+[node name="InputComponent" parent="." node_paths=PackedStringArray("storage_component") instance=ExtResource("4_iajq6")]
+storage_component = NodePath("")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InputComponent"]
+shape = SubResource("RectangleShape2D_8aykr")
+
+[node name="StorageComponent" parent="." instance=ExtResource("5_xw8pg")]

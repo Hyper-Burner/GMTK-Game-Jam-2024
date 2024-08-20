@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dupqi60hwstxs" path="res://items-Sheet.png" id="2_0m7i2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfrkp"]
+resource_local_to_scene = true
 size = Vector2(8, 8)
 
 [node name="Items" type="Area2D"]
