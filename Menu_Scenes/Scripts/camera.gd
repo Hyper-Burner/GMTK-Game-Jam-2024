@@ -5,9 +5,9 @@ var planet2: String = "res://Planets/Planet2.tscn"
 var planet3: String = "res://Planets/Planet3.tscn"
 var playerCam: String = "res://player_cam.tscn"
 var fadein: String = "res://Menu_Scenes/Scenes/fade_in.tscn"
-var planet_1_transition = preload("res://Audio/planet transition 1.wav")
-var planet_2_transition = preload("res://Audio/planet transition 2.wav")
-var planet_3_transition = preload("res://Audio/planet transition 3.wav")
+var planet_1_transition = preload("res://Audio/planet_1_transition.wav")
+var planet_2_transition = preload("res://Audio/planet_2_transition.wav")
+var planet_3_transition = preload("res://Audio/planet_3_transition.wav")
 
 func fade_to_black() -> void: # fade screen to black before title display
 	get_node("BlackScreen").visible = true
