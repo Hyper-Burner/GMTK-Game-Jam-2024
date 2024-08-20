@@ -9,7 +9,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wi10p"]
 resource_local_to_scene = true
-size = Vector2(64, 64)
+size = Vector2(16, 16)
 
 [node name="Machine" type="AnimatedSprite2D"]
 sprite_frames = ExtResource("1_80mgm")
@@ -23,7 +23,7 @@ storage_component = NodePath("../InputStorageComponent")
 shape = SubResource("RectangleShape2D_wi10p")
 
 [node name="OutputComponent" parent="." node_paths=PackedStringArray("storage") instance=ExtResource("3_24xd1")]
-position = Vector2(0, -10)
+position = Vector2(0, -17)
 storage = NodePath("../OutputStorageComponent")
 
 [node name="InputStorageComponent" parent="." instance=ExtResource("4_c8vte")]
@@ -31,7 +31,10 @@ storage_size = 1
 stack_size = 1
 
 [node name="OutputStorageComponent" parent="." instance=ExtResource("4_c8vte")]
-storage_size = 1
-stack_size = 1
+storage_size = 2
+stack_size = 10
 
-[node name="ConvertItemComponent" parent="." instance=ExtResource("6_ok3wo")]
+[node name="ConvertItemComponent" parent="." node_paths=PackedStringArray("inputs", "outputs") instance=ExtResource("6_ok3wo")]
+inputs = [NodePath("../InputStorageComponent")]
+outputs = [NodePath("../OutputStorageComponent")]
+output = Array[int]([0])
