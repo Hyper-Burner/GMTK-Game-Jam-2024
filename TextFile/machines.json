@@ -104,13 +104,9 @@
 			"name": "Conveyor_Belt",
 			"cost": {
 				"item1": {
-					"amount": 10,
-					"name": "Bamboo_Planks"
+					"amount": 2,
+					"name": "Green_Bamboo"
 				},
-				"item2": {
-					"amount": 5,
-					"name": "Bamboo_Pipes"
-				}
 			},
 			"action_delay": 10,
 			"input": {

@@ -8,11 +8,17 @@ signal inventory_updated
 signal update_objective_progress
 signal show_details
 
+
+var items_json = JSON.parse_string(FileAccess.get_file_as_string("res://TextFile/items.json"))
 @onready var inventory_slot_scene = preload("res://inventory_slot.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	inventory.resize(20)
+	for x in items_json.items:
+		x.merge({"quantity": 0})
+		self.add_item(x)
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,7 +40,11 @@ func add_item(item):
 			#print("Item added", inventory)
 			return true
 	return false
-	
+
+#Only use this for subtracting and not adding new things to inventory
+func to_item(quantity: int, name: String):
+	return {"quantity": quantity, "name": name}
+
 func remove_item():
 	inventory_updated.emit()
 
