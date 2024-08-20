@@ -16,7 +16,7 @@ region = Rect2(0, 77, 74, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hx86t"]
 atlas = ExtResource("2_3t7wn")
-region = Rect2(119, 77, 192, 32)
+region = Rect2(119, 77, 272, 32)
 
 [node name="Control" type="Control"]
 z_index = 10
@@ -74,24 +74,24 @@ script = ExtResource("3_hfloh")
 
 [node name="TextureRect" type="TextureRect" parent="Objective"]
 layout_mode = 0
-offset_left = -96.0
+offset_left = -136.0
 offset_top = -180.0
-offset_right = 96.0
+offset_right = 136.0
 offset_bottom = -148.0
 texture = SubResource("AtlasTexture_hx86t")
 
 [node name="ObjectivesList" type="HBoxContainer" parent="Objective"]
 layout_mode = 0
-offset_left = -39.0
-offset_top = -177.0
-offset_right = 73.0
+offset_left = -79.0
+offset_top = -178.0
+offset_right = 102.0
 offset_bottom = -151.0
 
 [node name="Label" type="Label" parent="Objective"]
 layout_mode = 0
-offset_left = -84.0
+offset_left = -122.0
 offset_top = -182.0
-offset_right = -47.0
+offset_right = -81.0
 offset_bottom = -159.0
 theme_override_fonts/font = ExtResource("3_rc25m")
 theme_override_font_sizes/font_size = 16
