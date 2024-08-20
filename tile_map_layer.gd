@@ -34,7 +34,9 @@ func _process(delta: float) -> void:
 				erase_cells(World.get_cell(location)[0])
 	if place_new:
 		var location = local_to_map(get_global_mouse_position())
-		get_node("FollowMouse").position = Vector2(location.x * 16 + 8, location.y * 16 + 8)
+		var size = get_node("FollowMouse").sprite_frames.get_frame_texture(get_node("FollowMouse").animation, get_node("FollowMouse").frame).get_region().size
+		size = size/Vector2(16,16)
+		get_node("FollowMouse").position = Vector2(location.x * 16, location.y * 16) + size * Vector2(8,8)
 		
 
 func _input(event: InputEvent) -> void:
