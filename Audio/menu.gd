@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 	if !settings["settings"][0]["audio"]:
 		volume_db = -80
 	elif settings["settings"][0]["audio"]:
-		volume_db = -5
+		volume_db = -15

@@ -18,6 +18,8 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="Background" type="Sprite2D" parent="."]
+position = Vector2(0, 1.81899e-12)
+scale = Vector2(0.972973, 0.972973)
 texture = ExtResource("1_s5nfs")
 script = ExtResource("2_bky3g")
 
@@ -97,15 +99,14 @@ text = "[center]Planet 1:
 test text[/center]"
 
 [node name="BlackScreen" type="Sprite2D" parent="Camera"]
-visible = false
 z_index = -2
-position = Vector2(-334, -195)
-scale = Vector2(670.25, 369.25)
+position = Vector2(-320, -180)
+scale = Vector2(640, 360)
 texture = ExtResource("10_16ot6")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Camera"]
 stream = ExtResource("11_6bcaw")
-volume_db = -5.0
+volume_db = -10.0
 autoplay = true
 script = ExtResource("11_1n6h3")
 
