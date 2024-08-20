@@ -11,6 +11,8 @@ func _ready() -> void:
 	conveyorbelt.set_machine_id(4)
 	$HBoxContainer.add_child(conveyorbelt)
 	
+	
+	print(Global.planet_level)
 	for x in range(1, unlocks[Global.planet_level]):
 		var instance = hotbar_button.instantiate()
 		instance.set_machine_id(x)

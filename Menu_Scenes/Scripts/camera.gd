@@ -37,18 +37,21 @@ func load_scene(loadPlanet: String) -> void: # load scene after click on planet
 	get_parent().queue_free()
 
 func _on_planet_1_button_down() -> void:
+	Global.planet_level = 0
 	fade_to_black()
 	display_title("Planet 1:\nα-736")
 	await get_tree().create_timer(7).timeout
 	load_scene(planet1)
 
 func _on_planet_2_button_down() -> void:
+	Global.planet_level = 1
 	fade_to_black()
 	display_title("Planet 2:\nβ-241")
 	await get_tree().create_timer(7).timeout
 	load_scene(planet2)
 
 func _on_planet_3_button_down() -> void:
+	Global.planet_level = 2
 	fade_to_black()
 	display_title("Planet 3:\nΣ-128")
 	await get_tree().create_timer(7).timeout
