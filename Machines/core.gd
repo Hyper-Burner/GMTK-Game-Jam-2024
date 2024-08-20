@@ -1,4 +1,4 @@
-extends Area2D
+extends AnimatedSprite2D
 
 var objectives = JSON.parse_string(FileAccess.get_file_as_string("res://TextFile/objectives.json"))
 

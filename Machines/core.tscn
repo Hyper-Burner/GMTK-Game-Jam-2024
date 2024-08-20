@@ -319,24 +319,22 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7s2ac"]
-size = Vector2(129, 128)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2axic"]
+size = Vector2(50, 48)
 
-[node name="Core" type="Area2D"]
-script = ExtResource("1_ih68l")
-
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Core" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_wfjh0")
-animation = &"broken_teleporter"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_7s2ac")
+animation = &"starting_rocket"
+script = ExtResource("1_ih68l")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
 [node name="InputComponent" parent="." node_paths=PackedStringArray("storage_component") instance=ExtResource("3_8mdw4")]
 storage_component = NodePath("../StorageComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InputComponent"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_2axic")
 
 [node name="StorageComponent" parent="." instance=ExtResource("2_bv250")]
 storage_size = 10

@@ -1,5 +1,5 @@
 {
-	"machines":[
+	"machines": [
 		{
 			"id": 0,
 			"name": "Core",
@@ -15,11 +15,10 @@
 					"name": "N/A"
 				}
 			},
-			"output":{
+			"output": {
 				"amount": 0,
 				"name": "N/A"
-				
-			}, 
+			},
 			"size_x": 1,
 			"size_y": 1
 		},
@@ -38,14 +37,12 @@
 					"name": "N/A"
 				}
 			},
-			"output":{
+			"output": {
 				"amount": 1,
 				"name": "Green_Bamboo"
-			}, 
-			
+			},
 			"size_x": 1,
 			"size_y": 1
-			
 		},
 		{
 			"id": 2,
@@ -63,11 +60,10 @@
 					"name": "Green_Bamboo"
 				}
 			},
-			"output":{
+			"output": {
 				"amount": 1,
 				"name": "Bamboo_Planks"
-				
-			}, 
+			},
 			"size_x": 2,
 			"size_y": 1
 		},
@@ -91,11 +87,10 @@
 					"name": "Bamboo_Planks"
 				}
 			},
-			"output":{
+			"output": {
 				"amount": 1,
 				"name": "Bamboo_Pipes"
-				
-			}, 
+			},
 			"size_x": 2,
 			"size_y": 2
 		},
@@ -106,7 +101,7 @@
 				"item1": {
 					"amount": 2,
 					"name": "Green_Bamboo"
-				},
+				}
 			},
 			"action_delay": 10,
 			"input": {
@@ -115,11 +110,10 @@
 					"name": "N/A"
 				}
 			},
-			"output":{
+			"output": {
 				"amount": 0,
 				"name": "N/A"
-				
-			}, 
+			},
 			"size_x": 1,
 			"size_y": 1
 		},
@@ -137,18 +131,16 @@
 				}
 			},
 			"action_delay": 10,
-			"input":  {
-				"item1":{	
+			"input": {
+				"item1": {
 					"amount": 1,
 					"name": "Metal_Bamboo"
-				}	
+				}
 			},
-		
-			"output":{
+			"output": {
 				"amount": 1,
 				"name": "Bamboo_Sheets"
-				
-			}, 
+			},
 			"size_x": 2,
 			"size_y": 2
 		},
@@ -166,17 +158,16 @@
 				}
 			},
 			"action_delay": 10,
-			"input":  {
-				"item1":{	
+			"input": {
+				"item1": {
 					"amount": 1,
 					"name": "Metal_Bamboo"
-				}	
+				}
 			},
-			"output":{
+			"output": {
 				"amount": 1,
 				"name": "Metal_Rods"
-				
-			}, 
+			},
 			"size_x": 2,
 			"size_y": 2
 		},
@@ -199,15 +190,15 @@
 			},
 			"action_delay": 10,
 			"input": {
-				"item1":{	
+				"item1": {
 					"amount": 1,
 					"name": "Sticky_Bamboo"
 				}
 			},
-			"output":{
+			"output": {
 				"amount": 1,
 				"name": "Glue"
-			}, 
+			},
 			"size_x": 3,
 			"size_y": 2
 		},
@@ -230,23 +221,23 @@
 			},
 			"action_delay": 10,
 			"input": {
-				"item1":{
+				"item1": {
 					"amount": 10,
 					"name": "Metal_Rods"
 				},
-				"item2":{
+				"item2": {
 					"amount": 10,
 					"name": "Metal_Sheets"
 				},
-				"item3":{
+				"item3": {
 					"amount": 20,
 					"name": "Glue"
 				}
 			},
-			"output":{
+			"output": {
 				"amount": 1,
 				"name": "Spacecraft_Hull"
-			}, 
+			},
 			"size_x": 4,
 			"size_y": 4
 		},
@@ -273,12 +264,12 @@
 			},
 			"action_delay": 10,
 			"input": {
-				"item1":{	
+				"item1": {
 					"amount": 5,
 					"name": "Screws"
 				}
 			},
-			"output":{
+			"output": {
 				"amount": 2,
 				"name": "Spokes"
 			},
@@ -304,12 +295,12 @@
 			},
 			"action_delay": 10,
 			"input": {
-				"item1":{	
+				"item1": {
 					"amount": 5,
 					"name": "Metal_Rods"
 				}
 			},
-			"output":{
+			"output": {
 				"amount": 10,
 				"name": "Screws"
 			},
@@ -335,20 +326,20 @@
 			},
 			"action_delay": 10,
 			"input": {
-				"item1":{
+				"item1": {
 					"amount": 1,
 					"name": "Glue"
 				},
-				"item2":{
+				"item2": {
 					"amount": 1,
 					"name": "Bamboo_Planks"
 				},
-				"item3":{
+				"item3": {
 					"amount": 1,
 					"name": "Wires"
 				}
 			},
-			"output":{
+			"output": {
 				"amount": 1,
 				"name": "PCB"
 			},
@@ -374,12 +365,12 @@
 			},
 			"action_delay": 10,
 			"input": {
-				"item1":{
+				"item1": {
 					"amount": 1,
 					"name": "Metal_Sheets"
 				}
 			},
-			"output":{
+			"output": {
 				"amount": 5,
 				"name": "Wires"
 			},
@@ -405,20 +396,20 @@
 			},
 			"action_delay": 10,
 			"input": {
-				"item1":{
+				"item1": {
 					"amount": 30,
 					"name": "Bamboo_Pipes"
 				},
-				"item2":{
+				"item2": {
 					"amount": 10,
 					"name": "Bamboo_Fuel"
 				},
-				"item3":{
+				"item3": {
 					"amount": 10,
 					"name": "Screws"
 				}
 			},
-			"output":{
+			"output": {
 				"amount": 1,
 				"name": "Thrusters"
 			},
@@ -452,12 +443,12 @@
 			},
 			"action_delay": 10,
 			"input": {
-				"item1":{
+				"item1": {
 					"amount": 1,
 					"name": "Metal_Sheets"
 				}
 			},
-			"output":{
+			"output": {
 				"amount": 1,
 				"name": "Bamboo_Fuel"
 			},
