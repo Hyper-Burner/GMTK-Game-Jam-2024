@@ -34,7 +34,7 @@ scale = Vector2(126, 199)
 texture = ExtResource("4_h8e4t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(22, 28)
+position = Vector2(23, 28)
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("3_p4htj")
 animation = &"Forge"
