@@ -18,6 +18,7 @@ func set_id(id : int):
 	self.id = id
 	$Sprite2D.frame = id
 
+
 func tween_position(final_val, duration : float):
 	var tween = create_tween()
 	print(final_val);

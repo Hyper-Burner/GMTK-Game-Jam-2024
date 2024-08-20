@@ -12,10 +12,10 @@ var items_json = JSON.parse_string(FileAccess.get_file_as_string("res://TextFile
 var size_x: int
 var size_y: int
 
-var input_type = []
-var input_amount = []
-
 var bamboo_delete: Vector2i
+
+var bamboo_type = 0
+
 	
 func set_id(id : int):
 	self.id = id
@@ -30,15 +30,16 @@ func set_id(id : int):
 					if z.name == x.input[y].name:
 						convert_item_component.input.append([z.id, x.input[y].amount])
 			for y in items_json.items:
-				if y.name == x.output.name:
-					convert_item_component.output[0] = int(y.id)
+				if(bamboo_type == 0):
+					if y.name == x.output.name:
+						convert_item_component.output[0] = int(y.id)
+				elif(bamboo_type == 1):
+					convert_item_component.output[0] = int(0)
+				elif (bamboo_type == 2):
+					convert_item_component.output[0] = int(3)
+				elif(bamboo_type == 3):
+					convert_item_component.output[0] = int(4)
 			machine_type = x.name
-			var temp_string = "item"
-			var temp_int = 1
-			for y in x.input:
-				input_type.append(x.input[str(temp_string,temp_int)].name)
-				input_amount.append(x.input[str(temp_string,temp_int)].amount)
-				temp_int+= 1
 			self.size_x = x.size_x * 8
 			self.size_y = x.size_y * 8
 	collision_shape.shape.extents = Vector2(size_x, size_y)

@@ -527,6 +527,7 @@ atlas = ExtResource("1_xfjew")
 region = Rect2(272, 320, 16, 16)
 
 [resource]
+resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,

@@ -11,9 +11,6 @@ class_name ConvertItemComponent
 func _physics_process(delta):
 	var flag = true
 	for x in input:
-		print(inputs[0].items.has(int(x[0])))
-		print(inputs[0].items)
-		print(x[0])
 		if !inputs[0].items.has(int(x[0])) or !inputs[0].items[int(x[0])] >= x[1]:
 			flag = false
 	#print(flag)
