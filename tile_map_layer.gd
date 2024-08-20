@@ -1,6 +1,7 @@
 extends TileMapLayer
 @export var selected_machine : int
 var machine = preload("res://Classes/machine.tscn")
+var conveyor_belt = preload("res://conveyor.tscn") 
 var machines_json = JSON.parse_string(FileAccess.get_file_as_string("res://TextFile/machines.json"))
 @onready var groundlayer = $ground
 
@@ -55,6 +56,8 @@ func _input(event: InputEvent) -> void:
 
 func place_machine(machine: PackedScene, pos : Vector2i, rot : int):
 	var global_pos = map_to_local(pos)
+	if(selected_machine == 4):
+		machine = conveyor_belt 
 	var instance = machine.instantiate()
 	if(selected_machine == 1):
 		match (self.get_cell_atlas_coords(pos)):
