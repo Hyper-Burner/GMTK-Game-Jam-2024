@@ -5,6 +5,19 @@ class_name conveyor
 
 var conveyor_speed = 1
 
-func _on_area_entered(area):
+var id
+
+var size_x: int
+var size_y: int
+
+		
+func set_id(useless):
+	id = 4
+	size_x = 8
+	size_y = 8
+	return Vector2(size_x,size_y)
+
+
+func _on_conveyor_area_entered(area: Area2D) -> void:
 	if area is Item:
 		area.tween_position($Marker2D.global_position, conveyor_speed)

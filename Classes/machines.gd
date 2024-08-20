@@ -4,6 +4,8 @@ class_name machines
 var input_storage_component : Array[StorageComponent]
 var output_storage_component : Array[StorageComponent]
 @export var convert_item_component : ConvertItemComponent
+
+
 var id : int
 
 var machines_json = JSON.parse_string(FileAccess.get_file_as_string("res://TextFile/machines.json"))
@@ -19,6 +21,7 @@ var bamboo_type = 0
 
 
 func set_id(id : int):
+	var output_marker = $OutputComponent
 	self.id = id
 	var animated_sprite = $"."
 	var machine_type
@@ -43,6 +46,8 @@ func set_id(id : int):
 			self.size_x = x.size_x * 8
 			self.size_y = x.size_y * 8
 	collision_shape.shape.extents = Vector2(size_x, size_y)
+	
+	output_marker.position = Vector2(size_x + 8, size_y/16 )
 	animated_sprite.play(machine_type)
 	return Vector2(size_x, size_y)
 

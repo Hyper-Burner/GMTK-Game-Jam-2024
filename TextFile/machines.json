@@ -114,9 +114,16 @@
 			},
 			"action_delay": 10,
 			"input": {
-				"item1": "N/A"
+				"item1": {
+					"amount": 0,
+					"name": "NA"
+				}
 			},
-			"output": "N/A",
+			"output":{
+				"amount": 0,
+				"name": "NA"
+				
+			}, 
 			"size_x": 1,
 			"size_y": 1
 		},

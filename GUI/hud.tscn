@@ -99,3 +99,5 @@ script = ExtResource("4_u7rj3")
 
 [connection signal="pressed" from="Hotbar/TextureButton" to="Hotbar" method="_on_texture_button_pressed"]
 [connection signal="button_down" from="StopPlacing" to="StopPlacing" method="_on_button_down"]
+[connection signal="mouse_entered" from="StopPlacing" to="StopPlacing" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StopPlacing" to="StopPlacing" method="_on_mouse_exited"]

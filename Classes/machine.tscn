@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dbaticph6txf7"]
 
 [ext_resource type="Script" path="res://Classes/machines.gd" id="1_7k2yt"]
-[ext_resource type="SpriteFrames" uid="uid://devjhx6s85xq4" path="res://Classes/machine.tres" id="1_80mgm"]
+[ext_resource type="SpriteFrames" uid="uid://c8p1i561k6kmk" path="res://Classes/machine.tres" id="1_80mgm"]
 [ext_resource type="PackedScene" uid="uid://dnuc1j857gjl" path="res://Components/input_component.tscn" id="2_8jynv"]
 [ext_resource type="PackedScene" uid="uid://6yje1yldhycb" path="res://Components/output_component.tscn" id="3_24xd1"]
 [ext_resource type="PackedScene" uid="uid://b5slr3nbkmmpb" path="res://Components/storage_component.tscn" id="4_c8vte"]
@@ -12,8 +12,9 @@ resource_local_to_scene = true
 size = Vector2(16, 16)
 
 [node name="Machine" type="AnimatedSprite2D" node_paths=PackedStringArray("convert_item_component")]
+rotation = -1.5708
 sprite_frames = ExtResource("1_80mgm")
-animation = &"Electronic_Fabricator"
+animation = &"Conveyor_Belt"
 script = ExtResource("1_7k2yt")
 convert_item_component = NodePath("ConvertItemComponent")
 
@@ -24,7 +25,8 @@ storage_component = NodePath("../InputStorageComponent")
 shape = SubResource("RectangleShape2D_wi10p")
 
 [node name="OutputComponent" parent="." node_paths=PackedStringArray("storage") instance=ExtResource("3_24xd1")]
-position = Vector2(0, -17)
+position = Vector2(8, 0)
+rotation = -1.5708
 storage = NodePath("../OutputStorageComponent")
 
 [node name="InputStorageComponent" parent="." instance=ExtResource("4_c8vte")]
